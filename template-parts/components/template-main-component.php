@@ -59,7 +59,7 @@ global $Mammen;
                     </div>
                 </div>
                 <div class="center__info">
-                    йцуsdgsdgerewrwe
+                    йцуsdgsdgerewrwe2222
                 </div>
 			</div>
 		</div>
