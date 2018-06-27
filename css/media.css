@@ -16,7 +16,7 @@
     #first .slick--slider .slider-cont {
         max-width: 100%;
         overflow: hidden;
-        padding: 0 0 20px 16px;
+        padding: 0 0 10px 16px;
     }
     .slick--slider .slider-cont .center_info__grey {
         top: initial;
@@ -25,6 +25,10 @@
 @media screen and (max-width: 1080px) {
     .desktop {
         display: none;
+    }
+    .slick-dots {
+        margin-top: 1.2em;
+        text-align: center;
     }
     #fullpage .mobile {
         display: block;

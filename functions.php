@@ -52,6 +52,9 @@ function ajaxurl_scripts () {
     wp_register_script('form', get_template_directory_uri() . '/js/form.js');
     wp_enqueue_script('form');
 
+    wp_register_script('scrollbar', get_template_directory_uri() . '/js/jquery.mCustomScrollbar.concat.min.js');
+    wp_enqueue_script('scrollbar');
+
     wp_register_script('main-ext', get_template_directory_uri() . '/js/main-ext.js');
     wp_enqueue_script('main-ext');
 
@@ -64,6 +67,9 @@ function ajaxurl_scripts () {
 
     wp_register_style( 'slick',  get_template_directory_uri() . '/css/slick.css' );
     wp_enqueue_style( 'slick' );
+
+    wp_register_style( 'scrollbar',  get_template_directory_uri() . '/css/jquery.mCustomScrollbar.min.css' );
+    wp_enqueue_style( 'scrollbar' );
 
     wp_register_style( 'main',  get_template_directory_uri() . '/css/main.css' );
     wp_enqueue_style( 'main' );

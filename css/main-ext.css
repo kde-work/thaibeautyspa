@@ -412,3 +412,83 @@
 .education .main.info .text-slide {
     text-align: left;
 }
+
+.count_of_clients {
+    display: flex;
+    margin: auto;
+}
+.count_of_clients__left, .count_of_clients__right {
+    display: inline-block;
+}
+.count_of_clients__right {
+    position: relative;
+    right: -21px;
+}
+.count_of_clients__left {
+    font-size: 98px;
+    font-family: Times New Roman, Times, serif;
+    font-weight: bold;
+    letter-spacing: -0.01em;
+    line-height: 0.92;
+    padding-right: 0;
+}
+.count_of_clients__title {
+    font-size: 25px;
+    font-family: "Sitka Banner", Times New Roman, serif;
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: -0.01em;
+}
+.count_of_clients__cont {
+    font-size: 20px;
+    font-family: "Myriad Pro", Times New Roman, serif;
+    letter-spacing: -0.01em;
+    width: 262px;
+}
+.center__right--mp .center__info {
+    display: flex;
+    margin: auto;
+}
+.center__right--mp .slick-slider {
+    width: 100%;
+}
+.center__right--mp .center__info--1 {
+    align-items: end;
+    display: flex;
+    height: 68%;
+    margin: auto;
+}
+.center__right--mp .center__info--2 {
+    height: 32%;
+}
+
+.competition {
+    text-align: center;
+    display: inline-block;
+}
+.competition__big-number {
+    font-family: Times New Roman, Times, serif;
+    font-size: 277px;
+    font-weight: bold;
+    line-height: 0.7;
+}
+.competition__sub-number {
+    font-family: "Sitka Display", Times New Roman, Times, serif;
+    font-size: 66px;
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+.competition__desc {
+    font-size: 25px;
+    font-family: "Roboto Condensed", Times New Roman, Times, serif;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+}
+.center--main-slide {
+    width: 65.5%;
+}
+.center--main-slide .center__left {
+    padding-left: 0 !important;
+}

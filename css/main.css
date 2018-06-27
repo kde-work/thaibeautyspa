@@ -228,8 +228,7 @@
     width:100%
 }
 .main.first .center__info h3, .main.first .center__info h3{
-    padding-bottom:10px;
-    font-size:33.3px;
+    font-size:33px;
     line-height:1;
     font-family:Times New Roman,Times,serif;
     text-transform:uppercase
@@ -247,7 +246,7 @@
     position:absolute;
     width:163px;
     height:117px;
-    bottom:-20px;
+    top:-28px;
     left:-20px;
     z-index:-1;
     background-color:hsla(0,0%,47%,.1)
@@ -275,9 +274,9 @@
 .slider-cont__body {
     position: relative;
 }
-.slider-cont__body p {
-    font-size: 15px !important;
-}
+/*.slider-cont__body p {*/
+    /*font-size: 15px !important;*/
+/*}*/
 .slider-cont__body hr {
     margin: 0 0 11px !important;
 }
@@ -285,13 +284,13 @@
     margin-top: 74px;
 }
 .slick-dots {
-    margin-top: 1.2em;
-    text-align: center;
+    margin-top: 0.2em;
+    text-align: left;
 }
 .slick-dots li {
     display: inline-block;
     vertical-align: top;
-    margin: 0 8px;
+    margin: 0 5px;
 }
 .slick-dots button {
     background:  no-repeat url("../img/bullet-0.png") center / cover;
