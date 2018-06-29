@@ -1,0 +1,242 @@
+.main {
+    z-index: 1;
+}
+.center__left {
+    width: 45%;
+    display: inline-block;
+    margin-right: 3%;
+
+}
+.center__right {
+    display: inline-block;
+    vertical-align: top;
+    width: 51%;
+}
+.contact__map {
+    border: 1px solid #000;
+    border-left: none;
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+.contact__map iframe {
+    border: 0;
+    position: relative;
+    top: -47px;
+    height: calc(100% + 62px);
+    width: 100%;
+}
+.contacts-box {
+    /*display: flex;*/
+    /*width: 100%;*/
+    /*flex-direction: column;*/
+    /*justify-content: center;*/
+    position: relative;
+}
+.city-down {
+    position: relative;
+}
+.contact-block {
+    z-index: 2;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/*.contacts-title {*/
+    /*position: absolute;*/
+    /*left: 48%;*/
+    /*top: 0;*/
+/*}*/
+.contacts-title {
+
+}
+.big-title{
+    font-family: Times New Roman;
+    text-transform: uppercase;
+    line-height: 0.7em;
+    margin-bottom: 28px;
+}
+.f--65 {
+    font-size: 65px;
+}
+.f--24 {
+    font-size: 24px!important;
+}
+.f--16 {
+    font-size: 16px!important;
+}
+.f--30 {
+    font-size: 30px!important;
+}
+.f--30 a {
+    font-size: 30px!important;
+}
+.phone-block {
+    /*margin-bottom: 57px;*/
+}
+.time-block {
+    /*margin-bottom:100px;*/
+}
+/*Стили для селекта начало*/
+.wrapper-dropdown {
+    /* размер и позиционирование */
+    position: relative;
+    width: 250px;
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 30px;
+
+    /*Общие стили */
+    color: #212121;
+    outline: none;
+    cursor: pointer;
+
+    /* Настройки шрифтов */
+
+    border: 2px solid #212121;
+    border-radius: 23px;
+}
+.wrapper-dropdown * {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.wrapper-dropdown:after {
+    content: "";
+    background: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDI4NC45MjkgMjg0LjkyOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjg0LjkyOSAyODQuOTI5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZD0iTTI4Mi4wODIsNzYuNTExbC0xNC4yNzQtMTQuMjczYy0xLjkwMi0xLjkwNi00LjA5My0yLjg1Ni02LjU3LTIuODU2Yy0yLjQ3MSwwLTQuNjYxLDAuOTUtNi41NjMsMi44NTZMMTQyLjQ2NiwxNzQuNDQxICAgTDMwLjI2Miw2Mi4yNDFjLTEuOTAzLTEuOTA2LTQuMDkzLTIuODU2LTYuNTY3LTIuODU2Yy0yLjQ3NSwwLTQuNjY1LDAuOTUtNi41NjcsMi44NTZMMi44NTYsNzYuNTE1QzAuOTUsNzguNDE3LDAsODAuNjA3LDAsODMuMDgyICAgYzAsMi40NzMsMC45NTMsNC42NjMsMi44NTYsNi41NjVsMTMzLjA0MywxMzMuMDQ2YzEuOTAyLDEuOTAzLDQuMDkzLDIuODU0LDYuNTY3LDIuODU0czQuNjYxLTAuOTUxLDYuNTYyLTIuODU0TDI4Mi4wODIsODkuNjQ3ICAgYzEuOTAyLTEuOTAzLDIuODQ3LTQuMDkzLDIuODQ3LTYuNTY1QzI4NC45MjksODAuNjA3LDI4My45ODQsNzguNDE3LDI4Mi4wODIsNzYuNTExeiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=) no-repeat center center / contain;
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    margin-top: -6px;
+}
+.wrapper-dropdown-1 .dropdown {
+    /* размер и позиция */
+    position: absolute;
+    top: 100%;
+    left: 0; /* Size */
+    right: 0; /* Size */
+
+    /* Стили */
+    font-weight: normal;
+    background: #ede2db;
+    border: 1px solid #212121;
+
+    opacity: 0;
+    pointer-events: none;
+}
+.wrapper-dropdown-1 .dropdown li {
+    display: block;
+    text-decoration: none;
+    color: #212121;
+    padding: 10px 20px;
+}
+
+/* Состояние при наведении курсора */
+.wrapper-dropdown-1 .dropdown li:hover {
+    background: #f3f8f8;
+}
+.wrapper-dropdown-1 .dropdown li.city-down__item--active:hover {
+    background: #ede2db;
+}
+/* активное состояние */
+.wrapper-dropdown-1.active .dropdown {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.wrapper-dropdown-1.active:after {
+    margin-top: -5px;
+}
+
+.wrapper-dropdown-1.active {
+}
+.city-down__item--active {
+    cursor: default;
+    color: #888 !important;
+}
+/*Стили для селекта конец*/
+.contact-ext {
+    display: none;
+}
+.contact-ext--active {
+    display: inline-block;
+}
+.contacts-footer{
+    margin-bottom: 40px;
+}
+.contacts-footer__item {
+    display: inline-block;
+}
+.copyright {
+    width: 46%;
+    text-align: right;
+}
+.politika {
+    width: 49%;
+    text-align: center;
+}
+@media screen and (max-width: 1080px) {
+    .contacts-box {
+        margin-bottom: 50px;
+    }
+}
+@media screen and (max-width: 750px) {
+    .contact-block {
+        background-image: url('../img/pattern.png');
+        background-repeat: repeat-x;
+        background-position: top;
+    }
+    .contacts-box {
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
+    .center__left {
+        width: 100%;
+        margin-right: 0;
+    }
+    .center__right {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .f--65 {
+        font-size: 40px;
+    }
+    .f--24 {
+        font-size: 30px;
+    }
+    .f--16 {
+        font-size: 22px;
+    }
+    .time-block {
+        padding-top: 10px
+    }
+    .contact__email {
+        margin-bottom: 25px;
+    }
+}
+@media screen and (max-width: 320px) {
+    .big-title {
+        text-align: center;
+    }
+    .wrapper-dropdown {
+        width: 100%;
+    }
+    .contacts-footer {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .copyright {
+        width: 100%;
+        text-align: center;
+    }
+    .politika{
+        width: 100%;
+    }
+
+}

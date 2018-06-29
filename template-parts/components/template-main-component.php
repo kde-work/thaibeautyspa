@@ -15,7 +15,7 @@
 global $Mammen;
 ?>
 
-<div class="section active" data-menuanchor="firstPage" id='first'>
+<div class="section " data-menuanchor="firstPage" id='first'>
 	<div class="main first slide">
 		<div class="flower"><img src="<?php echo get_template_directory_uri(); ?>/img/leaf.png" alt=""></div>
 		<div class="t"><img src="<?php echo get_template_directory_uri(); ?>/img/T.png" alt=""></div>
