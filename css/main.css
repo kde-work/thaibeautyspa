@@ -244,7 +244,7 @@
 }
 .main.first .center__info .center_info__grey, .main.first .center__info .center_info__grey{
     position:absolute;
-    width:163px;
+    width:163px;.right .main__social
     height:117px;
     top:-28px;
     left:-20px;
@@ -2877,8 +2877,12 @@ body{
     justify-content:space-between
 }
 .right .main__social{
-    width:40%;
-    margin-top:-4px
+    width: 113px;
+}
+.header-social {
+    display: inline-block;
+    margin-top: -4px;
+    width: 113px;
 }
 .right .main__social a {
     background-repeat: no-repeat;
