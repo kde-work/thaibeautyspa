@@ -52,11 +52,11 @@ function ajaxurl_scripts () {
     wp_register_script('form', get_template_directory_uri() . '/js/form.js');
     wp_enqueue_script('form');
 
-    wp_register_script('dev-kk', get_template_directory_uri() . '/js/dev-kk.js');
-    wp_enqueue_script('dev-kk');
-
     wp_register_script('scrollbar', get_template_directory_uri() . '/js/jquery.mCustomScrollbar.concat.min.js');
     wp_enqueue_script('scrollbar');
+
+    wp_register_script('dev-kk', get_template_directory_uri() . '/js/dev-kk.js');
+    wp_enqueue_script('dev-kk');
 
     wp_register_script('main-ext', get_template_directory_uri() . '/js/main-ext.js');
     wp_enqueue_script('main-ext');

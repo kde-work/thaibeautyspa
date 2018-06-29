@@ -444,7 +444,7 @@ $(document).ready(function() {
     // 		$('.main__menu__button').hide();
 
 
-    $('.main__menu__btn').hover(
+    $('.main__menu__btn, .menu-link').hover(
         function() {
             if( !smallScreen ) {
                 $('.main__menu__block').removeClass('menuDown');
