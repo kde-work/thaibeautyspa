@@ -14,12 +14,10 @@
  * Thumbnail: /page-builder/assets/img/first-comp.png *Image for admin panel in Page Builder
  * Preview: /page-builder/assets/img/first-comp.png *Relative path from Theme root
  * Global Component Rules: 0
- * Блок Контакты: GROUP BEGIN
- *    Заголовок Контакты: Textarea
- *    Заголовок Контакты OPTION 'limited': 150
- *    Заголовок Контакты OPTION 'help': Limit 150 characters
- *    Описание Контакты: Textarea
- * Блок Контакты: GROUP END
+ * Блок 1 место: GROUP BEGIN
+ *    Содержание блока: Textarea
+ *    Текст кнопки: Text
+ * Блок 1 место: GROUP END
  * Блок 1: GROUP BEGIN
  *    Заголовок 1: Text
  *    Заголовок 1 OPTION 'limited': 150
@@ -47,6 +45,11 @@
  *    Подзаголовок 3 OPTION 'help': Limit 250 characters
  *    Описание 3: Textarea
  * Блок 3: GROUP END
+ * Блок клиенты: GROUP BEGIN
+ *    Число клиентов: Text
+ *    Заголовок блока клиенты: Text
+ *    Описание блока клиенты: Textarea
+ * Блок клиенты: GROUP END
  * COMPONENT END
  */
 
