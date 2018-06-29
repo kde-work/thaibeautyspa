@@ -1,4 +1,7 @@
 @media screen and (min-width: 1080px) {
+    .services__content--mobile {
+        display: none;
+    }
     #fullpage .container__img:not(.container__img--desc) {
         background-image: none !important;
     }
