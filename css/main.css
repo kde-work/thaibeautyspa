@@ -504,7 +504,7 @@
 .main.fourth .center .container__right ul,.main.masters__block .center .container__right ul,.main.second .center .container__right ul{
     list-style:none
 }
-.main.fourth .center .container__right ul .container__img,.main.masters__block .center .container__right ul .container__img,.main.second .center .container__right ul .container__img{
+.main.fourth .center .container__right ul .container__img,.main.masters__block .center .container__right ul .container__img {
     position:absolute;
     overflow:hidden;
     margin-top:35px;
@@ -513,6 +513,17 @@
     width:78%;
     left:-122%;
     top:22%;
+    z-index:-1
+}
+.main.second .center .container__right ul .container__img {
+    position:absolute;
+    overflow:hidden;
+    margin-top: 0;
+    max-width: 551px;
+    height:100%;
+    width:115%;
+    left:-122%;
+    top: 95px;
     z-index:-1
 }
 .main.masters__block .center .container__right ul .container__img,.main.second .center .container__right ul .container__img{
@@ -554,8 +565,9 @@
     border-bottom:2px solid #000
 }
 .main.fourth .center .container__right ul p:not(.text--italic),.main.masters__block .center .container__right ul p:not(.text--italic),.main.second .center .container__right ul p:not(.text--italic){
+    font-size:16px;
+    line-height: 1.5;
     padding-bottom:20px;
-    font-size:16px
 }
 .main.fourth .center .container__right ul .btn,.main.masters__block .center .container__right ul .btn,.main.second .center .container__right ul .btn{
     padding:25px 48px;
@@ -1485,7 +1497,7 @@
 .linch .main__social a:last-child:after{
     background-color:#000!important
 }
-.linch .main__lang a:hover{
+.linch .container__right a:hover{
     -webkit-filter:drop-shadow(0 0 2px #000)!important;
     filter:drop-shadow(0 0 2px #000)!important
 }
@@ -4252,14 +4264,8 @@ body:not(.linch) .right .main__social a:last-child:hover {
         -webkit-animation:h 1.4s linear!important;
         animation:h 1.4s linear!important
     }
-    .second .container li .text--italic{
-        line-height:.8
-    }
     .second .container li hr{
         margin:5px 0!important
-    }
-    .second .container li p{
-        line-height:1
     }
     .third .center__left{
         -webkit-box-align:center!important;
@@ -4451,17 +4457,17 @@ body:not(.linch) .right .main__social a:last-child:hover {
     }
 }
 @media screen and (max-height:655px){
-    .fourth .container li h3,.second .container li h3{
+    .fourth .container li h3 {
         line-height:.8
     }
-    .fourth .container li .text--italic,.second .container li .text--italic{
+    .fourth .container li .text--italic {
         font-size:12px
     }
-    .fourth .container li .btn, .second .container li .btn{
+    .fourth .container li .btn{
         padding:20px 25px!important;
         font-size:18px
     }
-    .fourth .container li .btn:after,.fourth .container li .btn:before,.second .container li .btn:after,.second .container li .btn:before{
+    .fourth .container li .btn:after,.fourth .container li .btn:before {
         padding:20px 0!important
     }
 }
