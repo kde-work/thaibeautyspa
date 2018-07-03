@@ -15,9 +15,9 @@
 global $Mammen;
 ?>
 
-<div class="section active" id="second">
+<div class="section" id="second">
 
-	<div class="main second slide">
+	<div class="main second best-services slide">
 		<div class="center startPosition">
 			<div class="plus"></div>
 			<span class="s">S</span>
