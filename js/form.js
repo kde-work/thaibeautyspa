@@ -20,13 +20,15 @@
             $form = $('form', $cta__block),
             form_offset = $form.offset();
 
-        $cta__plus__top.css({
-            'top': form_offset.top - 17 + 'px'
-        });
+        if ($form.length) {
+            $cta__plus__top.css({
+                'top': form_offset.top - 17 + 'px'
+            });
 
-        $cta__plus__bottom.css({
-            'top': form_offset.top + $form.innerHeight() - 10 + 'px'
-        });
+            $cta__plus__bottom.css({
+                'top': form_offset.top + $form.innerHeight() - 10 + 'px'
+            });
+        }
     }
 
     $(function () {

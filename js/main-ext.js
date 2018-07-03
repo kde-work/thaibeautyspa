@@ -4,6 +4,47 @@
         return;
     }
 
+    // Подробнее на слайдере (всплытие окна)
+    $(function () {
+        var $cont_with_more__btn = $('.cont-with-more__btn');
+
+        $cont_with_more__btn.on('click', function () {
+            var $this = $(this),
+                data_id = $this.data('id'),
+                $cont_with_more = $this.closest('.cont-with-more'),
+                $cont_with_more__cont = $('.cont-with-more__cont', $cont_with_more),
+                $cont_with_more__more = $('.cont-with-more__more', $cont_with_more),
+                $more_box__item = $('.more-box__item', $cont_with_more),
+                $more_box__item__target = $('.more-box__item--'+data_id, $cont_with_more);
+
+            $more_box__item.removeClass('more-box__item--active');
+            $more_box__item__target.addClass('more-box__item--active');
+
+            $cont_with_more__more.show();
+            // $cont_with_more__more.css({
+            //     'top': '8%'
+            // });
+            $cont_with_more__cont.css({
+                'margin-top': '-100vh'
+            });
+        });
+    });
+    // Назад с Подробнее на Акциях
+    $(function () {
+        var $btn__back = $('.cont-with-more .btn__back');
+
+        $btn__back.on('click', function () {
+            var $this = $(this),
+                $cont_with_more = $this.closest('.cont-with-more'),
+                $cont_with_more__cont = $('.cont-with-more__cont', $cont_with_more),
+                $cont_with_more__more = $('.cont-with-more__more', $cont_with_more);
+
+            $cont_with_more__cont.css({
+                'margin-top': '0'
+            });
+        });
+    });
+
     // Эфект наведения на категории Услуг (смена картинки)
     $(function () {
         var $services__more = $('.services__link[data-img]');
@@ -192,26 +233,40 @@
         $scrollable.mCustomScrollbar();
     });
 
-    // Culc height of scrollable element
+    // Calc height of scrollable element
     function scrollable_height($par, h_offset) {
-        if (!$par) {
-            $par = $('body');
-        }
-        var $scroll_box__slide = $('.scroll-box__slide', $par),
-            $scroll_box__slide__active = $scroll_box__slide.filter(function () {
-                return this.style.display !== 'none';
-            }).first();
-        var $scroll_cont = $('.scroll-box__cont', $scroll_box__slide__active),
-            $container__img = $('.container__img', $scroll_box__slide__active);
+        setTimeout(function () {
+            if (!$par) {
+                $par = $('body');
+            }
+            var $scroll_box__slide = $('.scroll-box__slide, .slider-box__slide', $par),
+                $scroll_box__slide__active = $scroll_box__slide.filter(function () {
+                    return this.style.display !== 'none';
+                }).first();
 
-        if ($container__img.length) {
-            $container__img.height($scroll_cont.height() - parseInt($container__img.css('top')) - h_offset - 38);
-        }
+            var $scroll_cont = $('.scroll-box__cont', $scroll_box__slide__active),
+                $container__img = $('.container__img', $scroll_box__slide__active);
 
-        $scroll_cont.each(function () {
-            var $this = $(this),
-                $elems = $this.children('*:not(".scrollable")'),
-                $scrollable = $('.scrollable', $this),
+            if ($container__img.length) {
+                $container__img.height($scroll_cont.height() - parseInt($container__img.css('top')) - h_offset - 38);
+            }
+            $scroll_cont.each(function () {
+                var $this = $(this),
+                    $elems = $this.children('*:not(".scrollable")'),
+                    $scrollable = $('.scrollable', $this),
+                    elems_height = 0;
+
+                $elems.each(function () {
+                    var $_this = $(this);
+
+                    elems_height += $_this.outerHeight(true);
+                });
+                $scrollable.innerHeight($this.height() - elems_height - h_offset);
+            });
+
+            var $slider_box__cont = $('.slider-box__cont', $scroll_box__slide__active),
+                $elems = $slider_box__cont.children('*:not(".height-cover")'),
+                $height_cover = $('.height-cover', $scroll_box__slide__active),
                 elems_height = 0;
 
             $elems.each(function () {
@@ -219,8 +274,21 @@
 
                 elems_height += $_this.outerHeight(true);
             });
-            $scrollable.innerHeight($this.height() - elems_height - h_offset);
-        });
+            $height_cover.innerHeight($slider_box__cont.height() - elems_height - h_offset);
+
+            // bax fix with custom scroll
+            var $scrollable = $('.scrollable:not(.mCS_no_scrollbar)', $scroll_box__slide__active);
+            setTimeout(function () {
+                $scrollable.css({
+                    'height': $scrollable.height()*1 + 5 + 'px'
+                });
+            }, 250);
+            // setTimeout(function () {
+            //     $scrollable.css({
+            //         'height': 'initial'
+            //     });
+            // }, 290);
+        }, 50);
     }
     $(function () {
         scrollable_height(false, 58);

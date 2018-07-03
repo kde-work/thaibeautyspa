@@ -395,7 +395,8 @@ function mySlider(sliderBlock, style) {
 }
 
 jQuery(document).ready(function($) {
-    mySlider('.main_page .second .container', 'dotted');
+    mySlider('.main_page .shares .container', 'dotted');
+    mySlider('.main_page .best-services .container', 'dotted');
     // mySlider('.third .slider__wraper', 'regular');
 
     mySlider('.fourth .container__right', 'irregular');

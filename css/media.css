@@ -8,6 +8,9 @@
     .mobile {
         display: none;
     }
+    .main__menu__button.mobile {
+        display: none !important;
+    }
     #fullpage .container__img--desc {
         background-position: center;
         background-repeat: no-repeat;

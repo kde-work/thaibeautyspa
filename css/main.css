@@ -353,7 +353,7 @@
     display: none;
 }
 
-.main.fourth .center .s,.main.masters__block .center .s,.main.second .center .s, .left .center .s{
+.main.fourth .center .s,.main.masters__block .center .s,.main.second .center .s, .left .center .s, .s--top-right {
     position:absolute;
     right:15%;
     top:9%;
@@ -363,7 +363,7 @@
     font-weight:700;
     color:#b39658
 }
-.main.fourth .center .t,.main.masters__block .center .t,.main.second .center .t, .left .center .t{
+.main.fourth .center .t,.main.masters__block .center .t,.main.second .center .t, .left .center .t, .t--bottom-left {
     position:absolute;
     left:20.5%;
     bottom:5%;
@@ -373,7 +373,7 @@
     font-weight:700;
     color:#b39658
 }
-.main.fourth .center .b,.main.masters__block .center .b, .main.second .center .b, .left .center .b{
+.main.fourth .center .b,.main.masters__block .center .b, .main.second .center .b, .left .center .b, .b--center-big {
     position:absolute;
     left:36.3%;
     width:32%;
@@ -569,18 +569,18 @@
     line-height: 1.5;
     padding-bottom:20px;
 }
-.main.fourth .center .container__right ul .btn,.main.masters__block .center .container__right ul .btn,.main.second .center .container__right ul .btn{
+.main.fourth .center .container__right ul .btn,.main.masters__block .center .container__right ul .btn,.main.second .center .container__right ul .btn, #fullpage .btn--small-more {
     padding:25px 48px;
     background-color:#000;
     color:#000;
     border-color:#000;
     display: inline-block;
 }
-.main.fourth .center .container__right ul .btn:hover:after,.main.masters__block .center .container__right ul .btn:hover:after,.main.second .center .container__right ul .btn:hover:after{
+.main.fourth .center .container__right ul .btn:hover:after,.main.masters__block .center .container__right ul .btn:hover:after,.main.second .center .container__right ul .btn:hover:after, #fullpage .btn--small-more:hover::after {
     -webkit-transform:translateY(-3.5%);
     transform:translateY(-3.5%)
 }
-.main.fourth .center .container__right ul .btn:after,.main.fourth .center .container__right ul .btn:before,.main.masters__block .center .container__right ul .btn:after,.main.masters__block .center .container__right ul .btn:before,.main.second .center .container__right ul .btn:after,.main.second .center .container__right ul .btn:before{
+.main.fourth .center .container__right ul .btn:after,.main.fourth .center .container__right ul .btn:before,.main.masters__block .center .container__right ul .btn:after,.main.masters__block .center .container__right ul .btn:before,.main.second .center .container__right ul .btn:after,.main.second .center .container__right ul .btn:before, #fullpage .btn--small-more::before, #fullpage .btn--small-more::after {
     padding:25px 0;
     content:"Подробнее"
 }
