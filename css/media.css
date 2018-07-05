@@ -143,7 +143,7 @@
     }
     #fullpage .main {
         height: auto !important;
-        display: block !important;
+        /*display: block !important;*/
         z-index: 1;
     }
     #fullpage .main .center {
@@ -270,6 +270,9 @@
         margin-top: 4em;
         position: relative;
         z-index: 4;
+    }
+    .services__content--mobile {
+        display: block!important;
     }
     .services .services__content--mobile .enroll .center .enroll__bottom {
         display: block;

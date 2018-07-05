@@ -128,7 +128,7 @@
                 "pauseOnHover": false,
                 "slidesToShow": 1,
                 "slidesToScroll": 1,
-                "autoplay": true
+                "autoplay": false
             });
             // }
         }, 1200);
