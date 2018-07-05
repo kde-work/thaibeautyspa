@@ -48,7 +48,7 @@ if ( count( $cities ) ) {
 
                     <div class="contacts-title">
                         <h3 class="big-title f--65"><?php echo $Mammen->get_field( 'Название блока' ); ?></h3>
-                        <div id="dd" class="wrapper-dropdown wrapper-dropdown-1 city-down"><span><?php echo $first_city; ?></span>
+                        <div id="dd" class="wrapper-dropdown wrapper-dropdown--contacts wrapper-dropdown-1 city-down"><span><?php echo $first_city; ?></span>
                             <ul class="dropdown city-down__ul">
                                 <?php
                                 if ( count( $cities ) ) {

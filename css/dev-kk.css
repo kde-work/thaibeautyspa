@@ -1,3 +1,37 @@
+.f--14 {
+    font-size: 14px!important;
+}
+#masters-ext .f--14 {
+    font-size: 14px!important;
+}
+.f--16 {
+    font-size: 16px!important;
+}
+.f--19 {
+    font-size: 19px!important;
+}
+.f--24 {
+    font-size: 24px!important;
+}
+.f--30 {
+    font-size: 30px!important;
+}
+.f--30 a {
+    font-size: 30px!important;
+}
+.f--35 {
+    font-size: 35px!important;
+}
+.f--36 {
+    font-size: 36px!important;
+}
+.f--40 {
+    font-size: 40px!important;
+}
+.f--65 {
+    font-size: 65px;
+}
+/*Контакты НАЧАЛО*/
 .main {
     z-index: 1;
 }
@@ -57,21 +91,6 @@
     line-height: 0.7em;
     margin-bottom: 28px;
 }
-.f--65 {
-    font-size: 65px;
-}
-.f--24 {
-    font-size: 24px!important;
-}
-.f--16 {
-    font-size: 16px!important;
-}
-.f--30 {
-    font-size: 30px!important;
-}
-.f--30 a {
-    font-size: 30px!important;
-}
 .phone-block {
     /*margin-bottom: 57px;*/
 }
@@ -82,9 +101,8 @@
 .wrapper-dropdown {
     /* размер и позиционирование */
     position: relative;
-    width: 250px;
+    /*width: 250px;*/
     padding: 10px 10px 10px 30px;
-    margin-bottom: 30px;
 
     /*Общие стили */
     color: #212121;
@@ -95,6 +113,10 @@
 
     border: 2px solid #212121;
     border-radius: 23px;
+}
+.wrapper-dropdown--contacts {
+    width: 250px;
+    margin-bottom: 30px;
 }
 .wrapper-dropdown * {
     -moz-user-select: none;
@@ -178,9 +200,452 @@
     width: 49%;
     text-align: center;
 }
+
+.masters-ext__cont {
+    max-height: 200px;
+    overflow: auto;
+}
+/*Контакты КОНЕЦ*/
+/*Наши мастера НАЧАЛО*/
+.master-descr-for-mobile-big {
+    display: none;
+}
+#masters-ext .f--36 {
+    font-size: 36px!important;
+}
+#masters-ext .desktop {
+    margin-top: -37px;
+}
+.masters-ext__subtitel {
+    margin-bottom: 10px;
+}
+.masters-ext__hr {
+    margin-bottom: 12px !important;
+    margin-top: 2px !important;
+}
+#masters-ext ul.slider{
+    position: static;
+}
+.container__masters-img {
+    width: 100%;
+    height: 100%;
+}
+#masters-ext .container__img {
+    max-width: 500px !important;
+    max-height: 570px !important;
+    width: 83% !important;
+    height: 100% !important;
+    left: -96% !important;
+    top: 8% !important;
+}
+#masters-ext .container {
+    height: 55% !important;
+    width: 100%;
+}
+#masters-ext .container__right {
+    width: 50%;
+    margin-left: 0;
+    padding-right:15px;
+}
+#masters-ext .container__left {
+    width: 50%;
+}
+.home #masters-ext p {
+    font-size: 14px;
+}
+.container__slider__number {
+    display: none;
+}
+.container__left {
+    position: relative;
+}
+.master-call {
+    position: absolute;
+    bottom: -30%;
+    left: 50%;
+    margin-left: -300px;
+}
+.master-call button{
+    display: inline-block;
+}
+.master-call_btn {
+    margin-right: 30px;
+}
+.master-call_text {
+    display: inline-block;
+    font-size: 14px;
+    font-style: italic;
+    font-family: SitkaSmall;
+    width: 318px;
+}
+.master-call .btn::before, .master-call .btn::after {
+    content: "Выбрать мастера";
+}
+.masters-ext__cont ul li{
+    font-size: 14px;
+    font-style: italic;
+    font-family: SitkaSmall;
+}
+.masters-ext__cont ul{
+    list-style-type: disc!important;
+    list-style-position: inside!important;
+}
+.main-masters {
+    height: 100vh !important;
+    padding: 0 !important;
+    z-index: 1;
+    position: relative;
+    display: flex;
+}
+/*Наши мастера КОНЕЦ*/
+/*Горячие часы НАЧАЛО*/
+.hot-hours-ext .main .center {
+    flex-direction: column;
+    justify-content: center;
+}
+.hot-hours-ext .main .center__info {
+    max-width: none;
+    width: 100%;
+}
+.hot-hours-ext .main .center__info p {
+    width: 100%;
+    max-width: none;
+}
+.hot-hours-ext .main .center__info h3 {
+    font-size: 60px;
+}
+.hot-hours-ext .center__left__service {
+    margin-bottom: 0 !important;
+}
+.hot-hours-ext .main .center .hot-hours__subtitel {
+    font-size: 24px;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.hot-hours-ext .main .center__info h3 {
+    padding-bottom: 40px;
+}
+.hot-hours-ext .main .center .hot-hours__text {
+    font-size: 15px;
+    line-height: 1.6em;
+}
+.hot-hours-ext .main .center .hot-hours-info-cont {
+    margin-bottom: 42px;
+}
+.hot-hours-ext .main .center__left__service .service__data {
+    padding: 0;
+}
+.hot-hours-ext .main .center__left__service {
+    height: auto;
+}
+.hot-hours-ext .main .hot-hours-list-cont {
+    border: 1px solid #000;
+    padding: 30px 30px 22px 30px;
+}
+.main.third .center__info p {
+
+}
+.hot-hours-ext .main center {
+    position: relative;
+}
+.hot-hours-ext .hot-hours-bg {
+    background-image: url(../img/bg-hot-hours.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+    -webkit-background-size: contain;
+    background-size: contain;
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    right:0;
+    top: 0;
+}
+.data__item__date {
+    width: 15%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.data__item__date p {
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1.0;
+}
+.data__item__date-style {
+    font-size:30px;
+}
+.data__item__month-style {
+    font-weight: normal;
+    font-size: 16px;
+}
+.data__item__time {
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.data__item__price {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.data__item__btn {
+    width: 30%;
+    align-self: flex-end;
+    display: flex;
+    justify-content: flex-end;
+}
+.hot-hours-ext .main .center__left__service .service__data__item .btn {
+    padding: 24px 32px;
+}
+.hot-hours-ext .main .center__left__service .service__data__item .data__item__price .text--italic {
+    line-height: 1.1;
+}
+.hot-hours-ext .main .center .hot-hours .data__item__btn {
+    align-self: flex-end;
+    display: flex;
+    justify-content: flex-end;
+}
+.data__item__btn--wrap {
+    display: inline-block;
+}
+.hot-hours-ext .main .center__left__service .service__data__item {
+    padding-bottom: 34px;
+}
+.hot-hours-ext .main .center .price__info p.prive__info--stock::before,
+.hot-hours-ext .main .center .price__info p.prive__info--stock::after {
+    display: none!important;
+}
+.main.third .center__left__service .service__data__item .price__info p.prive__info--stock {
+    font-weight: bold;
+    font-size: 18px;
+}
+.hot-hours-ext .main .center__left__service .service__data__item .text--data {
+    line-height: 0.8;
+}
+.hot-hours-ext .main .center__info hr {
+    margin-top: 17px;
+    margin-bottom: 8px;
+}
+.hot-hours-ext .main .center__info .center_info__grey {
+    top: 136px;
+}
+.hot-hours-ext .main .center__left__service .service__data__item:last-child {
+    padding-bottom: 50px;
+}
+.hot-hours__content--mobile {
+    display: none;
+}
+/*Горячие часы КОНЕЦ*/
+
 @media screen and (max-width: 1080px) {
     .contacts-box {
         margin-bottom: 50px;
+    }
+    #masters-ext > .main {
+        display: none!important;
+    }
+    .services__slider--border-and-title {
+        border: none!important;
+    }
+    #fullpage .masters-ext .main .center .container__right {
+        padding: 0!important;
+    }
+    #masters-ext .container__right {
+        padding-right: 0px;
+    }
+    .border-line {
+        display: none!important;
+    }
+    .main_page .masters-ext .main .center {
+        width: 100%!important;
+    }
+    #fullpage #masters-ext .center .container__right .container__img {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: block;
+        height: 450px!important;
+        left: 0 !important;
+        min-height: 356px !important;
+        max-height: 450px;
+        max-width: 1000% !important;
+        position: relative;
+        width: 100% !important;
+    }
+    #masters-ext .unslider {
+        display:none;
+    }
+    #fullpage #masters-ext .center .container__right ul .container__img {
+        margin: 0!important;
+        margin-bottom: 23px!important;
+    }
+    .services__border-title {
+        justify-content: center;
+    }
+    .masters-mob-cont {
+        padding: 0 15px 0px 15px;
+    }
+    .masters-mob-cont ul li{
+        font-size: 14px;
+    }
+    .masters-mob-cont ul {
+        padding-top: 20px;
+        list-style-position: inside;
+        list-style-type: disc;
+    }
+    #masters-ext .masters-mob-cont .f--35 {
+        font-size: 35px;
+    }
+    .mobile__hr {
+        width: 44px!important;
+        margin: 0!important;
+        margin-bottom: 12px !important;
+        margin-top: 13px !important;
+        border-bottom: 3px solid #000!important;
+    }
+    .master-short-descr {
+        margin-bottom: 20px;
+    }
+    .master-descr-for-mobile{
+        margin-bottom:20px;
+    }
+    .master-descr-for-mobile ul{
+        padding-top: 0;
+    }
+    .master-descr-for-mobile ul li{
+        font-style: italic;
+        font-size: 17px;
+        font-family: SitkaSmall;
+    }
+    #masters-ext .slick-dots {
+        margin-top: 0;
+        margin-bottom: 25px;
+    }
+    .services__content--mobile .master-call{
+        position: relative;
+        top:0;
+        left:0;
+        bottom: 0;
+        margin-left: 0;
+    }
+    .master-call .btn::before, .master-call .btn::after {
+        display: block;
+        content: "Выбрать мастера";
+    }
+    .master-call {
+        padding: 0 15px;
+    }
+    .master-call_btn {
+        padding: 30px 20px!important;
+        margin: 0!important;
+    }
+    .master-call_text {
+        font-size: 17px;
+        margin-bottom: 20px;
+    }
+    .services__items--mobile .masters-h-mob {
+        font-size: 40px;
+        line-height: 1.1em;
+        text-align: center;
+        padding: 0;
+        margin-bottom: 30px;
+    }
+    .services__items--mobile .container__title {
+        padding: 0 15px;
+
+    }
+    #masters-ext .services__content--mobile {
+        padding: 20px 0px;
+        background-image: url('../img/pattern.png');
+        background-repeat: repeat-x;
+        background-position: top;
+    }
+    .contact-block {
+        background-image: url('../img/pattern.png');
+        background-repeat: repeat-x;
+        background-position: top;
+
+    }
+}
+
+@media screen and (max-width: 1080px) and (min-width: 600px) {
+    #fullpage #masters-ext .center .container__right ul .container__img {
+        display: inline-block;
+        margin: 0 0 23px 0 !important;
+        width: 37% !important;
+    }
+    .masters-mob-cont {
+        display: inline-block;
+        width: 60%;
+        vertical-align: top;
+        padding: 0 15px 0 30px;
+    }
+    .master-descr-for-mobile-big {
+        display: block;
+    }
+    .master-descr-for-mobile {
+        display: none;
+    }
+    .services__items--mobile .services__first {
+        padding: 0 41px;
+    }
+    .services__content--mobile .master-call {
+        text-align: center;
+    }
+    .master-short-descr {
+        font-family: SitkaSmall;
+        font-style: italic;
+    }
+}
+@media screen and (max-width: 770px) {
+    .services__items--mobile .services__first {
+        padding: 0;
+    }
+}
+@media screen and (max-width: 600px) {
+    .master-descr-for-mobile {
+        display: block;
+    }
+    .hot-hours__content--desctop  {
+        display: none;
+    }
+    .hot-hours__content--mobile  {
+        display: block;
+    }
+    .hot-hours-ext .main .center .center__info h3 {
+        font-size: 40px!important;
+        text-align: center;
+    }
+    .hot-hours-ext .main .center {
+        padding-top: 60px;
+    }
+    .hot-hours-ext {
+        background-image: url('../img/pattern.png');
+        background-repeat: repeat-x;
+        background-position: top;
+    }
+    .hot-hours-ext .main .center .hot-hours__subtitel {
+        font-size: 30px;
+    }
+    .hot-hours-ext .main .center__info h3 {
+        padding-bottom: 27px;
+    }
+    .hot-hours-ext .main .center .hot-hours__text {
+        font-size: 20px;
+        line-height: 1.5em!important;
+    }
+    .hot-hours-ext .service__salon{
+        margin-bottom: 50px;
+    }
+    .hot-hours-ext .main .hot-hours-list-cont {
+        border: none;
+        padding: 0 0 40px 0;
+    }
+    .hot-hours-ext .border-box .service__data {
+        border: none;
     }
 }
 @media screen and (max-width: 750px) {
@@ -222,7 +687,7 @@
     .big-title {
         text-align: center;
     }
-    .wrapper-dropdown {
+    .wrapper-dropdown--contacts {
         width: 100%;
     }
     .contacts-footer {
@@ -240,3 +705,10 @@
     }
 
 }
+@media screen and (max-width: 1300px) {
+    #masters-ext .f--36 {
+        font-size: 30px!important;
+    }
+
+}
+

@@ -26,6 +26,33 @@
             $dd_span.html($this.html());
         });
     });
+    $(function() {
+        var $wrapper_dropdown = $('.wrapper-dropdown');
+        var $dd_span = $wrapper_dropdown.find('span');
+        var $dd_li = $wrapper_dropdown.find('li');
+
+        $wrapper_dropdown.on('click', function(event){
+            $(this).toggleClass('active');
+            return false;
+        });
+
+        $dd_li.on('click',function(){
+            var $this = $(this),
+                this_id = $this.data('id'),
+                $par = $this.closest('.contact-block'),
+                $city_down__item  = $('.city-down__item', $par),
+                $contact_ext  = $('.contact-ext', $par),
+                $contact_ext_target  = $('.contact-ext--'+this_id, $par);
+
+            $city_down__item.removeClass('city-down__item--active');
+            $this.addClass('city-down__item--active');
+
+            $contact_ext.removeClass('contact-ext--active');
+            $contact_ext_target.addClass('contact-ext--active');
+
+            $dd_span.html($this.html());
+        });
+    });
     function contacts_padding() {
         var windowWidth = window.innerWidth,
             windowHeight = window.innerHeight,
