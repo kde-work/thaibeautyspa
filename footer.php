@@ -1,4 +1,4 @@
-<?php if (function_exists('get_field') AND get_field('fullpage', get_the_ID())) : ?>
+<?php if (function_exists('get_field') AND get_field('fullpage', get_the_ID()) OR get_post_type() === 'services') : ?>
 </div>
 <?php endif; ?>
 

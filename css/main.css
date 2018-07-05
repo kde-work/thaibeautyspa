@@ -2070,7 +2070,8 @@
 }
 .services .services__items .center .services__items__block .services__item__right{
     width:64%;
-    padding-right:4%
+    padding-left: 3%;
+    padding-right: 4%;
 }
 .services .services__items .center .services__items__block .services__item__right .services__item__bottom__left{
     display:-webkit-box;

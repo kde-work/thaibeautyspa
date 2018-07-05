@@ -28,19 +28,23 @@ $j = 1;
 						<h2 class="desktop"><?php echo $title; ?></h2>
 					</div>
 				</div>
-				<div class="container__right">
+				<div class="container__right scroll-box">
 					<ul class="slider">
 						<?php
 						$slides = $Mammen->get_fields( 'Слайдер' );
 						if ( count( $slides ) ) {
 							foreach ( $slides as $slide ) {
 								?>
-								<li>
-									<div class="container__img container__img--desc" style="background-image: url('<?php echo $slide->get_img( 'Картинка Большая', 'large' )[0]['src']; ?>');"></div>
-									<h3 class="slider-up"><?php echo $slide->get_field( 'Заголовок слайда' ); ?></h3>
-									<p class="text--italic slider-up"><?php echo $slide->get_field( 'Подзаголовок слайда' ); ?></p>
-									<hr>
-									<p class="slider-up"><?php echo $slide->get_field( 'Описание слайда' ); ?></p>
+								<li class="scroll-box__slide">
+                                    <div class="container__img container__img--desc" style="background-image: url('<?php echo $slide->get_img( 'Картинка Большая', 'large' )[0]['src']; ?>');"></div>
+                                    <div class="scroll-box__cont">
+                                        <div class="scrollable scrollable--100-60">
+                                            <h3 class="slider-up"><?php echo $slide->get_field( 'Заголовок слайда' ); ?></h3>
+                                            <p class="text--italic slider-up"><?php echo $slide->get_field( 'Подзаголовок слайда' ); ?></p>
+                                            <hr>
+                                            <p class="slider-up"><?php echo $slide->get_field( 'Описание слайда' ); ?></p>
+                                        </div>
+                                    </div>
 								</li>
 								<?php
 							}

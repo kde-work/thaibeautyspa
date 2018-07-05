@@ -189,8 +189,10 @@ global $Mammen;
 						<div class="education_info">
                             <h2><?php echo $Mammen->get_field( 'Заголовок О преподавателях' ); ?></h2>
                             <p><?php // echo $Mammen->get_field( 'Описание О преподавателях' ); ?></p>
-                            <div class="service__slick">
-								<?php tbs_text_slider(htmlspecialchars_decode($Mammen->get_field( 'Описание О преподавателях' )), 100, 'service__slick-item'); ?>
+                            <div class="scroll-box__cont">
+                                <div class="scrollable--tmp scrollable--100-130">
+								    <?php echo htmlspecialchars_decode($Mammen->get_field( 'Описание О преподавателях' )); ?>
+                                </div>
                             </div>
                             <div class="hide-text"><?php echo htmlspecialchars_decode($Mammen->get_field( 'Описание О преподавателях' )); ?></div>
 						</div>

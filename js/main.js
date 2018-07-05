@@ -4,7 +4,7 @@
 
 function mySlider(sliderBlock, style) {
     var container = $(sliderBlock);
-    var slides = container.find('.slider').children('li');
+    var slides = container.find('.slider').first().children('li');
     var activeSlide = slides.eq(0);
     var prev = container.find('.prev');
     var next = container.find('.next');
@@ -342,6 +342,11 @@ function mySlider(sliderBlock, style) {
             }
             if (style == "service" && !check) {
                 check = true;
+
+                if (activeSlide[0] === void 0 || !activeSlide[0].selector) {
+                    activeSlide = container.find('.slider').first().children('.blockSlideDown').first();
+                }
+
                 activeSlide.removeClass('blockSlideUp');
                 activeSlide.removeClass('blockSlideUpHide');
                 activeSlide.removeClass('blockSlideDown');
@@ -399,7 +404,10 @@ jQuery(document).ready(function($) {
     mySlider('.main_page .best-services .container', 'dotted');
     // mySlider('.third .slider__wraper', 'regular');
 
-    mySlider('.fourth .container__right', 'irregular');
+    mySlider('body:not(".home") .fourth .container__right', 'irregular');
+    mySlider('#fourth div:not(".services__content--mobile") .container__right', 'irregular');
+    mySlider('#fourth .services__content--mobile .container__right', 'irregular');
+    mySlider('#history .container__right', 'irregular');
     mySlider('.gallery .container__bottom', 'gallery');
     mySlider('.masters .container', 'irregular');
 
@@ -846,6 +854,8 @@ $(document).ready(function() {
 
         setTimeout(function() {
             initialSlickSlider();
+            initialCustomScroll('scrollable--tmp', $('.section'));
+            initialGenderChoice($('.current-choice'));
         },400);
     });
     function initialSlickSlider() {
@@ -885,7 +895,7 @@ $(document).ready(function() {
     window.initialSlickSlider = initialSlickSlider;
 
     function initialButtons() {
-        activeBlock.find('.services__items .slider .btn').click(function() {
+        activeBlock.on('click', '.services__items .slider .btn', function() {
             var target = $(this).data('target').split(' ');
             var content = contentBlock.find('#'+target[0]).find('#'+target[1]);
             sections.find('.section:last-child').html(content.html());
@@ -936,6 +946,8 @@ $(document).ready(function() {
             //         "autoplay": true
             //     });
             // }, 300);
+
+            initialCustomScroll('scrollable--tmp', $('.section'));
         });
     }
     function popup() {

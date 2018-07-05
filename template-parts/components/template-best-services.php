@@ -93,7 +93,6 @@ global $Mammen;
                                         </div>
                                         <div class="wrap slider-left"><a href="<?php echo get_the_permalink($post['ID']); ?>" class="btn">Подробнее</a></div>
                                     </div>
-
                                 </li>
 								<?php
 								ob_start();
@@ -109,6 +108,25 @@ global $Mammen;
                                 </div>
 								<?php
 								$dotes .= ob_get_contents();
+								ob_end_clean();
+
+								// mobile template
+								ob_start();
+								?>
+                                <div class="best-service-m__item" data-id="<?php echo $j; ?>">
+                                    <div class="best-service-m__center">
+                                        <div class="best-service-m__img"
+                                             style="background-image: url('<?php echo $image_url; ?>');">
+                                        </div>
+                                    </div>
+                                    <div class="best-service-m__title"><?php echo $title; ?></div>
+                                    <p class="best-service-m__sub-title text--italic slider-up"><?php echo $short_text; ?></p>
+                                    <div class="best-service-m__center">
+                                        <a href="<?php echo get_the_permalink($post['ID']); ?>" class="btn btn--small-more best-service-m__btn">Подробнее</a>
+                                    </div>
+                                </div>
+								<?php
+								$mobile .= ob_get_contents();
 								ob_end_clean();
 								$j++;
 							}
@@ -127,6 +145,9 @@ global $Mammen;
                     </div>
                 </div>
 			</div>
+            <div class="best-service-m slick--slider mobile">
+	            <?php echo $mobile; ?>
+            </div>
 
 		</div>
 	</div>

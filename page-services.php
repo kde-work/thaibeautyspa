@@ -5,6 +5,11 @@ Template Name: Услуги
 add_filter('body_class','services_body_class');
 function services_body_class( $classes ) {
 	$classes[] = 'services';
+	$classes[] = 'current-choice';
+	$classes[] = 'current-choice--man';
+	$classes[] = 'current-choice--female';
+	$classes[] = 'current-choice--couple';
+	$classes[] = 'current-choice--empty';
 	return $classes;
 }
 get_header();
@@ -138,7 +143,7 @@ $services_category = tbs_list_of_cat('cdiservices-category');
         </div>
     </div>
 
-	<div class="services__content">
+	<div class="services__content current-choice__original">
 		<div id="services__blocks">
         <?php
         $j = 0; // итерация для рубрик
@@ -152,17 +157,17 @@ $services_category = tbs_list_of_cat('cdiservices-category');
                     <div class="center">
                         <div class="container__wrap"><img
                                 src="<?php echo get_template_directory_uri(); ?>/img/border-6.png" alt=""></div>
-                        <ul class="slider">
+                        <ul class="slider current-choice__slider">
                             <li>
 								<?php
 								$posts = tbs_list_post_by_post_type( 'services', $cat['term_id'] );
 //								print_r( $posts );
 								$k = 0;
 								foreach ( $posts as $post ) {
-									if ( ($k % 3) == 0 AND $k ) {
-										echo '</li>';
-										echo '<li>';
-									}
+//									if ( ($k % 3) == 0 AND $k ) {
+//										echo '</li>';
+//										echo '<li>';
+//									}
 									++$k;
 									++$p;
 
@@ -178,8 +183,16 @@ $services_category = tbs_list_of_cat('cdiservices-category');
 									$cost2              = get_post_meta( $post['ID'], 'cdiservices-meta-text-cost-2', true );
 									$time3              = get_post_meta( $post['ID'], 'cdiservices-meta-text-time-3', true );
 									$cost3              = get_post_meta( $post['ID'], 'cdiservices-meta-text-cost-3', true );
+									$type_m             = get_post_meta( $post['ID'], 'cdiservices-meta-type-m', true );
+									$type_f             = get_post_meta( $post['ID'], 'cdiservices-meta-type-f', true );
+									$type_mf            = get_post_meta( $post['ID'], 'cdiservices-meta-type-mf', true );
                                     ?>
-                                    <div class="services__items__block">
+                                    <div class="services__items__block <?php
+                                    echo ($type_m) ? "services__items__block--man " : '';
+                                    echo ($type_f) ? "services__items__block--female " : '';
+                                    echo ($type_mf) ? "services__items__block--couple " : '';
+                                    echo (!$type_mf AND !$type_m AND !$type_mf) ? "services__items__block--empty " : '';
+                                    ?>">
                                         <div class="services__item__left block--back-image" style="background-image: url('<?php echo $image_url; ?>');">
                                         </div>
                                         <div class="services__item__right">
@@ -251,10 +264,12 @@ $services_category = tbs_list_of_cat('cdiservices-category');
                                                     </div>
 
                                                     <div class="enroll__bottom__right">
-                                                        <div class="service__slick">
-		                                                    <?php tbs_text_slider(htmlspecialchars_decode($main_text), 50, 'service__slick-item'); ?>
+                                                        <div class="scroll-box__cont scroll-box__cont--100per">
+                                                            <div class="scrollable--tmp scrollable--set-height">
+		                                                        <?php echo htmlspecialchars_decode($main_text); ?>
+		                                                        <?php echo htmlspecialchars_decode($ext_text); ?>
+                                                            </div>
                                                         </div>
-	                                                    <?php echo htmlspecialchars_decode($ext_text); ?>
                                                     </div>
                                                 </div>
                                             </div>
@@ -272,6 +287,23 @@ $services_category = tbs_list_of_cat('cdiservices-category');
                                     src="<?php echo get_template_directory_uri(); ?>/img/arrow.png" alt=""/></a>
                             <a class="unslider-arrow next"><img
                                     src="<?php echo get_template_directory_uri(); ?>/img/arrow.png" alt=""/></a>
+                        </div>
+                        <div class="under-slide">
+                            <div class="under-slide__left choice">
+                                <div class="choice__item choice__item--man" data-id="man">
+                                    <div class="choice__check-mark"></div>
+                                    <div class="choice__text">Для<br>мужчин</div>
+                                </div>
+                                <div class="choice__item choice__item--female" data-id="female">
+                                    <div class="choice__check-mark"></div>
+                                    <div class="choice__text">Для<br>женщин</div>
+                                </div>
+                                <div class="choice__item choice__item--couple" data-id="couple">
+                                    <div class="choice__check-mark"></div>
+                                    <div class="choice__text">Для<br>пар</div>
+                                </div>
+                            </div>
+                            <div class="under-slide__right"><a href="#">Показания и<br>противопоказания</a></div>
                         </div>
                     </div>
                 </div>
@@ -317,7 +349,7 @@ $services_category = tbs_list_of_cat('cdiservices-category');
 		</div>
 	</div>
 
-	<div class="sections">
+	<div class="sections current-choice__visible">
 
 		<div class="section" id="section1">
 		</div>

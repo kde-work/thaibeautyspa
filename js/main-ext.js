@@ -4,6 +4,88 @@
         return;
     }
 
+    function initialGenderChoice ($par) {
+        // setTimeout(function () {
+            if (!$par.length) {
+                return;
+            }
+            var target_tab = $('.services__link--active', $par).first().data('target').split(' ')[1],
+                $slider__original = $('.current-choice__original #'+target_tab+' .current-choice__slider', $par),
+                $slider__visible = $('.current-choice__visible > .active .current-choice__slider', $par),
+                $body = $('body'),
+                array_of_types = ['man', 'female', 'couple', 'empty'],
+                additional_class = '';
+
+            $slider__visible.html($slider__original.html());
+
+            if (!$body.hasClass('current-choice--man') && !$body.hasClass('current-choice--female') && !$body.hasClass('current-choice--couple') && !$body.hasClass('current-choice--empty')) {
+                $body.addClass('current-choice--man').addClass('current-choice--female').addClass('current-choice--couple').addClass('current-choice--empty');
+            }
+
+            if ($body.hasClass('current-choice--man') && $body.hasClass('current-choice--female') && $body.hasClass('current-choice--couple') && $body.hasClass('current-choice--empty')) {
+                $('.current-choice__visible > .active .choice__item', $par).removeClass('choice__item--active');
+                array_of_types.forEach(function(item, i, arr) {
+                    additional_class += ':not(".services__items__block--'+item+'")';
+                });
+            } else {
+                array_of_types.forEach(function(item, i, arr) {
+                    if ($body.hasClass('current-choice--'+item)) {
+                        $('.current-choice__visible > .active .choice__item--'+item, $par).addClass('choice__item--active');
+                        additional_class += ':not(".services__items__block--'+item+'")';
+                    }
+                });
+            }
+            $('.current-choice__visible > .active .services__items__block'+additional_class, $par).remove();
+
+            var $services__items__block = $('.current-choice__visible > .active .services__items__block', $par);
+            $services__items__block.each(function(i) {
+                if (i % 3 === 0) {
+                    $services__items__block.slice(i, i+3).wrapAll('<li/>')
+                }
+            }).parent('li').unwrap();
+
+            var $li = $('li', $slider__visible);
+
+            $li.hide();
+            $li.first().addClass('blockSlideDown').show();
+        // }, 600);
+    }
+
+    // Выбор пола на странице Услуги
+    $(function () {
+        var $body = $('body');
+
+        $body.on('click', '.choice__item', function () {
+            var $this = $(this);
+
+            if ($this.hasClass('choice__item--active')) {
+                $this.removeClass('choice__item--active');
+            } else {
+                $this.addClass('choice__item--active');
+            }
+
+            var $choice__item = $('.choice__item'),
+                $choice__item__active = $('.choice__item--active');
+
+            if (!$choice__item__active.length) {
+                $body.addClass('current-choice--man').addClass('current-choice--female').addClass('current-choice--couple').addClass('current-choice--empty');
+            } else {
+                $choice__item.each(function () {
+                    var $this = $(this),
+                        data_id = $this.data('id');
+
+                    if ($this.hasClass('choice__item--active')) {
+                        $body.addClass('current-choice--' + data_id);
+                    } else {
+                        $body.removeClass('current-choice--' + data_id);
+                    }
+                    $body.removeClass('current-choice--empty');
+                });
+            }
+            initialGenderChoice($('.current-choice'));
+        });
+    });
+
     // Подробнее на слайдере (всплытие окна)
     $(function () {
         var $cont_with_more__btn = $('.cont-with-more__btn');
@@ -213,25 +295,26 @@
 
     // Enable custom scroll
     $(function () {
-        var $scrollable = $('.scrollable'),
-            $scroll_box = $('.scroll-box');
+        var $scrollable = $('.scrollable');
 
-        // $scroll_box.each(function () {
-        //     var $this = $(this),
-        //         $scroll_box__slide = $('.scroll-box__slide', $this),
-        //         $scroll_cont = $('.scroll-box__cont', $this);
-        //
-        //     var $scroll_box__slide__active = $scroll_box__slide.filter(function () {
-        //         return this.style.display !== 'none';
-        //     }).first();
-        //
-        //     var $scroll_cont__active = $('.scroll-box__cont', $scroll_box__slide__active),
-        //         cont_height = $scroll_cont__active.outerHeight();
-        //
-        //     $scroll_cont.height(cont_height);
-        // });
         $scrollable.mCustomScrollbar();
     });
+
+    function initialCustomScroll(elem_class, $par) {
+        var timeout = 200;
+
+        setTimeout(function () {
+            var $this = $('.' + elem_class, $par);
+            
+            $this.removeClass(elem_class);
+            $this.addClass('scrollable--enable');
+            if ($this.hasClass('scrollable--set-height')) {
+                $this.height($this.closest('.scroll-box__cont').height());
+            }
+
+            $this.mCustomScrollbar();
+        }, timeout);
+    }
 
     // Calc height of scrollable element
     function scrollable_height($par, h_offset) {
@@ -245,8 +328,9 @@
                 }).first();
 
             var $scroll_cont = $('.scroll-box__cont', $scroll_box__slide__active),
-                $container__img = $('.container__img', $scroll_box__slide__active);
+                $container__img = $('.container__img:not(".container__img--not-js-height")', $scroll_box__slide__active);
 
+            // Высчитывается высота для блоков со скроллом
             if ($container__img.length) {
                 $container__img.height($scroll_cont.height() - parseInt($container__img.css('top')) - h_offset - 38);
             }
@@ -256,14 +340,19 @@
                     $scrollable = $('.scrollable', $this),
                     elems_height = 0;
 
-                $elems.each(function () {
-                    var $_this = $(this);
+                if ($scrollable.hasClass('scrollable--set-height')) {
+                    $scrollable.height($scrollable.closest('.scroll-box__cont').height());
+                } else {
+                    $elems.each(function () {
+                        var $_this = $(this);
 
-                    elems_height += $_this.outerHeight(true);
-                });
-                $scrollable.innerHeight($this.height() - elems_height - h_offset);
+                        elems_height += $_this.outerHeight(true);
+                    });
+                    $scrollable.innerHeight($this.height() - elems_height - h_offset);
+                }
             });
 
+            // Высчитывается высота для блоков таких как Акции
             var $slider_box__cont = $('.slider-box__cont', $scroll_box__slide__active),
                 $elems = $slider_box__cont.children('*:not(".height-cover")'),
                 $height_cover = $('.height-cover', $scroll_box__slide__active),
@@ -283,11 +372,8 @@
                     'height': $scrollable.height()*1 + 5 + 'px'
                 });
             }, 250);
-            // setTimeout(function () {
-            //     $scrollable.css({
-            //         'height': 'initial'
-            //     });
-            // }, 290);
+
+            $scrollable.mCustomScrollbar();
         }, 50);
     }
     $(function () {
@@ -330,5 +416,7 @@
 
     window.w_resize = w_resize;
     window.scrollable_height = scrollable_height;
+    window.initialCustomScroll = initialCustomScroll;
+    window.initialGenderChoice = initialGenderChoice;
 }($ || window.jQuery));
 // end of file

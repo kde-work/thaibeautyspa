@@ -15,7 +15,7 @@
 global $Mammen;
 $j = 1;
 ?>
-<div class="section" id="fourth">
+<div class="section" id="history">
 
 	<div class="main fourth slide active">
 

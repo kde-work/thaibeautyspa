@@ -548,6 +548,21 @@
 .scrollable {
     overflow: auto;
 }
+.scrollable--200 {
+    height: 200px;
+}
+.scrollable--100per, .scroll-box__cont--100per {
+    height: 100%;
+}
+.scrollable--100-60 {
+    height: calc(100% - 65px);
+}
+.scrollable--100-90 {
+    height: calc(100% - 90px);
+}
+.scrollable--100-130 {
+    height: calc(100% - 130px);
+}
 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
     background-color: #000 !important;
 }
@@ -719,7 +734,9 @@
     width: 100%;
 }
 .under-slide {
-    position: relative;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }
 .under-slide__line {
     background-color: #000;
@@ -964,4 +981,62 @@
     text-transform: uppercase;
     letter-spacing: -0.01em;
     margin-bottom: 16px;
+}
+
+.under-slide {
+    bottom: -56px;
+    display: flex;
+    left: 0;
+    justify-content: space-between;
+    position: absolute;
+    width: calc(100% - 186px);
+}
+.under-slide__right {
+    line-height: 1;
+    padding-top: 7px;
+    text-align: right;
+}
+.under-slide__right a {
+    color: #000;
+    font-family: Times New Roman, Times, serif;
+    font-size: 17px;
+    font-style: italic;
+    text-align: right;
+    text-decoration: underline;
+}
+.under-slide__right a:hover {
+    color: #b39658;
+}
+.choice {
+    display: flex;
+}
+.choice__item {
+    cursor: pointer;
+    display: flex;
+    font-family: Times New Roman, Times, serif;
+    font-size: 17px;
+    font-style: italic;
+    margin: 10px 30px 0 0;
+    vertical-align: top;
+}
+.choice__item:hover .choice__check-mark {
+    box-shadow: 1px 0 8px rgba(30,30,30,0.1);
+}
+.choice__check-mark {
+    border: 2px solid #000;
+    border-radius: 80px;
+    bottom: -3px;
+    height: 40px;
+    margin-right: 12px;
+    position: relative;
+    width: 40px;
+}
+.choice__item--active .choice__check-mark {
+    background: url("../img/checkmark.svg") no-repeat center center / 20px;
+}
+.current-choice .services__items__block {
+    display: none !important;
+}
+.current-choice--man .services__items__block--man, .current-choice--female .services__items__block--female, .current-choice--couple .services__items__block--couple, .current-choice--empty .services__items__block--empty {
+    display: flex !important;
 }
