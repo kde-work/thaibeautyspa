@@ -435,6 +435,9 @@
 .hot-hours-ext .main .center__left__service .service__data__item:last-child {
     padding-bottom: 50px;
 }
+.hot-hours__content--mobile {
+    display: none;
+}
 /*Горячие часы КОНЕЦ*/
 
 @media screen and (max-width: 1080px) {
