@@ -68,7 +68,8 @@
             $description = $('input[name="description"]', $form),
             $cat = $('input[name="cat"]', $form),
             $sub_title = $('.form__sub-title', $form),
-            $modal_text = $('.form__modal-text', $form);
+            $modal_text = $('.form__modal-text', $form),
+            $cta__time = $('.cta__time-e', $cta);
 
         popupBlock.css({
             display: "flex"
@@ -97,6 +98,19 @@
             $title.html(d.title);
         } else {
             $title.html('Заказать услугу');
+        }
+
+        if (d.day) {
+            var $day = $('.data__item__date-style', $cta__time),
+                $month = $('.data__item__month-style', $cta__time),
+                $time = $('.text--data', $cta__time);
+
+            $cta__time.show();
+            $day.html(d.day);
+            $month.html(d.month);
+            $time.html(d.big_time);
+        } else {
+            $cta__time.hide();
         }
 
         if (d.cat) {

@@ -25,7 +25,7 @@ if ( count( $cities ) ) {
 	}
 }
 ?>
-<div class="section active" data-menuanchor="firstPage" id='zero'>
+<div class="section active" data-menuanchor="firstPage" id='contact-ext'>
 	<div class="main ">
         <div class="contact-block">
             <div class="contacts-box">
@@ -102,13 +102,12 @@ if ( count( $cities ) ) {
                             <?php
                         }
                     }?>
-
                 </div>
             </div>
-            <div class="contacts-footer">
-                <div class="contacts-footer__item copyright">© ThaiBeautySpa 2012-2018. Все права защищены.</div>
-                <div class="contacts-footer__item politika"><a href="">Политика конфиденциальности</a></div>
-            </div>
+        </div>
+        <div class="contacts-footer">
+            <div class="contacts-footer__item copyright">© ThaiBeautySpa 2012-2018. Все права защищены.</div>
+            <div class="contacts-footer__item politika"><a href="#">Политика конфиденциальности</a></div>
         </div>
 	</div>
 </div>

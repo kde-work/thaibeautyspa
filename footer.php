@@ -4,8 +4,20 @@
 
 <div class="services__popup cta">
     <div class="cta__block">
-        <form action="#" class="services__popup__form cta__form">
+        <form action="#" class="services__popup__form cta__form cta__form--copy scrollable">
             <h3>Заказать услугу</h3>
+            <div class="cta__time-e">
+                <div class="data__item__date">
+                    <p><span class="data__item__date-style"></span>
+                        <br><span class="data__item__month-style"></span></p>
+                </div>
+                <div class="data__item__time cta__time-date">
+                    <p class="text--data big-orange"></p>
+                </div>
+                <div class="data__item__price cta__time-text">
+                    <p class="text--italic">Ваше время, на которое вас записали</p>
+                </div>
+            </div>
             <div class="service__inputs">
                 <input type="text" name="cta__last-name" placeholder="Фамилия">
                 <input type="text" name="cta__name" required placeholder="Имя">
@@ -35,6 +47,14 @@
                 <div class="services__gender__circle">
                     <input type="radio" name="cta__gender" class="cta__gender-input" id="cta__gender--2" value="Жен" checked>
                     <label for="cta__gender--2" class="cta__gender-label"><span>Жен</span></label>
+                </div>
+            </div>
+            <div class="modal-copy">
+                <div class="modal-copy__check modal-copy__check--active"></div>
+                <div class="modal-copy__cont">
+                    <div class="modal-copy__text">
+                        Нажимая на кнопку, вы даёте согласие на обработку персональных данных и соглашаетесь с
+                    <a href="/police/" target="_blank">политикой конфиденциальности</a></div>
                 </div>
             </div>
             <div class="wrap">

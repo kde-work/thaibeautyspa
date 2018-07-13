@@ -61,10 +61,7 @@
     width: 100%;
 }
 .contacts-box {
-    /*display: flex;*/
-    /*width: 100%;*/
-    /*flex-direction: column;*/
-    /*justify-content: center;*/
+    margin: auto 0;
     position: relative;
 }
 .city-down {
@@ -186,8 +183,17 @@
 .contact-ext--active {
     display: inline-block;
 }
-.contacts-footer{
-    margin-bottom: 40px;
+.contacts-footer {
+    position: absolute;
+    bottom: 56px;
+    width: 100%;
+    z-index: 5;
+}
+.hot-hours__scrollable {
+    height: 28vh;
+}
+.service__salon {
+    margin-top: 6px;
 }
 .contacts-footer__item {
     display: inline-block;
@@ -197,8 +203,9 @@
     text-align: right;
 }
 .politika {
-    width: 49%;
     text-align: center;
+    text-decoration: underline;
+    width: 49%;
 }
 
 .masters-ext__cont {
@@ -362,7 +369,7 @@
     top: 0;
 }
 .data__item__date {
-    width: 15%;
+    width: auto;
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
@@ -420,7 +427,7 @@
 }
 .main.third .center__left__service .service__data__item .price__info p.prive__info--stock {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 22px;
 }
 .hot-hours-ext .main .center__left__service .service__data__item .text--data {
     line-height: 0.8;
@@ -441,6 +448,65 @@
 /*Горячие часы КОНЕЦ*/
 
 @media screen and (max-width: 1080px) {
+    .hot-hours-ext .main .center .center__info h3 {
+        font-size: 40px!important;
+        text-align: center;
+    }
+    .hot-hours-ext .main .center {
+        padding-top: 60px;
+    }
+    .hot-hours-ext .main .center .hot-hours__subtitel {
+        font-size: 30px;
+    }
+    .hot-hours-ext .main .center__info h3 {
+        padding-bottom: 27px;
+    }
+    .hot-hours-ext .main .center .hot-hours__text {
+        font-size: 20px;
+        line-height: 1.5em!important;
+    }
+    .hot-hours-ext .service__salon{
+        margin-bottom: 50px;
+    }
+    .hot-hours-ext .main .hot-hours-list-cont {
+        border: none;
+        padding: 0 0 40px 0;
+    }
+    .hot-hours-ext .border-box .service__data {
+        border: none;
+    }
+    .hot-hours__m-title {
+        font-family: "Sitka Display", Times New Roman, Times, serif;
+        font-size: 20px;
+        font-style: italic;
+        font-weight: bold;
+        margin-top: 3em;
+        text-align: center;
+    }
+    .data__item__time {
+        width: auto;
+    }
+    .hot-hours__m-desc {
+        font-family: "Sitka Display", Times New Roman, Times, serif;
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 12px;
+        text-align: center;
+    }
+    .data__item__date-style {
+        font-size: 43px;
+    }
+    .data__item__date {
+        margin-right: 16px;
+        text-align: center;
+    }
+    .main.third .center__left__service .service__data__item {
+        justify-content: center;
+        padding: 13px 0 !important;
+    }
+    .hot-hours__scrollable {
+        height: auto;
+    }
     .contacts-box {
         margin-bottom: 50px;
     }
@@ -557,18 +623,6 @@
         padding: 0 15px;
 
     }
-    #masters-ext .services__content--mobile {
-        padding: 20px 0px;
-        background-image: url('../img/pattern.png');
-        background-repeat: repeat-x;
-        background-position: top;
-    }
-    .contact-block {
-        background-image: url('../img/pattern.png');
-        background-repeat: repeat-x;
-        background-position: top;
-
-    }
 }
 
 @media screen and (max-width: 1080px) and (min-width: 600px) {
@@ -615,45 +669,8 @@
     .hot-hours__content--mobile  {
         display: block;
     }
-    .hot-hours-ext .main .center .center__info h3 {
-        font-size: 40px!important;
-        text-align: center;
-    }
-    .hot-hours-ext .main .center {
-        padding-top: 60px;
-    }
-    .hot-hours-ext {
-        background-image: url('../img/pattern.png');
-        background-repeat: repeat-x;
-        background-position: top;
-    }
-    .hot-hours-ext .main .center .hot-hours__subtitel {
-        font-size: 30px;
-    }
-    .hot-hours-ext .main .center__info h3 {
-        padding-bottom: 27px;
-    }
-    .hot-hours-ext .main .center .hot-hours__text {
-        font-size: 20px;
-        line-height: 1.5em!important;
-    }
-    .hot-hours-ext .service__salon{
-        margin-bottom: 50px;
-    }
-    .hot-hours-ext .main .hot-hours-list-cont {
-        border: none;
-        padding: 0 0 40px 0;
-    }
-    .hot-hours-ext .border-box .service__data {
-        border: none;
-    }
 }
 @media screen and (max-width: 750px) {
-    .contact-block {
-        background-image: url('../img/pattern.png');
-        background-repeat: repeat-x;
-        background-position: top;
-    }
     .contacts-box {
         display: flex;
         flex-wrap: wrap-reverse;

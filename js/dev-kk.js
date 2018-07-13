@@ -1,7 +1,6 @@
 (function ($) {
     $(function() {
         var $wrapper_dropdown = $('.wrapper-dropdown');
-        var $dd_span = $wrapper_dropdown.find('span');
         var $dd_li = $wrapper_dropdown.find('li');
 
         $wrapper_dropdown.on('click', function(event){
@@ -9,13 +8,20 @@
             return false;
         });
 
-        $dd_li.on('click',function(){
+        $dd_li.on('click',function() {
             var $this = $(this),
                 this_id = $this.data('id'),
-                $par = $this.closest('.contact-block'),
-                $city_down__item  = $('.city-down__item', $par),
+                $par = $this.closest('.hot-hours-list-cont');
+
+            if (!$par.length) {
+                $par = $this.closest('#contact-ext');
+            }
+            var $city_down__item  = $('.city-down__item', $par),
                 $contact_ext  = $('.contact-ext', $par),
-                $contact_ext_target  = $('.contact-ext--'+this_id, $par);
+                $contact_ext_target  = $('.contact-ext--'+this_id, $par),
+                $hot_hours  = $('.hot-hours', $par),
+                $hot_hours_target  = $('.hot-hours--'+this_id, $par),
+                $dd_span = $('.wrapper-dropdown > span', $par);
 
             $city_down__item.removeClass('city-down__item--active');
             $this.addClass('city-down__item--active');
@@ -23,32 +29,8 @@
             $contact_ext.removeClass('contact-ext--active');
             $contact_ext_target.addClass('contact-ext--active');
 
-            $dd_span.html($this.html());
-        });
-    });
-    $(function() {
-        var $wrapper_dropdown = $('.wrapper-dropdown');
-        var $dd_span = $wrapper_dropdown.find('span');
-        var $dd_li = $wrapper_dropdown.find('li');
-
-        $wrapper_dropdown.on('click', function(event){
-            $(this).toggleClass('active');
-            return false;
-        });
-
-        $dd_li.on('click',function(){
-            var $this = $(this),
-                this_id = $this.data('id'),
-                $par = $this.closest('.contact-block'),
-                $city_down__item  = $('.city-down__item', $par),
-                $contact_ext  = $('.contact-ext', $par),
-                $contact_ext_target  = $('.contact-ext--'+this_id, $par);
-
-            $city_down__item.removeClass('city-down__item--active');
-            $this.addClass('city-down__item--active');
-
-            $contact_ext.removeClass('contact-ext--active');
-            $contact_ext_target.addClass('contact-ext--active');
+            $hot_hours.removeClass('hot-hours--active');
+            $hot_hours_target.addClass('hot-hours--active');
 
             $dd_span.html($this.html());
         });
@@ -65,8 +47,6 @@
 
         if (!$contacts_box.length) return;
 
-
-        $contacts_box.css('margin-top', '66px');
         // $contacts_box.css('height', windowHeight*0.5+'px');
         $contact__map.css('height', windowHeight*0.5+'px');
         $phone_block.css('margin-bottom',  windowHeight*0.5*0.06+'px');
@@ -75,7 +55,9 @@
 
         if (windowWidth > 1080) {
             $contact_block.css ('height', windowHeight+'px');
-            $contacts_box.css('margin-top', windowHeight*0.29+'px');
+            // $contacts_box.css('margin-top', windowHeight*0.29+'px');
+        } else {
+            $contacts_box.css('margin-top', '66px');
         }
     }
     // установим обработчик события resize

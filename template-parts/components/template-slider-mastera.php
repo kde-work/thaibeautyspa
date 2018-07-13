@@ -119,7 +119,7 @@ $j = 1;
                                 Если вы у нас впервые, то мы поможем
                                 выбрать лучшего мастера для вас.
                             </div>
-                            <button class="btn master-call_btn" onclick="popup_c({'cat':'обратный-звонок', 'title':'Обратный звонок', 'email': 1, 'time': 0, 'gender': 0, 'description': 'Выбрать мастера'}, this);">Выбрать мастера</button>
+                            <button class="btn master-call_btn" onclick="popup_c({'cat':'обратный-звонок', 'title':'Выбрать мастера', 'email': 1, 'time': 0, 'gender': 0, 'description': 'Выбрать мастера'}, this);">Выбрать мастера</button>
                         </div>
                     </div>
                 </div>

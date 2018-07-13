@@ -51,7 +51,7 @@
 .hot-hours {
     display: none;
 }
-.hot-hours--1 {
+.hot-hours--active {
     display: block;
 }
 .review__block {
@@ -983,7 +983,7 @@
     margin-bottom: 16px;
 }
 
-.under-slide {
+body.services .under-slide {
     bottom: -56px;
     display: flex;
     left: 0;
@@ -1039,4 +1039,55 @@
 }
 .current-choice--man .services__items__block--man, .current-choice--female .services__items__block--female, .current-choice--couple .services__items__block--couple, .current-choice--empty .services__items__block--empty {
     display: flex !important;
+}
+#contact-ext .main {
+    padding: 0;
+}
+
+.modal-copy {
+    display: flex;
+    margin: 10px 30px 0 0;
+}
+.modal-copy__check {
+    border: 2px solid #b39658;
+    border-radius: 80px;
+    bottom: -3px;
+    cursor: pointer;
+    height: 0;
+    margin-right: 14px;
+    padding: 30px;
+    position: relative;
+    width: 0;
+}
+.modal-copy__check--active {
+    background: url("../img/checkmark.svg") no-repeat center center / 32px;
+}
+.modal-copy__cont {
+    display: flex;
+    font-family: Times New Roman, Times, serif;
+    font-size: 17px;
+    font-style: italic;
+    vertical-align: top;
+}
+.modal-copy__text {
+    margin: auto 0;
+}
+.modal-copy__cont a {
+    text-decoration: underline;
+}
+.cta__time-e {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+.cta__time-text {
+    width: 109px !important;
+}
+.cta__time-date {
+    margin: 0 20px 0 10px;
+    width: auto !important;
+}
+.cta__form .btn[disabled] {
+    cursor: default !important;
+    opacity: 0.5;
 }

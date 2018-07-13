@@ -143,6 +143,7 @@
     }
     #fullpage #first .first > .mobile {
         display: block !important;
+        width: 100%;
     }
     #fullpage .main {
         height: auto !important;
@@ -268,6 +269,12 @@
     }
     .services .services__content {
         display: none !important;
+    }
+    .single-services .services__content {
+        display: block !important;
+    }
+    .single-services #services__enroll {
+        display: none;
     }
     .services .services__content--mobile {
         display: block;
@@ -854,6 +861,13 @@
     }
     #fullpage .services__content--desc {
         display: none !important;
+    }
+    #fullpage #contact-ext .main {
+        display: block !important;
+    }
+    #contact-ext .contacts-footer {
+        bottom: initial;
+        position: relative;
     }
 }
 @media screen and (max-width: 655px) {

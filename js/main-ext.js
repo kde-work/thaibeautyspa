@@ -4,6 +4,27 @@
         return;
     }
 
+    // "Ознакомлен с правилами" для модального окна
+    $(function () {
+        var $modal_copy__check = $('.modal-copy__check');
+
+        $modal_copy__check.on('click', function () {
+            var $this = $(this),
+                $form = $this.closest('form'),
+                $submit = $('[type="submit"]', $form);
+
+            console.log($submit);
+            if ($this.hasClass('modal-copy__check--active')) {
+                $this.removeClass('modal-copy__check--active');
+                $submit.prop('disabled', true);
+            } else {
+                $this.addClass('modal-copy__check--active');
+                $submit.prop('disabled', false);
+            }
+        });
+    });
+
+    // Выбор пола на странице Услуг
     function initialGenderChoice ($par) {
         // setTimeout(function () {
             if (!$par.length) {

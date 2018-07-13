@@ -410,6 +410,7 @@ jQuery(document).ready(function($) {
     mySlider('#history .container__right', 'irregular');
     mySlider('.gallery .container__bottom', 'gallery');
     mySlider('.masters .container', 'irregular');
+    mySlider('#masters-ext .container__right', 'irregular');
 
     var $hot_hours = $('.hot-hours');
     for (var i=1; i<=$hot_hours.length; ++i) {
