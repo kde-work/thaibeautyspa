@@ -27,6 +27,9 @@
     .slick--slider .slider-cont .center_info__grey {
         top: initial;
     }
+    body.contacts .contact__map {
+        display: none;
+    }
 }
 @media screen and (max-width: 1080px) {
     .desktop {
@@ -805,6 +808,7 @@
         color: #b39658;
         margin: auto;
         padding: 30px 36px;
+        z-index: 9;
     }
     #fullpage .header-btn .btn:hover {
         color: #000;
@@ -868,6 +872,15 @@
     #contact-ext .contacts-footer {
         bottom: initial;
         position: relative;
+    }
+    .data__item__month-style {
+        font-size: 22px;
+    }
+    .main.third .center__left__service .service__data__item .text--data {
+        font-size: 89px !important;
+    }
+    .hot-hours__m-title {
+        line-height: 1.1;
     }
 }
 @media screen and (max-width: 655px) {

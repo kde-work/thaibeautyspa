@@ -40,7 +40,22 @@ global $Mammen;
                                                 <div class="scrollable">
                                                     <?php echo $tab->get_field('Описание справа картинки'); ?>
                                                 </div>
-                                                <div class="btn btn--small-more cont-with-more__btn" data-id="<?php echo $j; ?>">Подробнее</div>
+                                                <?php
+                                                if ($tab->get_field('Использовать Окно Подробнее')) :
+                                                ?>
+                                                    <div class="btn btn--small-more cont-with-more__btn" data-id="<?php echo $j; ?>">Подробнее</div>
+                                                <?php else : ?>
+	                                                <?php
+	                                                $class_name = 'zapisatcya';
+	                                                $btn = 'Записаться';
+	                                                ?>
+                                                    <style type="text/css">
+                                                        #fullpage .<?php echo $class_name; ?>::after, #fullpage .<?php echo $class_name; ?>::before {
+                                                            content: '<? echo $btn; ?>' !important;
+                                                        }
+                                                    </style>
+                                                    <div class="btn btn--small-more <?php echo $class_name; ?>" onclick="popup_c({'cat':'<?php echo get_the_title(); ?>', 'title':'<?php echo $btn; ?>', 'subtitle':'<?php echo $tab->get_field('Заголовок слайда'); ?>', 'email': 1, 'time': 0, 'gender': 0, 'modal_text': '<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Описание под названием')); ?>', 'description': 'Акция: <?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Описание под названием')); ?>. /<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field( 'Описание под названием')); ?>/', 'template': 'wide'}, this);"><? echo $btn; ?></div>
+                                                <?php endif; ?>
                                             </div>
                                         </div>
                                         <div class="scroll-box__img height-cover"

@@ -36,15 +36,14 @@
     z-index: 1;
 }
 .center__left {
-    width: 45%;
     display: inline-block;
     margin-right: 3%;
-
+    width: 47%;
 }
 .center__right {
     display: inline-block;
     vertical-align: top;
-    width: 51%;
+    width: auto;
 }
 .contact__map {
     border: 1px solid #000;
@@ -218,10 +217,14 @@
     display: none;
 }
 #masters-ext .f--36 {
-    font-size: 36px!important;
+    font-size: 36px !important;
+}
+#fullpage #masters-ext .desktop.f--36 {
+    font-size: 50px !important;
+    max-width: initial !important;
 }
 #masters-ext .desktop {
-    margin-top: -37px;
+    margin-top: -44px;
 }
 .masters-ext__subtitel {
     margin-bottom: 10px;
@@ -480,15 +483,14 @@
         font-size: 20px;
         font-style: italic;
         font-weight: bold;
-        margin-top: 3em;
+        margin-top: 40px;
         text-align: center;
     }
     .data__item__time {
         width: auto;
     }
     .hot-hours__m-desc {
-        font-family: "Sitka Display", Times New Roman, Times, serif;
-        font-size: 30px;
+        font-size: 25px;
         font-weight: bold;
         margin-bottom: 12px;
         text-align: center;
@@ -502,7 +504,7 @@
     }
     .main.third .center__left__service .service__data__item {
         justify-content: center;
-        padding: 13px 0 !important;
+        padding: 8px 0 9px !important;
     }
     .hot-hours__scrollable {
         height: auto;
@@ -520,7 +522,7 @@
         padding: 0!important;
     }
     #masters-ext .container__right {
-        padding-right: 0px;
+        padding-right: 0;
     }
     .border-line {
         display: none!important;

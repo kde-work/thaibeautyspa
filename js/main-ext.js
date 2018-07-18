@@ -387,12 +387,12 @@
             $height_cover.innerHeight($slider_box__cont.height() - elems_height - h_offset);
 
             // bax fix with custom scroll
-            var $scrollable = $('.scrollable:not(.mCS_no_scrollbar)', $scroll_box__slide__active);
+            var $scrollable = $('.scrollable', $scroll_box__slide__active);
             setTimeout(function () {
                 $scrollable.css({
-                    'height': $scrollable.height()*1 + 5 + 'px'
+                    'height': $scrollable.height()*1 + 1 + 'px'
                 });
-            }, 250);
+            }, 350);
 
             $scrollable.mCustomScrollbar();
         }, 50);

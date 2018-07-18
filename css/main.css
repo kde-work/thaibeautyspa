@@ -314,24 +314,18 @@
     align-self:center;
     margin-top:50px
 }
-.main.first .center__right{
-    display:-webkit-box;
-    display:-ms-flexbox;
-    display:flex;
-    -ms-flex-wrap:wrap;
-    flex-wrap:wrap;
-    -webkit-box-pack:end;
-    -ms-flex-pack:end;
-    justify-content:flex-end;
-    -webkit-box-align:end;
-    -ms-flex-align:end;
-    align-items:flex-end;
-    padding-right:30px;
-    padding-left:10%
+.main.first .center__right {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-right: 30px;
+    padding-left: 10%;
+    height: 90%;
+    margin: auto;
 }
-.main.first .center__right .center__info:first-child{
-    margin-top:-80px
-}
+/*.main.first .center__right .center__info:first-child{*/
+    /*margin-top:-80px*/
+/*}*/
 .main.first .center__right .center__info:last-child .center_info__grey{
     bottom:0
 }
@@ -2012,7 +2006,7 @@
     display:-webkit-box;
     display:-ms-flexbox;
     display:flex;
-    width:20vh;
+    width:193px;
     bottom:calc(-8vh + 2px);
     right:0;
     height:8vh;
@@ -2179,7 +2173,8 @@
     -webkit-box-pack:justify;
     -ms-flex-pack:justify;
     justify-content:space-between;
-    height:47%
+    height:47%;
+    position: relative;
 }
 .services .enroll .center .enroll__top__left{
     width:30%
@@ -2196,8 +2191,8 @@
     border-bottom:4px solid #000
 }
 .services .enroll .center .enroll__top__right{
-    width:76%;
-    margin-right:-9%
+    width: 61%;
+    margin-right: -48px;
 }
 .services .enroll .center .enroll__top__right img{
     width:100%;
@@ -3790,9 +3785,6 @@ body:not(.linch) .right .main__social a:last-child:hover {
     }
     .masters .main .container .container__left .container__title h2{
         font-size:32px!important
-    }
-    .services .enroll .center .enroll__top__right{
-        width:73%!important
     }
     .services .enroll .center .btn__back,.services .enroll .center .btn__enroll{
         font-size:20px!important
