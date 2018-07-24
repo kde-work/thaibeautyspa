@@ -15,13 +15,44 @@
 global $Mammen;
 ?>
 
-<div class="section desktop" id="zero">
+<div class="section" id="zero">
 	<div class="main shares slide">
 		<div class="center startPosition cont-with-more">
 			<span class="s s--top-right">S</span>
 			<span class="t t--bottom-left">T</span>
 			<span class="b b--center-big"><img src="<?php echo get_template_directory_uri(); ?>/img/B.png" alt=""></span>
-			<div class="cont-with-more__cont container border-box service-slider slider-box">
+            <div class="best-service-m slick--slider mobile">
+				<?php
+				$tabs = $Mammen->get_fields( 'Слайд' );
+				if ( count( $tabs ) ) {
+					$j = 0;
+					foreach ( $tabs as $tab ) {
+						?>
+                        <div class="best-service-m__item shares-mobile" data-id="<?php echo $j; ?>">
+                            <div class="special__title f--center"><?php echo $tab->get_field('Заголовок слайда'); ?></div>
+                            <div class="special__big-text f--center"><?php echo $tab->get_field('Крупный текст под названием'); ?></div>
+                            <div class="shares-mobile__cont-img">
+                                <img src="<?php echo $tab->get_img( 'Картинка в круге', 'large' )[0]['src']; ?>" class="shares-mobile__img">
+                            </div>
+                            <div class="special__cont f--italic"><?php echo $tab->get_field('Описание под названием'); ?></div><?php
+							$class_name = 'zapisatcya';
+							$btn = 'Записаться';
+							?>
+                            <style type="text/css">
+                                #fullpage .<?php echo $class_name; ?>::after, #fullpage .<?php echo $class_name; ?>::before {
+                                    content: '<? echo $btn; ?>' !important;
+                                }
+                            </style>
+                            <div class="best-service-m__center">
+                                <div class="btn btn--small-more best-service-m__btn <?php echo $class_name; ?>" onclick="popup_c({'cat':'Акции', 'title':'<?php echo $btn; ?>', 'subtitle':'<?php echo $tab->get_field('Заголовок слайда'); ?>', 'email': 1, 'time': 0, 'gender': 0, 'modal_text': '<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Описание под названием')); ?>', 'description': 'Акция: <?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Описание под названием')); ?>. /<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field( 'Описание под названием')); ?>/', 'template': 'wide'}, this);"><? echo $btn; ?></div>
+                            </div>
+                        </div>
+						<?php
+					}
+				}
+				?>
+            </div>
+			<div class="cont-with-more__cont container border-box service-slider slider-box desktop">
 				<div class="container__right">
 					<ul class="slider scroll-box">
 						<?php
@@ -54,7 +85,7 @@ global $Mammen;
                                                             content: '<? echo $btn; ?>' !important;
                                                         }
                                                     </style>
-                                                    <div class="btn btn--small-more <?php echo $class_name; ?>" onclick="popup_c({'cat':'<?php echo get_the_title(); ?>', 'title':'<?php echo $btn; ?>', 'subtitle':'<?php echo $tab->get_field('Заголовок слайда'); ?>', 'email': 1, 'time': 0, 'gender': 0, 'modal_text': '<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Описание под названием')); ?>', 'description': 'Акция: <?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Описание под названием')); ?>. /<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field( 'Описание под названием')); ?>/', 'template': 'wide'}, this);"><? echo $btn; ?></div>
+                                                    <div class="btn btn--small-more <?php echo $class_name; ?>" onclick="popup_c({'cat':'Акции', 'title':'<?php echo $btn; ?>', 'subtitle':'<?php echo $tab->get_field('Заголовок слайда'); ?>', 'email': 1, 'time': 0, 'gender': 0, 'modal_text': '<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Описание под названием')); ?>', 'description': 'Акция: <?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Описание под названием')); ?>. /<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field( 'Описание под названием')); ?>/', 'template': 'wide'}, this);"><? echo $btn; ?></div>
                                                 <?php endif; ?>
                                             </div>
                                         </div>
@@ -91,7 +122,7 @@ global $Mammen;
                                                     content: '<? echo $btn; ?>' !important;
                                                 }
                                             </style>
-                                            <button class="btn btn__enroll <?php echo $class_name; ?>" onclick="popup_c({'cat':'<?php echo get_the_title(); ?>', 'title':'<?php echo $btn; ?>', 'subtitle':'<?php echo $tab->get_field('Заголовок окна'); ?>', 'email': 1, 'time': 0, 'gender': 0, 'modal_text': '<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Подзаголовок окна')); ?>', 'description': 'Акция: <?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Заголовок окна')); ?>. /<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field( 'Подзаголовок окна')); ?>/', 'template': 'wide'}, this);"><? echo $btn; ?></button>
+                                            <button class="btn btn__enroll <?php echo $class_name; ?>" onclick="popup_c({'cat':'Акции', 'title':'<?php echo $btn; ?>', 'subtitle':'<?php echo $tab->get_field('Заголовок окна'); ?>', 'email': 1, 'time': 0, 'gender': 0, 'modal_text': '<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Подзаголовок окна')); ?>', 'description': 'Акция: <?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Заголовок окна')); ?>. /<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field( 'Подзаголовок окна')); ?>/', 'template': 'wide'}, this);"><? echo $btn; ?></button>
 
                                             <div class="enroll__top">
                                                 <div class="enroll__top__left">

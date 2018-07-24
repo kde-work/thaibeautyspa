@@ -787,14 +787,18 @@ $(document).ready(function() {
         var target = $(this).data('target').split(' ');
         var content = contentBlock.find('#'+target[0]).find('#'+target[1]);
 
+        // mySlider('.container', 'dotted');
+
         if(!first) {
+            console.log('h1');
             $('.services__link').removeClass('services__link--active');
             $(this).addClass('services__link--active');
             setTimeout(function() {
                 activeBlock.data("target", target);
                 activeBlock.html(content.html());
                 mySlider('.sections .services__items .center', 'service');
-                mySlider('body:not(.education) .sections .section .container', 'irregular');
+                mySlider('.sections .dotted__items .center', 'dotted');
+                mySlider('body:not(.education):not(.special) .sections .section .container', 'irregular');
                 mySlider('.education .sections .section .container', 'service');
                 $.fn.fullpage.moveSectionDown();
                 first = true;
@@ -806,6 +810,7 @@ $(document).ready(function() {
             },700);
         }
         else if(first && order) {
+            console.log('h2');
             $('.services__link').removeClass('services__link--active');
             $(this).addClass('services__link--active');
             activeBlock = sections.find('.section:nth-child(2)');
@@ -814,7 +819,8 @@ $(document).ready(function() {
                 activeBlock.data("target", target);
                 activeBlock.html(content.html());
                 mySlider('.sections .section:nth-child(2) .services__items .center', 'service');
-                mySlider('body:not(.education) .section:nth-child(2) .container', 'irregular');
+                mySlider('.sections .section:nth-child(2) .dotted__items .center', 'dotted');
+                mySlider('body:not(.education):not(.special) .section:nth-child(2) .container', 'irregular');
                 mySlider('.education .section:nth-child(2) .container', 'service');
                 $.fn.fullpage.moveSectionUp();
                 order = false;
@@ -822,6 +828,7 @@ $(document).ready(function() {
             },400);
         }
         else if(first && !order && clickLock) {
+            console.log('h3');
             var activeTarget = activeBlock.data("target");
             var agree = false;
             if(activeTarget[0] == target[0])
@@ -838,7 +845,8 @@ $(document).ready(function() {
                     activeBlock.data("target", target);
                     activeBlock.html(content.html());
                     mySlider('#'+activeBlock.attr("id")+' .services__items .center', 'service');
-                    mySlider('body:not(.education) #'+activeBlock.attr("id")+' .second .container', 'irregular');
+                    mySlider('#'+activeBlock.attr("id")+' .dotted__items .center', 'dotted');
+                    mySlider('body:not(.education):not(.special) #'+activeBlock.attr("id")+' .second .container', 'irregular');
                     mySlider('.education #'+activeBlock.attr("id")+' .second .container', 'service');
                     $.fn.fullpage.moveSectionUp();
                     setTimeout(function() {
@@ -857,6 +865,7 @@ $(document).ready(function() {
             initialSlickSlider();
             initialCustomScroll('scrollable--tmp', $('.section'));
             initialGenderChoice($('.current-choice'));
+            scrollable_height($('.special .section.active'), 58);
         },400);
     });
     function initialSlickSlider() {

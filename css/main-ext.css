@@ -984,7 +984,7 @@
     margin-bottom: 16px;
 }
 
-body.services .under-slide {
+body.services:not(.special) .under-slide {
     bottom: -56px;
     display: flex;
     left: 0;
@@ -1091,4 +1091,99 @@ body.services .under-slide {
 .cta__form .btn[disabled] {
     cursor: default !important;
     opacity: 0.5;
+}
+#fullpage .center--h100 {
+    height: initial;
+    margin: 0 auto;
+    top: initial;
+    width: 62.5%;
+}
+.special__big-price {
+    font-family: "Roboto Condensed", Arial, serif;
+    font-size: 67px;
+    font-weight: bold;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    position: absolute;
+    top: 0;
+    right: 47px;
+}
+.services__items__block {
+    position: relative;
+}
+#fullpage .img--contain {
+    background: transparent no-repeat center center / contain;
+}
+#fullpage .img--card {
+    height: 177px;
+    width: 287px;
+}
+.services.special .services__items .center .services__items__block .services__item__right {
+    width: calc(100% - 337px);
+    padding-left: 0;
+}
+.services.special .services__items .center .services__items__block .services__item__right h3 {
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: -0.01em;
+}
+.special .services__item__bottom__left p {
+    font-family: "Roboto Condensed", Arial, serif;
+    font-size: 21px;
+}
+
+.special-presents {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+.special-presents__box {
+    max-width: 100%;
+    position: relative;
+    width: 448px;
+    z-index: 5;
+}
+.special-presents__title {
+    font-family: Times New Roman, Times, serif;
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: -0.01em;
+    line-height: 50px;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+}
+.special-presents__cont {
+    font-family: "Roboto Condensed", Arial, serif;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+    line-height: 29px;
+    margin-bottom: 34px;
+}
+.special-presents__bg {
+    background: transparent no-repeat center right / contain;
+    background-image: none;
+    height: 94%;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+#fullpage .special-presents__btn .btn {
+    padding: 25px 48px !important;
+    width: initial !important;
+    height: initial !important;
+}
+.pattern-line {
+    background: url('../img/pattern.png') repeat-x top center;
+    height: 6px;
+    margin: 4em 0;
+}
+.f--italic {
+    font-style: italic;
+}
+#fullpage .f--center {
+    display: block;
+    text-align: center;
+    width: 100%;
 }

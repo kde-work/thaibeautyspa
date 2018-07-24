@@ -1313,9 +1313,10 @@
     width:auto;
     height:100%
 }
-.special .s{
-    top:24%!important;
-    right:49%!important
+.special .s {
+    bottom: 5% !important;
+    right: 35% !important;
+    top: initial !important;
 }
 .special .b{
     bottom:16%!important;
@@ -1979,13 +1980,13 @@
     top:8.8vh;
     height:67vh
 }
-.services .services__items .center ul{
+.services .services__items .center ul:not(.cont-with-more) {
     display:block;
     height:100%;
     margin-left:-3%;
     overflow:hidden
 }
-.services .services__items .center ul li{
+.services .services__items .center ul:not(.cont-with-more) li {
     overflow-y:hidden;
     height:100%;
     padding:2.5vh 0;
@@ -4133,10 +4134,6 @@ body:not(.linch) .right .main__social a:last-child:hover {
     .right{
         padding-right:30px!important
     }
-    .right .main__social{
-        margin-top:0;
-        width:60%!important
-    }
     .main__menu__block{
         width:calc(16.2% + 35px);
         padding-left:15px!important;
@@ -4285,10 +4282,6 @@ body:not(.linch) .right .main__social a:last-child:hover {
     }
     .right{
         padding-right:15px!important
-    }
-    .right .main__social{
-        margin-top:0;
-        width:70%!important
     }
     .about:not(.education) .main.second .center .container__right .slider h3{
         font-size:26px!important;
@@ -4522,15 +4515,6 @@ body:not(.linch) .right .main__social a:last-child:hover {
     }
     .right .main__right__top p{
         font-size:12px!important
-    }
-    .right .main__right__top .main__social{
-        margin-right:20px!important;
-        -ms-flex-wrap:wrap;
-        flex-wrap:wrap;
-        width:30%!important
-    }
-    .right .main__right__top .main__social a{
-        width:27px!important
     }
     .right .main__right__bottom p{
         padding-right:10px;
