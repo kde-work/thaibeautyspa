@@ -26,7 +26,7 @@ tbs_video_style_js_init ();
                 <h3>Видео отзывы</h3>
                 <div class="content__block">
                     <div class="container__video">
-                        <ul id="youtubelist">
+                        <ul id="youtubelist" class=" ">
                         <?php
                         $videos = $Mammen->get_fields( 'Видео' );
                         if ( count( $videos ) ) {
@@ -45,7 +45,7 @@ tbs_video_style_js_init ();
             </div>
             <div class="center__bottom">
                 <h3>Фотографии гостей</h3>
-                <div class="content__block review__block">
+                <div class="content__block review__block guest_foto">
 	                <?php
 	                $photos = $Mammen->get_fields( 'Фото' );
 	                if ( count( $photos ) ) {
@@ -68,7 +68,7 @@ tbs_video_style_js_init ();
         <div class="center">
             <div class="center__top">
                 <h3>Отзывы наших гостей</h3>
-                <div class="center__top__reviews">
+                <div class="center__top__reviews guests_reviews">
                 <?php
                 $reviews = $Mammen->get_fields( 'Отзывы' );
                 if ( count( $reviews ) ) {
