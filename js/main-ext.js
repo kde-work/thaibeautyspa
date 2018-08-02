@@ -4,6 +4,56 @@
         return;
     }
 
+    // Мобильная Информация о курсах
+    $(function () {
+        var $btn = $('.btn--more-mobile, .btn__back--mobile');
+
+        $btn.on('click', function () {
+            var $this = $(this),
+                this_id = $this.data('id'),
+                $par = $this.closest('.services__items--mobile'),
+                $hide_on_click = $('.hide-on-mobile-more', $par),
+                $more_box__item = $('.more-box__item', $par),
+                $more_box__item__target = $('.more-box__item--'+this_id, $par);
+
+            if ($this.hasClass('btn--more-mobile')) {
+                $hide_on_click.hide();
+                $more_box__item.removeClass('more-box__item--active');
+                $more_box__item__target.addClass('more-box__item--active');
+            }
+
+            if ($this.hasClass('btn__back--mobile')) {
+                $hide_on_click.show();
+                $more_box__item.removeClass('more-box__item--active');
+            }
+        });
+    });
+
+    // Переключение между преподавателями
+    $(function () {
+        var $body = $('body');
+
+        $body.on('click', '.persons_nav-item', function () {
+            var $this = $(this),
+                this_id = $this.data('id'),
+                $par = $this.closest('.persons-block'),
+                $persons_nav_item = $('.persons_nav-item', $par),
+                $persons__item = $('.persons__item', $par),
+                $persons__item__target = $('.persons__item--'+this_id, $par);
+
+            $persons__item.removeClass('persons__item--active');
+            $persons__item__target.addClass('persons__item--active');
+
+            $persons_nav_item.removeClass('persons_nav-item--active');
+            $this.addClass('persons_nav-item--active');
+
+            initialOurTeachers();
+        });
+    });
+    $(window).resize(function() {
+        initialOurTeachers();
+    });
+
     // "Ознакомлен с правилами" для модального окна
     $(function () {
         var $modal_copy__check = $('.modal-copy__check');
@@ -13,7 +63,6 @@
                 $form = $this.closest('form'),
                 $submit = $('[type="submit"]', $form);
 
-            console.log($submit);
             if ($this.hasClass('modal-copy__check--active')) {
                 $this.removeClass('modal-copy__check--active');
                 $submit.prop('disabled', true);
@@ -109,9 +158,9 @@
 
     // Подробнее на слайдере (всплытие окна)
     $(function () {
-        var $cont_with_more__btn = $('.cont-with-more__btn');
+        var $body = $('body');
 
-        $cont_with_more__btn.on('click', function () {
+        $body.on('click', '.cont-with-more__btn', function () {
             var $this = $(this),
                 data_id = $this.data('id'),
                 $cont_with_more = $this.closest('.cont-with-more'),
@@ -124,27 +173,45 @@
             $more_box__item__target.addClass('more-box__item--active');
 
             $cont_with_more__more.show();
-            // $cont_with_more__more.css({
-            //     'top': '8%'
-            // });
-            $cont_with_more__cont.css({
-                'margin-top': '-100vh'
-            });
+            if (!$cont_with_more.hasClass('cont-with-more--transform')) {
+                // $cont_with_more__more.css({
+                //     'top': '8%'
+                // });
+                $cont_with_more__cont.css({
+                    'margin-top': '-100vh'
+                });
+            } else {
+                $cont_with_more__cont.animate({
+                    'top': '-100vh'
+                });
+                $cont_with_more__more.animate({
+                    'top': '0'
+                });
+            }
         });
     });
     // Назад с Подробнее на Акциях
     $(function () {
-        var $btn__back = $('.cont-with-more .btn__back');
+        var $body = $('body');
 
-        $btn__back.on('click', function () {
+        $body.on('click', '.cont-with-more .btn__back', function () {
             var $this = $(this),
                 $cont_with_more = $this.closest('.cont-with-more'),
                 $cont_with_more__cont = $('.cont-with-more__cont', $cont_with_more),
                 $cont_with_more__more = $('.cont-with-more__more', $cont_with_more);
 
-            $cont_with_more__cont.css({
-                'margin-top': '0'
-            });
+            if (!$cont_with_more.hasClass('cont-with-more--transform')) {
+                $cont_with_more__cont.css({
+                    'margin-top': '0'
+                });
+            } else {
+                $cont_with_more__cont.animate({
+                    'top': '0'
+                });
+                $cont_with_more__more.animate({
+                    'top': '100vh'
+                });
+            }
         });
     });
 
@@ -218,18 +285,52 @@
 
             var $slick = $('.slick--slider-init', $services__content__target);
 
+            var init_obj = {
+                    "dots": true,
+                    "infinite": true,
+                    "prevArrow": '<div class="slider__prev"></div>',
+                    "nextArrow": '<div class="slider__next"></div>',
+                    // "slide": '.text-slide',
+                    "pauseOnHover": false,
+                    "slidesToShow": 1,
+                    "slidesToScroll": 1,
+                    "autoplay": false
+                },
+                additional_obj = {
+                    "slidesToShow": 5,
+                    "slidesToScroll": 2,
+                    "responsive": [
+                        {
+                            "breakpoint": 880,
+                            "settings": {
+                                "slidesToShow": 4,
+                                "slidesToScroll": 2
+                            }
+                        },
+                        {
+                            "breakpoint": 660,
+                            "settings": {
+                                "slidesToShow": 3,
+                                "slidesToScroll": 2
+                            }
+                        },
+                        {
+                            "breakpoint": 440,
+                            "settings": {
+                                "slidesToShow": 2,
+                                "slidesToScroll": 1
+                            }
+                        }
+                    ]
+                };
+
             $slick.addClass('slick--slider').removeClass('slick--slider-init');
-            $slick.slick({
-                "dots": true,
-                "infinite": true,
-                "prevArrow": '<div class="slider__prev"></div>',
-                "nextArrow": '<div class="slider__next"></div>',
-                // "slide": '.text-slide',
-                "pauseOnHover": false,
-                "slidesToShow": 1,
-                "slidesToScroll": 1,
-                "autoplay": false
-            });
+
+            if ($slick.hasClass('slick--multi-slides')) {
+                init_obj = Object.assign(init_obj, additional_obj)
+            }
+
+            $slick.slick(init_obj);
             if ($this.hasClass('services__title--slick')) {
                 setTimeout(function () {
                     var $slick = $('.slick--slider', $services__content__target),

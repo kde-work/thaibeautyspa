@@ -123,17 +123,23 @@ function tbs_list_of_cat ($term_name) {
 		ARRAY_A
 	);
 }
-function tbs_list_post_by_post_type ($post_type, $cat_id) {
+function tbs_list_post_by_post_type ($post_type, $cat_id = false) {
 	global $wpdb;
 
+	$add1 = '';
+	$add = '';
+	if ($cat_id) {
+		$add1 = "INNER JOIN `$wpdb->term_relationships` as term_relationships ON term_relationships.`object_id` = posts.`ID`";
+		$add = "AND term_relationships.`term_taxonomy_id` = '$cat_id'";
+    }
+
 	return $wpdb->get_results(
-		"SELECT * FROM `$wpdb->posts` as posts INNER JOIN
-			 `$wpdb->term_relationships` as term_relationships ON
-			 term_relationships.`object_id` = posts.`ID`
+		"SELECT * FROM `$wpdb->posts` as posts 
+             $add1
 			 WHERE 
 			    posts.`post_type` = '$post_type'
 		        AND posts.`post_status` = 'publish'
-		           AND term_relationships.`term_taxonomy_id` = '$cat_id'
+		           $add
 		     ORDER BY posts.`post_date` DESC
 	        ",
 		ARRAY_A

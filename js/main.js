@@ -790,7 +790,6 @@ $(document).ready(function() {
         // mySlider('.container', 'dotted');
 
         if(!first) {
-            console.log('h1');
             $('.services__link').removeClass('services__link--active');
             $(this).addClass('services__link--active');
             setTimeout(function() {
@@ -810,7 +809,6 @@ $(document).ready(function() {
             },700);
         }
         else if(first && order) {
-            console.log('h2');
             $('.services__link').removeClass('services__link--active');
             $(this).addClass('services__link--active');
             activeBlock = sections.find('.section:nth-child(2)');
@@ -828,7 +826,6 @@ $(document).ready(function() {
             },400);
         }
         else if(first && !order && clickLock) {
-            console.log('h3');
             var activeTarget = activeBlock.data("target");
             var agree = false;
             if(activeTarget[0] == target[0])
@@ -863,13 +860,24 @@ $(document).ready(function() {
 
         setTimeout(function() {
             initialSlickSlider();
+            initialOurTeachers();
             initialCustomScroll('scrollable--tmp', $('.section'));
             initialGenderChoice($('.current-choice'));
             scrollable_height($('.special .section.active'), 58);
+            initialOther();
         },400);
     });
+    function initialOther() {
+        var $service__slick = $('.fp-table.active'),
+            $height__init = $('.height--init-5', $service__slick);
+
+        if ($height__init.length) {
+            $height__init.outerHeight($height__init.outerHeight()+10);
+        }
+    }
+    window.initialOther = initialOther;
     function initialSlickSlider() {
-        var $service__slick = $('.fp-section .service__slick');
+        var $service__slick = $('.fp-table.active .service__slick');
         if ($service__slick.length) {
             $service__slick.each(function () {
                 var $this = $(this),
@@ -887,6 +895,13 @@ $(document).ready(function() {
                 $service__slick_item.addClass('slick--slider-s');
                 $this.append($tmp);
 
+                if ($slick__slider.hasClass('slick--set-height')) {
+                    var $elems = $slick__slider.children('*');
+
+                    $elems.height($elems.height());
+                    $elems.width($elems.width());
+                }
+
                 var $slider = $('.slick--slider-s');
                 $slider.slick({
                     "dots": true,
@@ -899,10 +914,58 @@ $(document).ready(function() {
                     "autoplay": true
                 });
             });
+        } else {
+            var $fp_table = $('.fp-table.active'),
+                $slick = $('.slick--slider-tab', $fp_table).first(),
+                $par = $slick.closest('div:not(.slick--slider-tab)'),
+                $tmp = $slick.clone(),
+                $slick__slider = $('.slick--slider-s');
 
+            if ($slick.length) {
+                $slick__slider.remove();
+                $slick.addClass('slick--slider-s');
+                $par.append($tmp);
+
+                if ($slick.hasClass('slick--set-height')) {
+                    var $elems = $slick.children('*');
+
+                    $elems.height($par.innerHeight() - 30);
+                    $elems.width($par.innerWidth());
+                }
+
+                var $slider = $('.slick--slider-s');
+
+                $slider.removeClass('slick--slider-tab');
+                $slider.slick({
+                    "dots": true,
+                    "infinite": true,
+                    "prevArrow": '<div class="slider__prev"></div>',
+                    "nextArrow": '<div class="slider__next"></div>',
+                    "pauseOnHover": true,
+                    "slidesToShow": 1,
+                    "slidesToScroll": 1,
+                    "autoplay": true
+                });
+            }
         }
     }
     window.initialSlickSlider = initialSlickSlider;
+
+    function initialOurTeachers() {
+        var $persons_block = $('.fp-table.active .persons-block');
+        if ($persons_block.length) {
+            var $persons_block__title = $('.persons-block__title', $persons_block),
+                $persons = $('.persons', $persons_block),
+                $persons__item__active = $('.persons__item--active', $persons_block),
+                $person = $('.person', $persons__item__active),
+                $prices = $('.prices', $persons__item__active);
+
+            var person_height = $persons_block.outerHeight(true) - $persons_block__title.outerHeight(true);
+            $persons.outerHeight(person_height);
+            $person.outerHeight(person_height - $prices.outerHeight(true));
+        }
+    }
+    window.initialOurTeachers = initialOurTeachers;
 
     function initialButtons() {
         activeBlock.on('click', '.services__items .slider .btn', function() {
