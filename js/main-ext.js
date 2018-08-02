@@ -385,6 +385,24 @@
     });
 
     $(function () {
+            var $slider = $('.reviews #youtubelist, .reviews .guest_foto, .reviews .guests_reviews'),
+                $body = $('body');
+
+            if ($body.width() < 600) {
+                $slider.slick({
+                    "dots": true,
+                    "infinite": true,
+                    "prevArrow": '<div class="slider__prev"></div>',
+                    "nextArrow": '<div class="slider__next"></div>',
+                    // "slide": '.text-slide',
+                    "pauseOnHover": false,
+                    "slidesToShow": 1,
+                    "slidesToScroll": 1,
+                    "autoplay": false
+                });
+            }
+    });
+    $(function () {
         setTimeout(function () {
             var $slider = $('.slick--slider'),
                 $body = $('body');
