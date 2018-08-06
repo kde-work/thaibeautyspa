@@ -18,7 +18,7 @@ global $Mammen;
 <div class="component--<?php echo $Mammen->get_slug(); ?>">
     <div class="services__content--mobile">
         <div id="1">
-            <div class="main services__items--mobile">
+            <div class="main services__items--mobile services__content--hide-tab-name">
                 <div class="center">
                     <?php
                     $j = 0; // итерация для рубрик
@@ -29,6 +29,11 @@ global $Mammen;
                         ++ $j;
                         ?>
                         <div class="services__m-content services__m-content--<?php echo $j; ?>" data-id="<?php echo $j; ?>">
+	                        <?php
+	                        if ($j > 1) {
+		                        echo "<div class=\"pattern-line\"></div>";
+	                        }
+	                        ?>
                             <div class="container__left">
                                 <div class="container__title">
                                 </div>
@@ -85,6 +90,11 @@ global $Mammen;
                                     <a class="unslider-arrow next"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png" alt="" /></a>
                                 </div>
                             </div>
+	                        <?php
+	                        if ($j < count($services_category)) {
+		                        echo "<div class=\"pattern-line\"></div>";
+	                        }
+	                        ?>
                         </div>
                         <h3 class="services__title services__title--<?php echo $j; ?>" data-id="<?php echo $j; ?>">
                             <span class="services__title-num"><?php echo tbs_get_number_with_zero($j); ?></span>

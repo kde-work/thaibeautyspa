@@ -431,9 +431,9 @@
     .services__m-content {
         display: none;
     }
-    body:not(.special):not(.education) .services__m-content {
-        border: 1px solid #000;
-    }
+    /*body:not(.special):not(.education) .services__m-content {*/
+        /*border: 1px solid #000;*/
+    /*}*/
     .special__h2, .special__title, .special__big-text {
         display: block;
         font-family: Times New Roman, Times, serif;
@@ -822,9 +822,10 @@
     }
     .services__border-title {
         display: flex;
+        margin-bottom: 22px;
     }
     .services__border-title h3, .services__border-title h2 {
-        font-size: 22px;
+        font-size: 30px;
         font-family: Times New Roman,Times,serif;
         line-height: 0;
         padding: 0 11px;
@@ -946,7 +947,6 @@
     .header-phones .header-phone {
         font-size: 24px;
     }
-
     .service-slider--pre .container__pre {
         display: none;
     }
@@ -1097,6 +1097,23 @@
         margin: 2.5% 0 2.5%;
         padding: 17px 35px;
         width: calc(100%) !important;
+    }
+    .contacts .contact-ext--active {
+        display: block;
+    }
+    .contact-box__cities {
+        margin-left: initial;
+    }
+    .contacts .main .center__left {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    #fullpage .center__left__time {
+        margin: 0;
+    }
+    .center--mobile {
+        margin: auto;
+        width: 95%;
     }
 }
 @media screen and (max-width: 655px) {

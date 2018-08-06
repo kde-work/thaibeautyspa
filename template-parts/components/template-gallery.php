@@ -28,7 +28,8 @@ tbs_video_style_js_init ();
 		<div class="container__wrap"><img src="<?php echo get_template_directory_uri(); ?>/img/border-5.png" alt=""></div>
 		<div class="container__top">
             <div class="border-line border-line--30"></div>
-			<h2>Галлерея</h2>
+			<h2 class="desktop">&nbsp;&nbsp;Галерея</h2>
+			<h2 class="mobile">Галерея</h2>
             <div class="border-line"></div>
 			<div class="container__top__btns">
 				<button class="gallery__btn gallery__btn--active btn" data-target="b1">Фото</button>
