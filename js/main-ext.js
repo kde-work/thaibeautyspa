@@ -498,7 +498,7 @@
 
             // Высчитывается высота для блоков со скроллом
             if ($container__img.length) {
-                $container__img.height($scroll_cont.height() - parseInt($container__img.css('top')) - h_offset - 38);
+                $container__img.height($scroll_cont.height() - parseInt($container__img.css('top')) - h_offset - 68);
             }
             $scroll_cont.each(function () {
                 var $this = $(this),
@@ -529,7 +529,7 @@
 
                 elems_height += $_this.outerHeight(true);
             });
-            $height_cover.innerHeight($slider_box__cont.height() - elems_height - h_offset);
+            $height_cover.innerHeight($slider_box__cont.height() - elems_height - h_offset - 30);
 
             // bax fix with custom scroll
             var $scrollable = $('.scrollable', $scroll_box__slide__active);

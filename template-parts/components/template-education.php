@@ -168,7 +168,7 @@ global $Mammen;
                                 ob_start();
                                 ?>
                                 <div id="<?php echo $post['ID']; ?>" class="about-event more-box__item more-box__item--<?php echo $post['ID']; ?>">
-                                    <div class="center">
+                                    <div class="center--mobile">
                                         <div class="best-service-m__center">
                                             <h2 class="special__h2"><?php echo str_replace(array('<br>', '<br />'), ' ', $title); ?></h2>
                                         </div>
@@ -178,7 +178,7 @@ global $Mammen;
                                              style="background-image: url('<?php echo $image_url; ?>');">
                                         </div>
                                     </div>
-                                    <div class="center">
+                                    <div class="center--mobile">
                                         <div class="scrollable scrollable--250 text--mobile">
                                             <p><?php echo $Mammen->get_field( 'Описание О школе' ); ?></p>
                                         </div>
@@ -251,7 +251,7 @@ global $Mammen;
                                     </div>
                                 </div>
                                 <?php
-                                $more_html .= ob_get_contents();
+                                $more_html_mobile .= ob_get_contents();
                                 ob_end_clean(); // втихую отбрасывает содержимое буфера
                             }
                         }
@@ -264,7 +264,7 @@ global $Mammen;
                 </h3>
             </div>
             <div class="cont-with-more__more--mobile about-events">
-		        <?php echo $more_html; ?>
+		        <?php echo $more_html_mobile; ?>
             </div>
         </div>
     </div>
@@ -279,7 +279,7 @@ global $Mammen;
                         <div class="container__left border-cont__title border-cont__title--ext">
                             <div class="border-line border-line--desc border-line--30"></div>
                             <div class="container__title">
-	                            <?php $title = $Mammen->get_field( 'Заголовок О школе' )?>
+	                            <?php $title = $Mammen->get_field( 'Заголовок О школе Мобильный' )?>
                                 <h2 class="schedule__title"><?php echo str_replace(' ', '&nbsp;', $title); ?></h2>
                             </div>
                             <div class="border-line border-line--desc"></div>
@@ -321,7 +321,7 @@ global $Mammen;
 				<div class="center">
 					<div class="container info__container">
 						<div class="persons-block">
-                            <h2 class="persons-block__title"><?php echo str_replace(' ', '&nbsp;', $Mammen->get_field( 'Заголовок О преподавателях' ) ); ?></h2>
+                            <h2 class="persons-block__title"><?php echo str_replace(array('<br>', '<br />', ' '), '&nbsp;', $Mammen->get_field( 'Заголовок О преподавателях' ) ); ?></h2>
                             <div class="persons">
 	                            <?php
 	                            $persons = $Mammen->get_fields( 'Преподаватели' );

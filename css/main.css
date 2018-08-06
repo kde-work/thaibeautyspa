@@ -1033,14 +1033,14 @@
 .masters .main .container .unslider{
     z-index:2
 }
-.masters .main .container__title h2{
-    max-width:500px!important;
-    margin-top:-35px!important;
-    padding:0!important;
-    margin-left:-3%!important;
-    font-size:38px!important;
-    line-height:1.2!important
-}
+/*.masters .main .container__title h2{*/
+    /*max-width:500px!important;*/
+    /*margin-top:-35px!important;*/
+    /*padding:0!important;*/
+    /*margin-left:-3%!important;*/
+    /*font-size:38px!important;*/
+    /*line-height:1.2!important*/
+/*}*/
 .masters .main .container__right{
     width:58%!important;
     margin-left:0!important;

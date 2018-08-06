@@ -14,17 +14,20 @@
  * Thumbnail: /page-builder/assets/img/contacts.png *Image for admin panel in Page Builder
  * Preview: /page-builder/assets/img/contacts.png *Relative path from Theme root
  * Global Component Rules: 0
- * Время работы: Text
- * Картинка Карты: Media Upload
- * Картинка Карты OPTION 'help': Рекомендуется вертикальный формат 388х905
- * Ссылка на карты: Text
- * Адрес: Textarea
- * Email: Text
- * Наши телефоны: GROUP BEGIN
- * Наши телефоны OPTION 'type': Repeating Group
- *    Телефон: Text
- * Наши телефоны: GROUP END
- * Код карты: Textarea
+ * Города: GROUP BEGIN
+ * Города OPTION 'type': Repeating Group
+ *    Картинка Карты: Media Upload
+ *    Картинка Карты OPTION 'help': Рекомендуется вертикальный формат 388х905
+ *    Название города: Text
+ *    Время работы: Text
+ *    Адрес: Textarea
+ *    Email: Text
+ *    Наши телефоны: GROUP BEGIN
+ *    Наши телефоны OPTION 'type': Repeating Group
+ *       Телефон: Text
+ *    Наши телефоны: GROUP END
+ *    Код карты: Textarea
+ * Города: GROUP END
  * COMPONENT END
  */
 

@@ -21,10 +21,11 @@
                 $contact_ext_target  = $('.contact-ext--'+this_id, $par),
                 $hot_hours  = $('.hot-hours', $par),
                 $hot_hours_target  = $('.hot-hours--'+this_id, $par),
-                $dd_span = $('.wrapper-dropdown > span', $par);
+                $dd_span = $('.wrapper-dropdown > span', $par),
+                $city_down__target  = $('.city-down__item[data-id="'+this_id+'"]', $par);
 
             $city_down__item.removeClass('city-down__item--active');
-            $this.addClass('city-down__item--active');
+            $city_down__target.addClass('city-down__item--active');
 
             $contact_ext.removeClass('contact-ext--active');
             $contact_ext_target.addClass('contact-ext--active');
