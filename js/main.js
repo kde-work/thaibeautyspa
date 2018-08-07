@@ -511,7 +511,7 @@ $(document).ready(function() {
         fitToSection: true,
         lockAnchors: true,
         controlArrows: false,
-        keyboardScrolling: false,
+        keyboardScrolling: true,
         easingcss3: 'ease',
         afterLoad: function(){
             $.fn.fullpage.setMouseWheelScrolling(canScroll);

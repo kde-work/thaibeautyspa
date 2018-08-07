@@ -170,7 +170,7 @@ global $Mammen;
                                                 <div id="<?php echo $p; ?>">
                                                     <div class="main enroll">
                                                         <div class="center">
-                                                            <div class="container__wrap"><img src="<?php echo get_template_directory_uri(); ?>/img/border-8.png" alt=""></div>
+                                                            <div class="container__wrap"><img src="<?php echo get_template_directory_uri(); ?>/img/border-6.png" alt=""></div>
                                                             <button class="btn btn__back">НАЗАД</button>
                                                             <?php
                                                             $class_name = MM_Component_Page::clear_name($tab->get_field('Текст кнопки окна Подробнее'));

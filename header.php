@@ -32,7 +32,7 @@ if (function_exists('get_field')) {
 	?>
     <div class="main__menu__block">
         <div id="main__menu__block__close"></div>
-        <div class="menu__animation"></div>f
+        <div class="menu__animation"></div>
         <a href="/" class="main__menu__logo main__logo"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-gold.svg" alt="logo"></a>
         <nav class="main__menu__links">
             <?php

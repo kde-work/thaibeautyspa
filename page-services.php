@@ -216,7 +216,7 @@ $services_category = tbs_list_of_cat('cdiservices-category');
                                     <div id="<?php echo $p; ?>">
                                         <div class="main enroll">
                                             <div class="center">
-                                                <div class="container__wrap"><img src="<?php echo get_template_directory_uri(); ?>/img/border-7.png" alt=""></div>
+                                                <div class="container__wrap"><img src="<?php echo get_template_directory_uri(); ?>/img/border-6.png" alt=""></div>
                                                 <button class="btn btn__back">НАЗАД</button>
                                                 <button class="btn btn__enroll" onclick="popup_c({'cat':'услуги', 'title':'Заказ услуги', 'email': 1, 'time': 1, 'gender': 1, 'description': 'Услуга: <?php echo $title; ?>'}, this);">ЗАПИСАТЬСЯ</button>
 

@@ -260,6 +260,9 @@
 #masters-ext .container__left {
     width: 50%;
 }
+.border-cont .container__right {
+    z-index: 1;
+}
 .home #masters-ext p {
     font-size: 14px;
 }
@@ -929,5 +932,31 @@
     }
 }
 /*страница отзывы конец*/
+/*7.08.18*/
+/*Телефоны адаптация начало*/
+@media screen and (max-width: 1682px) {
+    .header-phones {
+        flex-direction: column;
+    }
+    .header-phones__split {
+        display: none;
+    }
+}
+/*Телефоны адаптация конец*/
+/*Буква Т страница обучение начало*/
+.education .t {
+    left: 48%;
+}
+/*Буква Т страница обучение конец*/
+/*Буква O страница о нас  начало*/
+.about .o {
+    width: auto;
+}
+/*Буква О страница о нас конец*/
+/*Буква B страница обучение  начало*/
+.education .b {
+    left: 15% !important;
+}
+/*Буква B страница обучение конец*/
 
 

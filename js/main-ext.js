@@ -522,6 +522,7 @@
             var $slider_box__cont = $('.slider-box__cont', $scroll_box__slide__active),
                 $elems = $slider_box__cont.children('*:not(".height-cover")'),
                 $height_cover = $('.height-cover', $scroll_box__slide__active),
+                $height_cover_img = $('.height-cover.scroll-box__img', $scroll_box__slide__active),
                 elems_height = 0;
 
             $elems.each(function () {
@@ -529,7 +530,8 @@
 
                 elems_height += $_this.outerHeight(true);
             });
-            $height_cover.innerHeight($slider_box__cont.height() - elems_height - h_offset - 30);
+            $height_cover.innerHeight($slider_box__cont.height() - elems_height - h_offset - 26);
+            $height_cover_img.innerHeight($slider_box__cont.height() - elems_height - h_offset + 10);
 
             // bax fix with custom scroll
             var $scrollable = $('.scrollable', $scroll_box__slide__active);

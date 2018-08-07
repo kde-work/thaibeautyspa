@@ -24,16 +24,17 @@ global $Mammen;
 			<span class="t">T</span>
 			<span class="b"><img src="<?php echo get_template_directory_uri(); ?>/img/B.png" alt=""></span>
 			<div class="flower"><img src="<?php echo get_template_directory_uri(); ?>/img/flower.png" alt=""></div>
-			<div class="container border-box service-slider service-slider--pre">
-				<!-- <div class="container__wrap"><img src="<?php echo get_template_directory_uri(); ?>/img/border-10.png" alt=""></div> -->
-				<div class="container__wrap"><img src="<?php echo get_template_directory_uri(); ?>/img/border-2.png" alt=""></div>
-				<div class="container__left">
-					<div class="container__title">
+			<div class="container border-cont service-slider service-slider--pre">
+                <div class="container__left">&nbsp;<br>&nbsp;<br>&nbsp;</div>
+                <div class="border-cont__title border-cont__title--left-cont">
+                    <div class="border-line border-line--desc border-line--30"></div>
+                    <div class="container__title">
 						<?php $title = $Mammen->get_field( 'Заголовок' )?>
-						<h2 class="mobile"><?php echo str_replace(' ', '&nbsp;', $title); ?></h2>
-						<h2 class="desktop"><?php echo $title; ?></h2>
-					</div>
-				</div>
+                        <h2 class="schedule__title h2--one-line mobile"><?php echo str_replace(' ', '&nbsp;', $title); ?></h2>
+                        <h2 class="schedule__title h2--one-line desktop"><?php echo $title; ?></h2>
+                    </div>
+                    <div class="border-line border-line--desc"></div>
+                </div>
                 <div class="container__pre best-s-pre">
                     <div class="best-s-pre__cont">
                         <div class="best-s-pre__desc">Здесь мы поможем вам с выбором лучшей программы, выберите<br>категорию для лучшего подбора программ для вас </div>

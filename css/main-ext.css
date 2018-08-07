@@ -97,7 +97,7 @@
 }
 #fullpage .img-text-box .container {
     height: auto;
-    max-height: calc(100vh - 352px);
+    max-height: calc(100vh - 203px);
 }
 .education .main.schedule .container__left {
     left: 0;
@@ -645,6 +645,15 @@
     width: 100%;
     z-index: 10;
 }
+.special .unslider--dotes {
+    bottom: -73px;
+}
+.main.second .center .container .unslider--100 {
+    bottom: 0;
+}
+.main.second .center .container .unslider--dotes {
+    bottom: -94px;
+}
 .unslider--dotes {
     bottom: -94px;
     display: flex;
@@ -790,7 +799,7 @@
 }
 .scroll-box__img {
     background: transparent no-repeat bottom left / contain;
-    bottom: 65px;
+    bottom: 76px;
     height: 60%;
     left: 0;
     position: absolute;
@@ -799,17 +808,21 @@
 }
 .slider-box__title, .slider-box__big-text {
     font-family: Times New Roman, Times, serif;
-    font-size: 41px;
     font-weight: bold;
     text-transform: uppercase;
+    margin-bottom: 7px;
+}
+.slider-box__title {
+    font-size: 30px;
 }
 .slider-box__big-text {
-    font-size: 50px;
+    font-size: 36px;
 }
 .slider-box__under-title {
     font-family: Cambria,Times New Roman, Times, serif;
-    font-size: 25px;
+    font-size: 18px;
     font-style: italic;
+    margin-bottom: 18px;
 }
 .slider-box__right {
     font-family: "Roboto Condensed", Times New Roman, Times, serif;
@@ -872,7 +885,7 @@
     display: none;
     height: 70%;
     position: relative;
-    top: 365px;
+    margin-top: 37vh;
     width: 100%;
     -webkit-transition: all 0.8s linear;
     -o-transition: all 0.8s linear;
@@ -1297,8 +1310,15 @@ body.services:not(.special) .under-slide {
 #fullpage .persons-box .info__container {
     height: 72vh;
 }
+#fullpage .persons-box .info__container {
+    height: auto;
+    max-height: calc(100vh - 203px);
+}
 #fullpage .events-box .border-cont {
     height: auto;
+}
+.education .main.schedule .container__left .container__title h2 {
+    font-size: 39px;
 }
 .persons-block {
     display: flex;
@@ -1675,4 +1695,31 @@ body.services:not(.special) .under-slide {
     font-family: Times New Roman,Times,serif;
     padding: 0 14px;
     text-transform: uppercase;
+}
+.gallery .main .center {
+    position: relative;
+}
+.gallery .main .center::before, .gallery .main .center::after {
+    background-color: #000;
+    content: '';
+    height: 100%;
+    left: 0;
+    padding: 0 1px;
+    position: absolute;
+    top: 0;
+    width: 0;
+    z-index: -1;
+}
+.gallery .main .center::after {
+    left: initial;
+    right: 0;
+}
+.services:not(.education) .btn__back {
+    box-shadow: -0 -5px 0 #EEE2DB, 0 -5px 0 #EEE2DB, -0 5px 0 #EEE2DB, 0 5px 0 #EEE2DB, -5px -0 0 #EEE2DB, 5px -0 0 #EEE2DB, -5px 0 0 #EEE2DB, 5px 0 0 #EEE2DB, -1px -5px 0 #EEE2DB, 1px -5px 0 #EEE2DB, -1px 5px 0 #EEE2DB, 1px 5px 0 #EEE2DB, -5px -1px 0 #EEE2DB, 5px -1px 0 #EEE2DB, -5px 1px 0 #EEE2DB, 5px 1px 0 #EEE2DB, -2px -5px 0 #EEE2DB, 2px -5px 0 #EEE2DB, -2px 5px 0 #EEE2DB, 2px 5px 0 #EEE2DB, -5px -2px 0 #EEE2DB, 5px -2px 0 #EEE2DB, -5px 2px 0 #EEE2DB, 5px 2px 0 #EEE2DB, -3px -5px 0 #EEE2DB, 3px -5px 0 #EEE2DB, -3px 5px 0 #EEE2DB, 3px 5px 0 #EEE2DB, -5px -3px 0 #EEE2DB, 5px -3px 0 #EEE2DB, -5px 3px 0 #EEE2DB, 5px 3px 0 #EEE2DB, -4px -5px 0 #EEE2DB, 4px -5px 0 #EEE2DB, -4px 5px 0 #EEE2DB, 4px 5px 0 #EEE2DB, -5px -4px 0 #EEE2DB, 5px -4px 0 #EEE2DB, -5px 4px 0 #EEE2DB, 5px 4px 0 #EEE2DB, -5px -5px 0 #EEE2DB, 5px -5px 0 #EEE2DB, -5px 5px 0 #EEE2DB, 5px 5px 0 #EEE2DB, -5px -5px 0 #EEE2DB, 5px -5px 0 #EEE2DB, -5px 5px 0 #EEE2DB, 5px 5px 0 #EEE2DB;
+}
+.services:not(.education) .btn__enroll {
+    box-shadow: -0 -5px 0 #eae3de, 0 -5px 0 #eae3de, -0 5px 0 #eae3de, 0 5px 0 #eae3de, -5px -0 0 #eae3de, 5px -0 0 #eae3de, -5px 0 0 #eae3de, 5px 0 0 #eae3de, -1px -5px 0 #eae3de, 1px -5px 0 #eae3de, -1px 5px 0 #eae3de, 1px 5px 0 #eae3de, -5px -1px 0 #eae3de, 5px -1px 0 #eae3de, -5px 1px 0 #eae3de, 5px 1px 0 #eae3de, -2px -5px 0 #eae3de, 2px -5px 0 #eae3de, -2px 5px 0 #eae3de, 2px 5px 0 #eae3de, -5px -2px 0 #eae3de, 5px -2px 0 #eae3de, -5px 2px 0 #eae3de, 5px 2px 0 #eae3de, -3px -5px 0 #eae3de, 3px -5px 0 #eae3de, -3px 5px 0 #eae3de, 3px 5px 0 #eae3de, -5px -3px 0 #eae3de, 5px -3px 0 #eae3de, -5px 3px 0 #eae3de, 5px 3px 0 #eae3de, -4px -5px 0 #eae3de, 4px -5px 0 #eae3de, -4px 5px 0 #eae3de, 4px 5px 0 #eae3de, -5px -4px 0 #eae3de, 5px -4px 0 #eae3de, -5px 4px 0 #eae3de, 5px 4px 0 #eae3de, -5px -5px 0 #eae3de, 5px -5px 0 #eae3de, -5px 5px 0 #eae3de, 5px 5px 0 #eae3de, -5px -5px 0 #eae3de, 5px -5px 0 #eae3de, -5px 5px 0 #eae3de, 5px 5px 0 #eae3de;;
+}
+.linch .btn__back, .linch .btn__enroll {
+    box-shadow: -0 -4px 0 #B39658, 0 -4px 0 #B39658, -0 4px 0 #B39658, 0 4px 0 #B39658, -4px -0 0 #B39658, 4px -0 0 #B39658, -4px 0 0 #B39658, 4px 0 0 #B39658, -1px -4px 0 #B39658, 1px -4px 0 #B39658, -1px 4px 0 #B39658, 1px 4px 0 #B39658, -4px -1px 0 #B39658, 4px -1px 0 #B39658, -4px 1px 0 #B39658, 4px 1px 0 #B39658, -2px -4px 0 #B39658, 2px -4px 0 #B39658, -2px 4px 0 #B39658, 2px 4px 0 #B39658, -4px -2px 0 #B39658, 4px -2px 0 #B39658, -4px 2px 0 #B39658, 4px 2px 0 #B39658, -3px -4px 0 #B39658, 3px -4px 0 #B39658, -3px 4px 0 #B39658, 3px 4px 0 #B39658, -4px -3px 0 #B39658, 4px -3px 0 #B39658, -4px 3px 0 #B39658, 4px 3px 0 #B39658, -4px -4px 0 #B39658, 4px -4px 0 #B39658, -4px 4px 0 #B39658, 4px 4px 0 #B39658, -4px -4px 0 #B39658, 4px -4px 0 #B39658, -4px 4px 0 #B39658, 4px 4px 0 #B39658;
 }

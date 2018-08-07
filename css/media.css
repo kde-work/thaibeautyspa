@@ -45,6 +45,223 @@
         display: flex;
     }
 }
+@media screen and (max-width: 1498px) {
+    .services .s {
+        top: -3.5%;
+    }
+    .services .t {
+        right: 10%;
+    }
+    .persons-block__title {
+        font-size: 50px;
+    }
+    .person__title {
+        font-size: 33px;
+    }
+    .about .services__main.services__main__active .services__link {
+        padding-bottom: 15px;
+    }
+    .education .s {
+        right: 12% !important;
+        bottom: 37% !important;
+    }
+    .about .b {
+        left: 14% !important;
+    }
+    .about .t {
+        top: 4.4% !important;
+    }
+    .about .s {
+        right: 12% !important;
+    }
+    .startMenuRight {
+        width: auto;
+    }
+    /*контакты начало*/
+    .contacts-box {
+        display: flex;
+        align-items: flex-end;
+    }
+    .big-title {
+        font-size: 50px;
+    }
+    .contacts-box .f--24 {
+        font-size: 22px;
+    }
+    /*контакты конец*/
+    /*горячие часы начало*/
+    .data__item__btn {
+        width: auto;
+    }
+    .main.third .center__left__service .service__data__item .text--italic {
+        font-size: 15px;
+    }
+    .third .service__data .service__data__item .price__info p {
+        line-height: 1.4em;
+    }
+    .main.third .center__left__service .service__data__item .btn {
+        font-size: 18px;
+    }
+    .third .service__data .service__data__item .price__info p.prive__info--stock {
+        font-size: 18px !important;
+    }
+    .hot-hours-ext .main .center .hot-hours-info-cont {
+        margin-bottom: 24px;
+    }
+    .hot-hours-ext .main .center .hot-hours .data__item__btn {
+        flex-basis: 28%;
+    }
+    .hot-hours-ext .main .hot-hours-list-cont {
+        padding: 30px 23px 22px 19px;
+    }
+    .hot-hours__scrollable {
+        margin-bottom: 18px;
+    }
+    .hot-hours-ext .main .center__left__service .service__data__item:last-child {
+        padding-bottom: 35px;
+    }
+    .hot-hours__scrollable {
+        height: 24vh;
+    }
+    /*горячие часы конец*/
+    /*копирайт начало*/
+    .copyright {
+        font-size: 14px;
+    }
+    /*копирайт конец*/
+    .person__photo {
+        border-radius: 60px;
+        max-height: 100%;
+    }
+    #fullpage .persons-box .info__container, .main.second .center .service-slider--pre, .persons-block {
+        height: 100%;
+        max-height: calc(100vh - 143px);
+    }
+    #fullpage .about-event .center {
+        /*height: calc(100vh - 143px);*/
+        height: calc(100vh - 112px);
+    }
+    .services .enroll .center {
+        padding: 40px 30px;
+        height: calc(100vh - 175px);
+        top: initial;
+        margin: auto;
+    }
+    .main.fourth .center .container {
+        height: calc(100vh - 175px);
+    }
+    .masters #fullpage .main .container .container__right .container__img {
+        top: 42px !important;
+    }
+    .masters .main .t {
+        top: 0 !important;
+    }
+    .masters .main .b {
+        top: 50% !important;
+        bottom: auto !important;
+        left: 11% !important;
+    }
+    .services #fullpage .services__items .center .slider .services__item__right h3 {
+        font-size: 21px !important;
+    }
+    .services .enroll .center .enroll__top__right {
+        width: 58%;
+        margin-right: -28px;
+    }
+    .services .enroll .center .btn__back {
+        padding: 18px 26px !important;
+    }
+    .services .enroll .center .enroll__bottom__right {
+        width: 54%;
+    }
+    .services .services__items .services__item__left {
+        min-height: 119px;
+    }
+    .services .services__items .center .services__items__block .services__item__right .services__item__bottom__right .btn {
+        padding: 25px 28px;
+        border-color: #000;
+    }
+    .services .enroll .center .enroll__top__right {
+        width: calc(55% + 28px);
+        margin-right: -28px;
+    }
+    #fullpage .about-event .btn__enroll {
+        bottom: -27px;
+    }
+    .about-event__title {
+        font-size: 31px;
+        margin-bottom: 22px;
+    }
+    .scrollable--72vh-90 {
+        height: calc(100vh - 242px);
+    }
+    .about-event__desc p {
+        margin-bottom: 0.8em;
+        line-height: 1.4;
+    }
+    .about-event__rows--center {
+        max-height: 33vh;
+        height: 32vh;
+    }
+    .about-event__table tr {
+        display: flex;
+        justify-content: space-between;
+    }
+    .about-event__table .about-event__t-name {
+        flex-basis: 50%;
+        padding-right: 10px;
+    }
+    .about-event__table .about-event__t-cost {
+        flex-basis: 20%;
+        padding-right: 10px;
+        font-size: 23px;
+    }
+    .services .services__main__active .services__main__left {
+        padding-top: 16px;
+    }
+    .persons-block__title {
+        margin-bottom: 22px;
+    }
+    .person__title {
+        margin-bottom: 17px;
+    }
+    .person__sub-title {
+        font-size: 20px;
+    }
+    .services .enroll .center .enroll__bottom__left .enroll__price__circle p:first-child {
+        font-size: 25px;
+    }
+    .services .enroll .center .enroll__bottom__left .enroll__price__circle p {
+        font-size: 15px;
+    }
+    .services .enroll .enroll__bottom__left .text--price {
+        font-size: 27px !important;
+    }
+    .slider-box__right-cont {
+        width: 56%;
+    }
+    .special .t {
+        right: 12% !important;
+    }
+    .special .b {
+        left: 14% !important;
+    }
+    .special .s {
+        display: none;
+    }
+    .review__photo, .reviews .reviews__second .center__top__reviews .center__reviews__block {
+        width: 31%;
+    }
+    .review__photo:nth-child(4), .review__photo:nth-child(5) {
+        display: none;
+    }
+    .center__reviews__block:nth-child(4), .center__reviews__block:nth-child(5) {
+        display: none;
+    }
+    .about .t {
+        display: none;
+    }
+}
 @media screen and (max-width: 1350px) {
     #fullpage .img--card {
         height: 142px;
@@ -60,6 +277,35 @@
         right: -30%;
     }
 }
+@media screen and (max-width: 1200px) {
+    .main.third .data__item__price {
+        width: auto;
+        flex-basis: 33%;
+    }
+    .main.third .data__item__time {
+        width: auto;
+        flex-basis: 30%;
+        text-align: center;
+    }
+    .main.third .data__item__date {
+        flex-basis: 7%;
+    }
+}
+@media screen and (max-width: 1170px) {
+    /*горячие часы начало*/
+    .main.third .center__left__service .service__data ul li {
+        padding: 0 15px 0 9px;
+    }
+    .hot-hours-ext .main .center .hot-hours .data__item__btn {
+        flex-basis: 26%;
+    }
+    .hot-hours-ext .main .center__info h3 {
+        padding-left: 0% !important;
+        top: 0px !important;
+        font-size: 60px !important;
+    }
+    /*горячие часы конец*/
+}
 @media screen and (max-width: 1160px) {
     .special__big-price {
         font-size: 40px;
@@ -68,6 +314,16 @@
     .special #fullpage .btn--small-more {
         width: 173px;
     }
+}
+@media screen and (max-width: 1138px) {
+    /*горячие часы начало*/
+    .third .service__data .service__data__item .price__info p.prive__info--stock {
+        font-size: 17px !important;
+    }
+    .main.third .center__left__service .service__data__item .text--data, .big-orange {
+        font-size: 74px !important;
+    }
+    /*горячие часы конец*/
 }
 @media screen and (max-width: 1080px) {
     .desktop {
@@ -454,6 +710,11 @@
         margin-bottom: 14px;
         text-align: left;
     }
+    /*page-id-792  страница спецпредложений начало*/
+    .page-id-792 .special__big-text {
+        margin-top: 23px;
+    }
+    /*page-id-792  страница спецпредложений конец*/
     .special__cont {
         display: block;
         font-family: Cambria, Times New Roman, Times, serif;

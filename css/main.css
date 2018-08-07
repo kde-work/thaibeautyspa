@@ -2111,7 +2111,7 @@
     display:flex;
     -webkit-box-pack:justify;
     -ms-flex-pack:justify;
-    justify-content:space-between
+    justify-content: space-between;
 }
 .services .enroll .center{
     padding:50px;
@@ -2192,7 +2192,7 @@
     border-bottom:4px solid #000
 }
 .services .enroll .center .enroll__top__right{
-    width: 61%;
+    width: calc(55% + 40px);
     margin-right: -48px;
 }
 .services .enroll .center .enroll__top__right img{
@@ -2211,15 +2211,18 @@
 }
 .services .enroll__bottom__price {
     margin-right: 12px;
+    text-align: center;
+    width: 33%;
 }
 .services .enroll .center .enroll__bottom__left{
-    margin-right: 3.2%;
-    width:40%;
+    margin-right: 30px;
+    width:calc(45% - 30px);
     -webkit-align-self:center;
     -ms-flex-item-align:center;
     align-self:center;
     -ms-flex-pack:justify;
-    text-align:center
+    text-align:center;
+    justify-content: space-between;
 }
 .enroll__bottom__left > .align--left {
     padding-right: 24px;
@@ -2227,14 +2230,19 @@
 .services .enroll .center .enroll__bottom__left .text--price{
     font-size:40px;
     font-weight:700;
-    font-family:Times New Roman,Times,serif
+    font-family:Times New Roman,Times,serif;
+    position: relative;
+    display: inline-block;
+    width: auto;
 }
 .services .enroll .center .enroll__bottom__left .text--price sup{
     margin-left:-6px;
     font-size:16px;
     font-weight:400;
     font-family:Roboto Condensed,sans-serif;
-    color:#b39658
+    color:#b39658;
+    position: absolute;
+    right: -30px;
 }
 .services .enroll .center .enroll__bottom__left .enroll__price__circle{
     padding:4% 0;
@@ -2251,7 +2259,8 @@
     justify-content:space-around;
     text-align:center;
     border-radius:50%;
-    border:1px solid #000
+    border:1px solid #000;
+    margin: auto;
 }
 .services .enroll .center .enroll__bottom__left .enroll__price__circle p:first-child{
     font-size:40px;
@@ -2273,7 +2282,7 @@
     border-bottom:2px solid #000
 }
 .services .enroll .center .enroll__bottom__right{
-    width:48%
+    width:55%
 }
 .services .enroll .center .enroll__bottom__right p{
     padding-bottom:20px;
@@ -3803,9 +3812,6 @@ body:not(.linch) .right .main__social a:last-child:hover {
         padding-bottom:10px!important;
         line-height:1!important
     }
-    .about:not(.education) .main.second .center .container__right .img__tmp,.about:not(.education) .main.second .center .container__right .slider .container__img{
-        top:-3%!important
-    }
     .linch .main .center .slider .services__items__block .services__item__right__text h3{
         font-size:28px
     }
@@ -3827,9 +3833,6 @@ body:not(.linch) .right .main__social a:last-child:hover {
     .main__menu__block .btn:hover:after{
         -webkit-transform:translateY(-2%)!important;
         transform:translateY(-2%)!important
-    }
-    .fourth .container,.second:not(.info) .container{
-        height:68vh!important
     }
     .fourth .container__left h2:not(.schedule__title),.second:not(.info) .container__left h2:not(.schedule__title){
         font-size:50px!important
@@ -3951,6 +3954,14 @@ body:not(.linch) .right .main__social a:last-child:hover {
         padding:18px 0!important;
         font-size:18px!important
     }
+    .services .enroll .center .btn__back:before,.services .enroll .center .btn__enroll:before{
+        padding: 22px 2px !important;
+        top: -5px;
+    }
+    .services .enroll .center .btn__back:after,.services .enroll .center .btn__enroll:after{
+        padding: 22px 1px !important;
+        top: -8px;
+    }
     .contacts .main .center__right .text--bold, .contacts .main .center__right .text--bold a {
         font-size:32px
     }
@@ -4027,9 +4038,6 @@ body:not(.linch) .right .main__social a:last-child:hover {
     .main.third .center__right p{
         font-size:16px;
         line-height:1.5
-    }
-    .gallery .center .container__top{
-        padding-right:0
     }
     .gallery .center .container__top .gallery__btn{
         font-size:20px
@@ -4114,7 +4122,7 @@ body:not(.linch) .right .main__social a:last-child:hover {
         font-size:28px!important
     }
     .gallery .center .container__top{
-        padding-right:0
+        padding-right:15px;
     }
     .gallery .center .container__top h2{
         font-size:30px

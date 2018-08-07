@@ -19,14 +19,16 @@ $j = 1;
     <div class=" main main-masters fourth slide services__content--desc">
         <div class="center">
 			<?php echo $Mammen->get_field( 'Произвольный HTML' )?>
-            <div class="container border-box border-box--with-bottom">
-                <div class="container__wrap"><img src="<?php echo get_template_directory_uri(); ?>/img/border-masters.png" alt=""></div>
+            <div class="container border-cont">
                 <div class="container__left">
-                    <div class="container__title ">
-						<?php $title = $Mammen->get_field( 'Заголовок' )?>
-                        <h2 class="mobile"><?php echo str_replace(' ', '&nbsp;', $title); ?></h2>
-                        <h2 class="desktop f--36"><?php echo $title; ?></h2>
+                </div>
+                <div class="border-cont__title border-cont__title--left-cont">
+                    <div class="border-line border-line--desc border-line--30"></div>
+                    <div class="container__title">
+	                    <?php $title = $Mammen->get_field( 'Заголовок' )?>
+                        <h2 class="schedule__title h2--one-line"><?php echo str_replace(' ', '&nbsp;', $title); ?></h2>
                     </div>
+                    <div class="border-line border-line--desc"></div>
                 </div>
                 <div class="container__right">
                     <ul class="slider">

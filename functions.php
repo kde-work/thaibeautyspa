@@ -66,6 +66,9 @@ function ajaxurl_scripts () {
 	wp_register_style( 'g-font', 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700' );
 	wp_enqueue_style( 'g-font' );
 
+	wp_register_style( 'Myriad-Pro',  get_template_directory_uri() . '/fonts/MyriadPro/stylesheet.css' );
+	wp_enqueue_style( 'Myriad-Pro' );
+
     wp_register_style( 'fullpage',  get_template_directory_uri() . '/css/jquery.fullpage.min.css' );
     wp_enqueue_style( 'fullpage' );
 
