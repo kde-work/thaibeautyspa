@@ -202,11 +202,14 @@
     text-align: right;
 }
 .politika {
+    cursor: pointer;
+    color: #000;
+    font-family: SitkaSmall, serif;
+    font-size: 15.2px;
     text-align: center;
     text-decoration: underline;
     width: 49%;
 }
-
 .masters-ext__cont {
     max-height: 200px;
     overflow: auto;

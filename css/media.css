@@ -1376,6 +1376,15 @@
         margin: auto;
         width: 95%;
     }
+    .border-cont > .container__left {
+        display: none;
+    }
+    .border-cont {
+        border: none;
+    }
+    .hot-hours__scrollable {
+        height: auto;
+    }
 }
 @media screen and (max-width: 655px) {
     #fullpage .main__logo{

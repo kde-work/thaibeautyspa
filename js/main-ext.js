@@ -405,21 +405,21 @@
     $(function () {
         setTimeout(function () {
             var $slider = $('.slick--slider'),
-                $body = $('body');
+                autoplay = false;
 
-            // if ($body.width() < 1080) {
+            if ($slider.hasClass('slick--autoplay')) {
+                autoplay = true;
+            }
             $slider.slick({
                 "dots": true,
                 "infinite": true,
                 "prevArrow": '<div class="slider__prev"></div>',
                 "nextArrow": '<div class="slider__next"></div>',
-                // "slide": '.text-slide',
                 "pauseOnHover": false,
                 "slidesToShow": 1,
                 "slidesToScroll": 1,
-                "autoplay": false
+                "autoplay": autoplay
             });
-            // }
         }, 1200);
     });
     $(window).resize(function() {

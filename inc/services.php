@@ -72,6 +72,24 @@ function tbs_text_slider ($text, $count_words = 57, $class = 'slick--slider') {
     </div>
 	<?php
 }
+function tbs_modal_cont ($name) {
+    $id = tbs_get_id_by_url($name)[0]['ID'];
+	?>
+    <div class="cta__cont cta__cont--<?php echo $name; ?>">
+        <h3><?php echo get_the_title($id); ?></h3>
+        <div class="form__sub-title"><?php echo get_field('произвольный_html', $id); ?></div>
+        <div class="form__modal-text scrollable">
+			<?php
+			$post = get_post($id);
+			if(current_user_can('edit_posts')) {
+				echo '<a href="'. get_edit_post_link($id) .'">Изменить</a>';
+			}
+			echo tbs_auto_paragraph(do_shortcode($post->post_content));
+			?>
+        </div>
+    </div>
+	<?php
+}
 function tbs_video_style_js_init ($selector = '#youtubelist') {
 	?>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -158,6 +176,19 @@ function tbs_get_best_services () {
 		           AND postmeta.`meta_key` = 'cdiservices-meta-best'
 		              AND postmeta.`meta_value` = 'yes'
 		     ORDER BY posts.`post_date` DESC
+	        ",
+		ARRAY_A
+	);
+}
+function tbs_get_id_by_url ($url) {
+	global $wpdb;
+
+	$url = htmlspecialchars($url);
+	return $wpdb->get_results(
+		"SELECT * FROM `$wpdb->posts` as posts
+			 WHERE 
+		        posts.`post_status` = 'publish'
+		           AND posts.`post_name` = '$url'
 	        ",
 		ARRAY_A
 	);

@@ -40,7 +40,7 @@ global $Mammen;
 			</div>
 			<div class="center__right center__right--mp">
                 <div class="center__info center__info--1">
-                    <div class="slick--slider">
+                    <div class="slick--slider slick--autoplay">
                         <div class="slider-cont">
                             <h3><?php echo $Mammen->get_field( 'Заголовок 1' )?></h3>
                             <p class="text--italic"><?php echo $Mammen->get_field( 'Подзаголовок 1' )?></p>

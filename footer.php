@@ -39,7 +39,7 @@
                     <label for="cta__min--3" class="cta__time-label"><span>120&nbsp;мин</span></label>
                 </div>
             </div>
-            <div class="services__form__gender cta__gender">
+            <!--<div class="services__form__gender cta__gender">
                 <div class="services__gender__circle">
                     <input type="radio" name="cta__gender" class="cta__gender-input" id="cta__gender--1" value="Муж" checked>
                     <label for="cta__gender--1" class="cta__gender-label"><span>Муж</span></label>
@@ -48,13 +48,13 @@
                     <input type="radio" name="cta__gender" class="cta__gender-input" id="cta__gender--2" value="Жен" checked>
                     <label for="cta__gender--2" class="cta__gender-label"><span>Жен</span></label>
                 </div>
-            </div>
+            </div>-->
             <div class="modal-copy">
                 <div class="modal-copy__check modal-copy__check--active"></div>
                 <div class="modal-copy__cont">
                     <div class="modal-copy__text">
                         Нажимая на кнопку, вы даёте согласие на обработку персональных данных и соглашаетесь с
-                    <a href="/police/" target="_blank">политикой конфиденциальности</a></div>
+                    <a onclick="popup_none_cta({'id':'private'});" href="#">политикой конфиденциальности</a></div>
                 </div>
             </div>
             <div class="wrap">
@@ -97,28 +97,19 @@
     </div>
 </div>
 
-<div id="modal_form" class="cta" style="display: none;"><!-- Само окно -->
-    <span id="modal_close">X</span> <!-- Кнопка закрыть -->
-    <div class="cta__desc font--20">Узнайте подробности по телефону. Мы вам перезвоним ;)</div>
-    <form action="<?php echo get_template_directory_uri(); ?>/email/email_to_admin.php" class="cta__form" method="post">
-        <span class="cta__for cta__for--1">Ваше имя *</span>
-        <input type="text" class="cta__input--name" name="name" placeholder="Ваше имя *">
-        <span class="cta__for cta__for--2">Телефон *</span>
-        <input type="tel" class="cta__input--number" name="number" placeholder="Телефон *">
-        <input type="hidden" class="cta__input--hidden" name="form" value="Записаться на занятия из шапки">
-        <button class="cta__input--submit btn--coral font--19" type="submit">Записаться на занятия</button>
-    </form>
-
-    <div class="cta__loading">
-        <span class="cta__loading__info">Идет отправка...</span>
-        <div class="loader8"></div>
+<div class="services__popup none-cta">
+    <div class="cta__block cta__block--wide">
+        <div class="services__popup__form cta__form cta__form--copy">
+            <?php
+            tbs_modal_cont('pok-prot');
+            tbs_modal_cont('private');
+            ?>
+        </div>
+        <div class="cta__plus cta__plus--top"></div>
+        <div class="cta__plus cta__plus--bottom"></div>
     </div>
-
-    <div class="cta__success">
-        <span class="cta__success__info"><b>Заявка успешно отправлена!</b><br>В ближайшее время Вам позвонят</span>
-    </div>
-
 </div>
+
 <div id="overlay"></div><!-- Подложка -->
 
 <?php wp_footer(); ?>

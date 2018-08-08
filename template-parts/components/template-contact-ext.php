@@ -107,7 +107,7 @@ if ( count( $cities ) ) {
         </div>
         <div class="contacts-footer">
             <div class="contacts-footer__item copyright">© ThaiBeautySpa 2012-2018. Все права защищены.</div>
-            <div class="contacts-footer__item politika"><a href="#">Политика конфиденциальности</a></div>
+            <div class="contacts-footer__item politika"><div onclick="popup_none_cta({'id':'private'});">Политика конфиденциальности</div></div>
         </div>
 	</div>
 </div>

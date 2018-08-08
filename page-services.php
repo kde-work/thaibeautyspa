@@ -230,7 +230,10 @@ $services_category = tbs_list_of_cat('cdiservices-category');
                                                     </div>
                                                 </div>
                                                 <div class="enroll__bottom">
-                                                    <div class="enroll__bottom__left">
+                                                    <?php
+                                                    $count_p = ((bool)$time1) + ((bool)$time2) + ((bool)$time3);
+                                                    ?>
+                                                    <div class="enroll__bottom__left enroll__bottom__left--<?php echo $count_p; ?>">
                                                         <?php if ($time1 AND $cost1) : ?>
                                                         <div class="enroll__bottom__price">
                                                             <div class="enroll__price__circle">
@@ -303,7 +306,7 @@ $services_category = tbs_list_of_cat('cdiservices-category');
                                     <div class="choice__text">Для<br>пар</div>
                                 </div>
                             </div>
-                            <div class="under-slide__right"><a href="#">Показания и<br>противопоказания</a></div>
+                            <div class="under-slide__right"><a href="#" onclick="popup_none_cta({'id':'pok-prot'});">Показания и<br>противопоказания</a></div>
                         </div>
                     </div>
                 </div>
