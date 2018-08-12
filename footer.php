@@ -110,6 +110,15 @@
     </div>
 </div>
 
+<div class="services__popup img-cta">
+    <div class="cta__block cta__block--wide">
+        <div class="cta__form img-cta__cont">
+        </div>
+        <div class="cta__plus cta__plus--top"></div>
+        <div class="cta__plus cta__plus--bottom"></div>
+    </div>
+</div>
+
 <div id="overlay"></div><!-- Подложка -->
 
 <?php wp_footer(); ?>

@@ -174,6 +174,34 @@
     }
     window.popup_none_cta = popup_none_cta;
 
+    // Модальное окно с картинкой
+    function popup_img_cta(d, _this) {
+        var $cta = $('.img-cta'),
+            $cta__block_all = $('.cta__block'),
+            $cta__block = $('.cta__block', $cta),
+            $cta__cont = $('.img-cta__cont', $cta);
+
+        $cta.css({
+            display: "flex"
+        });
+
+        $cta__block_all.removeClass('cta__block--active');
+        $cta__block.addClass('cta__block--active');
+
+        if (d.img !== void 0 && d.img) {
+            $cta__cont.html('<img src="'+d.img+'" class="img-cta__img">');
+        }
+
+        modal_pluses();
+        $('.img-cta__img').on('load', function () {
+            modal_pluses();
+        });
+        setTimeout(function () {
+            modal_pluses();
+        }, 400);
+    }
+    window.popup_img_cta = popup_img_cta;
+
     // Высота скролла в модальном окне с текстом
     function thai_cont_modal_height(h_offset) {
         var $par = $('.cta__cont--active'),

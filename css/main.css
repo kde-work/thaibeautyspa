@@ -1786,7 +1786,9 @@
     display:-ms-flexbox;
     display:flex;
     -ms-flex-pack:distribute;
-    justify-content:space-around
+    justify-content: space-around;
+    height: 86px;
+    bottom: -54px;
 }
 .services__popup__form .services__form__time .services__time__line{
     position:absolute;

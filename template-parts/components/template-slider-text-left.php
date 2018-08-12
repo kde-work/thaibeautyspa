@@ -39,7 +39,7 @@ $j = 1;
 							foreach ( $slides as $slide ) {
 								?>
 								<li class="scroll-box__slide">
-                                    <div class="container__img container__img--desc" style="background-image: url('<?php echo $slide->get_img( 'Картинка Большая', 'large' )[0]['src']; ?>');"></div>
+                                    <div class="container__img container__img--desc container__img--not-js-height" style="background-image: url('<?php echo $slide->get_img( 'Картинка Большая', 'large' )[0]['src']; ?>');"></div>
                                     <div class="scroll-box__cont">
                                         <div class="scrollable scrollable--100-60">
                                             <h3 class="slider-up"><?php echo $slide->get_field( 'Заголовок слайда' ); ?></h3>

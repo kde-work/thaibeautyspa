@@ -1205,6 +1205,10 @@
     #fullpage .header-btn .btn:hover {
         color: #000;
     }
+    .services #fullpage .enroll .center .btn {
+        margin-top: 1em;
+        position: relative;
+    }
     .header-phones .header-phone {
         font-size: 24px;
     }

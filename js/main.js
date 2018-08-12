@@ -345,7 +345,14 @@ function mySlider(sliderBlock, style) {
 
                 if (activeSlide[0] === void 0 || !activeSlide[0].selector) {
                     activeSlide = container.find('.slider').first().children('.blockSlideDown').first();
+                    if (!activeSlide.length) {
+                        activeSlide = container.find('.slider').first().children('.blockSlideUp').first();
+                    }
                 }
+
+                // console.log(direction);
+                $('.slider > li', container).removeClass('blockSlideUp').removeClass('blockSlideUpHide').removeClass('blockSlideDown').removeClass('blockSlideDownHide');
+                // $('.slider > li', container).addClass();
 
                 activeSlide.removeClass('blockSlideUp');
                 activeSlide.removeClass('blockSlideUpHide');

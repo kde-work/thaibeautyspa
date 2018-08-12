@@ -147,6 +147,17 @@ $cost3              = get_post_meta( $id, 'cdiservices-meta-text-cost-3', true )
                                                 <div class="enroll__bottom__right">
                                                     <p><?php echo htmlspecialchars_decode($main_text); ?></p>
                                                     <?php echo htmlspecialchars_decode($ext_text); ?>
+                                                </div><?php
+	                                            $class_name = 'zapisatcya';
+	                                            $btn = 'Записаться';
+	                                            ?>
+                                                <style type="text/css">
+                                                    #fullpage .<?php echo $class_name; ?>::after, #fullpage .<?php echo $class_name; ?>::before {
+                                                        content: '<? echo $btn; ?>' !important;
+                                                    }
+                                                </style>
+                                                <div class="best-service-m__center">
+                                                    <button class="btn btn--small-more best-service-m__btn <?php echo $class_name; ?>" onclick="popup_c({'cat':'услуги', 'title':'Заказ услуги', 'email': 1, 'time': 1, 'gender': 1, 'description': 'Услуга: <?php echo $title; ?>'}, this);">ЗАПИСАТЬСЯ</button>
                                                 </div>
                                             </div>
                                         </div>

@@ -120,7 +120,7 @@ global $Mammen;
                                              style="background-image: url('<?php echo $image_url; ?>');">
                                         </div>
                                     </div>
-                                    <div class="best-service-m__title"><?php echo $title; ?></div>
+                                    <div class="best-service-m__title"><?php echo str_replace('&nbsp;', ' ', $title); ?></div>
                                     <p class="best-service-m__sub-title text--italic slider-up"><?php echo $short_text; ?></p>
                                     <div class="best-service-m__center">
                                         <a href="<?php echo get_the_permalink($post['ID']); ?>" class="btn btn--small-more best-service-m__btn">Подробнее</a>

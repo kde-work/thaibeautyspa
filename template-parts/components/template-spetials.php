@@ -35,7 +35,7 @@ global $Mammen;
                                         </div>
                                         <div class="best-service-m__center">
                                             <div class="best-service-m__img special__img"
-                                                 style="background-image: url('<?php echo $tab->get_img( 'Картинка', 'large' )[0]['src']; ?>');">
+                                                 style="background-image: url('<?php echo $tab->get_img( 'Картинка прямоугольная мобильная', 'large' )[0]['src']; ?>');">
                                             </div>
                                         </div>
                                         <div class="special__big-text"><?php echo $tab->get_field('Крупный текст под названием'); ?></div>
@@ -92,7 +92,7 @@ global $Mammen;
                                             }
                                         </style>
                                         <div class="best-service-m__center">
-                                            <div class="btn btn--small-more best-service-m__btn <?php echo $class_name; ?>" onclick="popup_c({'cat':'Абонемент', 'title':'<?php echo $btn; ?>', 'subtitle':'<?php echo str_replace(array('<br>', '<br />'), ' ', $slide->get_field('Заголовок абонемента')); ?>', 'email': 1, 'time': 0, 'gender': 0, 'modal_text': '<?php echo str_replace(array('<br>', '<br />'), ' ', $slide->get_field('Описание абонемента')); ?>', 'description': 'Абонемент: <?php echo str_replace(array('<br>', '<br />'), ' ', $slide->get_field('Заголовок абонемента')); ?>. /<?php echo str_replace(array('<br>', '<br />'), ' ', $slide->get_field( 'Описание абонемента')); ?>/', 'template': 'wide'}, this);"><? echo $btn; ?></div>
+                                            <div class="btn btn--small-more best-service-m__btn <?php echo $class_name; ?>" onclick="popup_c({'cat':'Абонемент', 'title':'<?php echo $btn; ?>', 'subtitle':'<?php echo str_replace(array('<br>', '<br />'), ' ', $slide->get_field('Заголовок абонемента')); ?>', 'email': 1, 'time': 0, 'gender': 0, 'modal_text': '<?php echo str_replace(array('<br>', '<br />'), ' ', strip_tags($slide->get_field('Описание абонемента'))); ?>', 'description': 'Абонемент: <?php echo str_replace(array('<br>', '<br />'), ' ', strip_tags($slide->get_field('Заголовок абонемента'))); ?>. /<?php echo str_replace(array('<br>', '<br />'), ' ', strip_tags($slide->get_field( 'Описание абонемента'))); ?>/', 'template': 'wide'}, this);"><? echo $btn; ?></div>
                                         </div>
                                     </div>
 									<?php
@@ -161,7 +161,7 @@ global $Mammen;
 																<?php echo $tab->get_field('Описание справа картинки'); ?>
                                                             </div>
 															<?php
-															if ($tab->get_field('Использовать Окно Подробнее')) :
+															if ($tab->get_field('Использовать Окно Подробнее') OR false) :
 																?>
                                                                 <div class="btn btn--small-more cont-with-more__btn" data-id="<?php echo $j; ?>">Подробнее</div>
 															<?php else : ?>
@@ -194,10 +194,11 @@ global $Mammen;
 											$dotes .= ob_get_contents();
 											ob_end_clean();
 
+											/*if ($tab->get_field('Использовать Окно Подробнее') OR false) :
 											// Формирование "Подробнее"
 											ob_start();
 											?>
-                                            <div id="<?php echo $j; ?>" class="more-box__item more-box__item--<?php echo $j; ?>">
+                                            <div id="i-<?php echo $j; ?>" class="more-box__item more-box__item--<?php echo $j; ?>">
                                                 <div class="main enroll">
                                                     <div class="center more-box__center">
                                                         <div class="container__wrap"><img src="<?php echo get_template_directory_uri(); ?>/img/border-8.png" alt=""></div>
@@ -244,6 +245,7 @@ global $Mammen;
 											<?php
 											$more_html .= ob_get_contents();
 											ob_end_clean(); // втихую отбрасывает содержимое буфера
+                                            endif;*/
 
 											$j++;
 										}
@@ -272,7 +274,7 @@ global $Mammen;
 					<div class="center">
 						<div class="container__wrap"><img src="<?php echo get_template_directory_uri(); ?>/img/border-6.png" alt=""></div>
 						<ul class="slider">
-							<li>
+							<li class="blockSlideDown" style="display: flex;">
 								<?php
 								$slides = $Mammen->get_fields( 'Слайд' );
 								if ( count( $slides ) ) {
@@ -280,7 +282,7 @@ global $Mammen;
 									foreach ( $slides as $slide ) {
 										if ( ( $y % 3 ) == 0 AND $y ) {
 											echo '</li>';
-											echo '<li>';
+											echo '<li style="display: none;">';
 										}
 										++ $y;
 										++ $p;
@@ -308,7 +310,7 @@ global $Mammen;
                                                                 top: 3px;
                                                             }
                                                         </style>
-                                                        <div class="btn btn--small-more <?php echo $class_name; ?>" onclick="popup_c({'cat':'Абонемент', 'title':'<?php echo $btn; ?>', 'subtitle':'<?php echo str_replace(array('<br>', '<br />'), ' ', $slide->get_field('Заголовок абонемента')); ?>', 'email': 1, 'time': 0, 'gender': 0, 'modal_text': '<?php echo str_replace(array('<br>', '<br />'), ' ', $slide->get_field('Описание абонемента')); ?>', 'description': 'Абонемент: <?php echo str_replace(array('<br>', '<br />'), ' ', $slide->get_field('Заголовок абонемента')); ?>. /<?php echo str_replace(array('<br>', '<br />'), ' ', $slide->get_field( 'Описание абонемента')); ?>/', 'template': 'wide'}, this);"><? echo $btn; ?></div>
+                                                        <div class="btn btn--small-more <?php echo $class_name; ?>" onclick="popup_c({'cat':'Абонемент', 'title':'<?php echo $btn; ?>', 'subtitle':'<?php echo str_replace(array('<br>', '<br />'), ' ', $slide->get_field('Заголовок абонемента')); ?>', 'email': 1, 'time': 0, 'gender': 0, 'modal_text': '<?php echo str_replace(array('<br>', '<br />'), ' ', strip_tags($slide->get_field('Описание абонемента'))); ?>', 'description': 'Абонемент: <?php echo str_replace(array('<br>', '<br />'), ' ', strip_tags($slide->get_field('Заголовок абонемента'))); ?>. /<?php echo str_replace(array('<br>', '<br />'), ' ', strip_tags($slide->get_field( 'Описание абонемента'))); ?>/', 'template': 'wide'}, this);"><? echo $btn; ?></div>
                                                     </div>
 												</div>
 											</div>

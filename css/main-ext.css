@@ -196,7 +196,7 @@
 .cta__block:not(.cta__block--none-style) {
     display: flex;
     height: 100%;
-    max-width: 95%;
+    max-width: 92%;
     position: relative;
     width: 490px;
 }
@@ -382,6 +382,7 @@
 .cta__block--wide {
     width: 730px !important;
 }
+
 .cta__block--wide .services__popup__form .service__inputs input {
     margin: 2.5% 10px 2.5%;
     padding: 17px 35px;
@@ -1451,6 +1452,7 @@ body.services:not(.special) .under-slide {
 }
 .prices__cert {
     border: 1px solid #000;
+    cursor: pointer;
     height: 107px;
     max-width: 116px;
     width: 19%;
@@ -1750,4 +1752,16 @@ body.services:not(.special) .under-slide {
 }
 #fullpage .events .btn--small-more::after {
     padding: 27px 0;
+}
+.img-cta__cont {
+    display: flex;
+    height: auto;
+    margin: auto;
+    width: 100%;
+}
+.img-cta__cont img {
+    height: auto;
+    max-width: 100%;
+    outline: 3px solid #b39658;
+    width: 100%;
 }
