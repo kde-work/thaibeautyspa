@@ -49,17 +49,27 @@
         if (!$contacts_box.length) return;
 
         // $contacts_box.css('height', windowHeight*0.5+'px');
-        $contact__map.css('height', windowHeight*0.5+'px');
-        $phone_block.css('margin-bottom',  windowHeight*0.5*0.06+'px');
-        $time_block.css('margin-bottom',  windowHeight*0.5*0.13+'px');
-        // $time_block.css('margin-bottom',  windowHeight*0.5*0.13+'px');
+        // $contact__map.css('height', windowHeight*0.5+'px');
 
-        if (windowWidth > 1080) {
-            $contact_block.css ('height', windowHeight+'px');
-            // $contacts_box.css('margin-top', windowHeight*0.29+'px');
-        } else {
-            $contacts_box.css('margin-top', '66px');
-        }
+        // if ( windowHeight > 770 ) {
+        //
+        //     $phone_block.css('margin-bottom',  windowHeight*0.5*0.06+'px');
+        //     $time_block.css('margin-bottom',  windowHeight*0.5*0.13+'px');
+        //     // $time_block.css('margin-bottom',  windowHeight*0.5*0.13+'px');
+        // }
+        // else {
+        //     $phone_block.css('margin-bottom',  windowHeight*0.6*0.06+'px');
+        //     $time_block.css('margin-bottom',  windowHeight*0.6*0.13+'px');
+        //     // $time_block.css('margin-bottom',  windowHeight*0.5*0.13+'px');
+        // }
+        //
+        //
+        // if (windowWidth > 1080) {
+        //     $contact_block.css ('height', windowHeight+'px');
+        //     // $contacts_box.css('margin-top', windowHeight*0.29+'px');
+        // } else {
+        //     $contacts_box.css('margin-top', '66px');
+        // }
     }
     // установим обработчик события resize
     $(window).resize(function(){

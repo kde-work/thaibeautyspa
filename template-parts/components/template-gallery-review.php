@@ -87,7 +87,7 @@ tbs_video_style_js_init ();
                 ?>
                 </div>
             </div>
-            <div class="center__bottom">
+            <div class="center__bottom form_padding">
                 <h3>Напишите нам отзыв</h3>
                 <div class="container cta__block cta__block--none-style">
                     <form action="#" class="cta__form reviews__form">

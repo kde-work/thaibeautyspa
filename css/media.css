@@ -80,7 +80,6 @@
     /*контакты начало*/
     .contacts-box {
         display: flex;
-        align-items: flex-end;
     }
     .big-title {
         font-size: 50px;
@@ -260,6 +259,41 @@
     }
     .about .t {
         display: none;
+    }
+}
+@media screen and (max-width: 1400px) {
+    .main.first .plus {
+        bottom: 10%;
+        left: 25.5%;
+    }
+    .contacts-title .big-title {
+        font-size: 44px!important;
+    }
+    .contact-ext .f--30 a {
+        font-size: 25px!important;
+    }
+    .time-block {
+        margin-bottom: 30px;
+    }
+    .phone-block {
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-height: 730px) {
+    .contact-ext .f--24 {
+        font-size: 22px !important;
+    }
+    .contact-ext p.f--30 {
+        line-height: 1em;
+    }
+    .contact-ext .f--30 a {
+        font-size: 22px!important;
+    }
+    .time-block {
+        margin-bottom: 25px;
+    }
+    .phone-block {
+        margin-bottom: 20px;
     }
 }
 @media screen and (max-width: 1350px) {

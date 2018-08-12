@@ -51,6 +51,7 @@
     display: block;
     overflow: hidden;
     position: relative;
+    height: 100%;
 }
 .contact__map iframe {
     border: 0;
@@ -60,7 +61,7 @@
     width: 100%;
 }
 .contacts-box {
-    margin: auto 0;
+    /*margin: auto 0;*/
     position: relative;
 }
 .city-down {
@@ -71,7 +72,7 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 }
 /*.contacts-title {*/
     /*position: absolute;*/
@@ -88,10 +89,10 @@
     margin-bottom: 28px;
 }
 .phone-block {
-    /*margin-bottom: 57px;*/
+    margin-bottom: 17px;
 }
 .time-block {
-    /*margin-bottom:100px;*/
+    margin-bottom: 44px;
 }
 /*Стили для селекта начало*/
 .wrapper-dropdown {
@@ -835,6 +836,9 @@
 }
 /*страница галлерея конец*/
 /*страница отзывы начало*/
+.form_padding {
+    padding-top: 20px;
+}
 @media screen and (max-width: 600px) {
     .reviews ul.youtubewall li {
         width: auto;

@@ -137,8 +137,8 @@
 .main.first .plus{
     position:absolute;
     display:block;
-    bottom:20%;
-    left:19.5%
+    bottom: 5%;
+    left: 25.5%;
 }
 .main.first .plus:after,.main.first .plus:before{
     content:"";
@@ -182,7 +182,7 @@
     color:#b39658
 }
 .main.first .s{
-    right:17.7%;
+    right: 10.7%;
     top:42%;
     font-size:130.8px;
     font-weight:700
@@ -357,6 +357,14 @@
     font-weight:700;
     color:#b39658
 }
+.s--top-right {
+    right: 6%;
+    top: 30%;
+}
+.main.second .center .s {
+    right: 11%;
+    top: 33%;
+}
 .main.fourth .center .t,.main.masters__block .center .t,.main.second .center .t, .left .center .t, .t--bottom-left {
     position:absolute;
     left:20.5%;
@@ -366,6 +374,14 @@
     font-size:78px;
     font-weight:700;
     color:#b39658
+}
+.t--bottom-left {
+    left: 8.5%;
+    bottom: 20%;
+}
+.main.second .center .t {
+    left: 9.5%;
+    bottom: 27%;
 }
 .main.fourth .center .b,.main.masters__block .center .b, .main.second .center .b, .left .center .b, .b--center-big {
     position:absolute;
