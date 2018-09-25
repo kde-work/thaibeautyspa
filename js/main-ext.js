@@ -4,6 +4,68 @@
         return;
     }
 
+    // Карусель кружочков в Лучших программах и Акциях
+    $(function () {
+        thai_unslider__dotes('unslider--lazy-load', $('body'), false);
+    });
+    function thai_unslider__dotes(_class, $par, delay) {
+        if (delay) {
+            setTimeout(function () {
+                thai_unslider__dotes_ext(_class, $par, delay);
+            }, delay);
+        } else {
+            thai_unslider__dotes_ext(_class, $par, delay);
+        }
+    }
+    function thai_unslider__dotes_ext(_class, $par, delay) {
+        var $unslider__dotes = $('.unslider--dotes:not(.'+_class+')', $par);
+
+        if ($unslider__dotes.length && !$unslider__dotes.hasClass(_class)) {
+            $unslider__dotes.slick({
+                dots: false,
+                infinite: true,
+                "prevArrow": '<div class="slider__prev"></div>',
+                "nextArrow": '<div class="slider__next"></div>',
+                slidesToShow: 5,
+                speed: 240,
+                slidesToScroll: 1
+            });
+        }
+    }
+    $(function () {
+        var $body = $('body');
+
+        $body.on('click', '.unslider-arrow--round', function () {
+            var $this = $(this),
+                $under_slide = $this.closest('.under-slide'),
+                $slick_slider = $('.slick-slider', $under_slide),
+                $slider__prev = $('.slider__prev', $under_slide),
+                $slider__next = $('.slider__next', $under_slide),
+                $prev = $('.prev', $under_slide),
+                $next = $('.next', $under_slide);
+
+            if ($slider__prev.length && $this.hasClass('_prev')) {
+                $slick_slider.slick('slickPrev');
+                setTimeout(function () {
+                    $prev.trigger('click');
+                }, 240);
+            }
+            if ($slider__next.length && $this.hasClass('_next')) {
+                $slick_slider.slick('slickNext');
+                setTimeout(function () {
+                    $next.trigger('click');
+                }, 240);
+            }
+
+            if ($slider__prev.length && $this.hasClass('prev')) {
+                $slick_slider.slick('slickPrev');
+            }
+            if ($slider__next.length && $this.hasClass('next')) {
+                $slick_slider.slick('slickNext');
+            }
+        });
+    });
+
     // Мобильная Информация о курсах
     $(function () {
         var $btn = $('.btn--more-mobile, .btn__back--mobile');
@@ -76,48 +138,48 @@
     // Выбор пола на странице Услуг
     function initialGenderChoice ($par) {
         // setTimeout(function () {
-            if (!$par.length) {
-                return;
-            }
-            var target_tab = $('.services__link--active', $par).first().data('target').split(' ')[1],
-                $slider__original = $('.current-choice__original #'+target_tab+' .current-choice__slider', $par),
-                $slider__visible = $('.current-choice__visible > .active .current-choice__slider', $par),
-                $body = $('body'),
-                array_of_types = ['man', 'female', 'couple', 'empty'],
-                additional_class = '';
+        if (!$par.length) {
+            return;
+        }
+        var target_tab = $('.services__link--active', $par).first().data('target').split(' ')[1],
+            $slider__original = $('.current-choice__original #'+target_tab+' .current-choice__slider', $par),
+            $slider__visible = $('.current-choice__visible > .active .current-choice__slider', $par),
+            $body = $('body'),
+            array_of_types = ['man', 'female', 'couple', 'empty'],
+            additional_class = '';
 
-            $slider__visible.html($slider__original.html());
+        $slider__visible.html($slider__original.html());
 
-            if (!$body.hasClass('current-choice--man') && !$body.hasClass('current-choice--female') && !$body.hasClass('current-choice--couple') && !$body.hasClass('current-choice--empty')) {
-                $body.addClass('current-choice--man').addClass('current-choice--female').addClass('current-choice--couple').addClass('current-choice--empty');
-            }
+        if (!$body.hasClass('current-choice--man') && !$body.hasClass('current-choice--female') && !$body.hasClass('current-choice--couple') && !$body.hasClass('current-choice--empty')) {
+            $body.addClass('current-choice--man').addClass('current-choice--female').addClass('current-choice--couple').addClass('current-choice--empty');
+        }
 
-            if ($body.hasClass('current-choice--man') && $body.hasClass('current-choice--female') && $body.hasClass('current-choice--couple') && $body.hasClass('current-choice--empty')) {
-                $('.current-choice__visible > .active .choice__item', $par).removeClass('choice__item--active');
-                array_of_types.forEach(function(item, i, arr) {
+        if ($body.hasClass('current-choice--man') && $body.hasClass('current-choice--female') && $body.hasClass('current-choice--couple') && $body.hasClass('current-choice--empty')) {
+            $('.current-choice__visible > .active .choice__item', $par).removeClass('choice__item--active');
+            array_of_types.forEach(function(item, i, arr) {
+                additional_class += ':not(".services__items__block--'+item+'")';
+            });
+        } else {
+            array_of_types.forEach(function(item, i, arr) {
+                if ($body.hasClass('current-choice--'+item)) {
+                    $('.current-choice__visible > .active .choice__item--'+item, $par).addClass('choice__item--active');
                     additional_class += ':not(".services__items__block--'+item+'")';
-                });
-            } else {
-                array_of_types.forEach(function(item, i, arr) {
-                    if ($body.hasClass('current-choice--'+item)) {
-                        $('.current-choice__visible > .active .choice__item--'+item, $par).addClass('choice__item--active');
-                        additional_class += ':not(".services__items__block--'+item+'")';
-                    }
-                });
-            }
-            $('.current-choice__visible > .active .services__items__block'+additional_class, $par).remove();
-
-            var $services__items__block = $('.current-choice__visible > .active .services__items__block', $par);
-            $services__items__block.each(function(i) {
-                if (i % 3 === 0) {
-                    $services__items__block.slice(i, i+3).wrapAll('<li/>')
                 }
-            }).parent('li').unwrap();
+            });
+        }
+        $('.current-choice__visible > .active .services__items__block'+additional_class, $par).remove();
 
-            var $li = $('li', $slider__visible);
+        var $services__items__block = $('.current-choice__visible > .active .services__items__block', $par);
+        $services__items__block.each(function(i) {
+            if (i % 3 === 0) {
+                $services__items__block.slice(i, i+3).wrapAll('<li/>')
+            }
+        }).parent('li').unwrap();
 
-            $li.hide();
-            $li.first().addClass('blockSlideDown').show();
+        var $li = $('li', $slider__visible);
+
+        $li.hide();
+        $li.first().addClass('blockSlideDown').show();
         // }, 600);
     }
 
@@ -342,6 +404,10 @@
                     }
                 }, 30);
             }
+
+            setTimeout(function () {
+                $('html, body').animate({ scrollTop: $services__content__target.offset().top }, 400);
+            }, 700);
         });
     });
     function sal_open_acc($btn, $btns, $tab, $tabs) {
@@ -385,22 +451,22 @@
     });
 
     $(function () {
-            var $slider = $('.reviews #youtubelist, .reviews .guest_foto, .reviews .guests_reviews'),
-                $body = $('body');
+        var $slider = $('.reviews #youtubelist, .reviews .guest_foto, .reviews .guests_reviews'),
+            $body = $('body');
 
-            if ($body.width() < 600) {
-                $slider.slick({
-                    "dots": true,
-                    "infinite": true,
-                    "prevArrow": '<div class="slider__prev"></div>',
-                    "nextArrow": '<div class="slider__next"></div>',
-                    // "slide": '.text-slide',
-                    "pauseOnHover": false,
-                    "slidesToShow": 1,
-                    "slidesToScroll": 1,
-                    "autoplay": false
-                });
-            }
+        if ($body.width() < 600) {
+            $slider.slick({
+                "dots": true,
+                "infinite": true,
+                "prevArrow": '<div class="slider__prev"></div>',
+                "nextArrow": '<div class="slider__next"></div>',
+                // "slide": '.text-slide',
+                "pauseOnHover": false,
+                "slidesToShow": 1,
+                "slidesToScroll": 1,
+                "autoplay": false
+            });
+        }
     });
     $(function () {
         setTimeout(function () {
@@ -418,7 +484,25 @@
                 "pauseOnHover": false,
                 "slidesToShow": 1,
                 "slidesToScroll": 1,
-                "autoplay": autoplay
+                "autoplay": false
+            });
+        }, 1200);
+        setTimeout(function () {
+            var $slider = $('.slick--sliders'),
+                autoplay = false;
+
+            if ($slider.hasClass('slick--autoplay')) {
+                autoplay = true;
+            }
+            $slider.slick({
+                "dots": true,
+                "infinite": true,
+                "prevArrow": '<div class="slider__prev"></div>',
+                "nextArrow": '<div class="slider__next"></div>',
+                "pauseOnHover": false,
+                "slidesToShow": 1,
+                "slidesToScroll": 1,
+                "autoplay": true
             });
         }, 1200);
     });
@@ -471,7 +555,7 @@
 
         setTimeout(function () {
             var $this = $('.' + elem_class, $par);
-            
+
             $this.removeClass(elem_class);
             $this.addClass('scrollable--enable');
             if ($this.hasClass('scrollable--set-height')) {
@@ -575,12 +659,20 @@
             $dot__item.each(function () {
                 var $this = $(this),
                     this_id = $this.data('id');
-                
+
                 $this.removeClass('dot__item--'+this_id);
                 $this.data('id', i);
                 $this.addClass('dot__item--'+i);
                 i++;
             });
+
+            setTimeout(function () {
+                var $par = $this.closest('.service-slider'),
+                    $scrollable_lazy_load = $('.scrollable--lazy-load', $par);
+
+                thai_unslider__dotes('unslider--qwe', $par, false);
+                $scrollable_lazy_load.mCustomScrollbar();
+            }, 400);
         });
     });
 
@@ -588,5 +680,6 @@
     window.scrollable_height = scrollable_height;
     window.initialCustomScroll = initialCustomScroll;
     window.initialGenderChoice = initialGenderChoice;
+    window.thai_unslider__dotes = thai_unslider__dotes;
 }($ || window.jQuery));
 // end of file

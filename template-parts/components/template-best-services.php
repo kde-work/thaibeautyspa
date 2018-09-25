@@ -64,6 +64,7 @@ global $Mammen;
 							$j = 0;
 							foreach ( $posts as $post ) {
 								$title              = get_the_title( $post['ID'] );
+								$title_short        = get_post_meta( $post['ID'], 'cdiservices-short-title', true );
 								$image_id           = get_post_meta( $post['ID'], 'cdiservices-meta-image-best', true );
 								$image_url          = wp_get_attachment_image_src( $image_id, 'large' )[0];
 								$image_oil_id       = get_post_meta( $post['ID'], 'cdiservices-meta-image-oil', true );
@@ -105,7 +106,7 @@ global $Mammen;
                                                 echo ($type_mf) ? "dot__item--couple " : '';
                                                 ?>" data-id="<?php echo $j; ?>">
                                     <div class="dot-item__img"><img src="<?php echo $image_url; ?>"></div>
-                                    <div class="dot-item__title"><?php echo $title; ?></div>
+                                    <div class="dot-item__title"><?php echo ( $title_short ) ? $title_short : $title; ?></div>
                                 </div>
 								<?php
 								$dotes .= ob_get_contents();
@@ -138,10 +139,12 @@ global $Mammen;
 				</div>
                 <div class="under-slide">
                     <div class="unslider--100">
-                        <a class="unslider-arrow--round prev"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png" alt="" /></a>
-                        <a class="unslider-arrow--round next"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png" alt="" /></a>
+                        <a class="prev" style="display: none;"></a>
+                        <a class="next" style="display: none;"></a>
+                        <a class="unslider-arrow--round _prev"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png" alt="" /></a>
+                        <a class="unslider-arrow--round _next"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png" alt="" /></a>
                     </div>
-                    <div class="unslider--100 unslider--dotes">
+                    <div class="unslider--100 unslider--dotes unslider--lazy-load">
 		                <?php echo $dotes; ?>
                     </div>
                 </div>

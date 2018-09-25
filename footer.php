@@ -50,7 +50,7 @@
                 </div>
             </div>-->
             <div class="modal-copy">
-                <div class="modal-copy__check modal-copy__check--active"></div>
+                <div class="modal-copy__check"></div>
                 <div class="modal-copy__cont">
                     <div class="modal-copy__text">
                         Нажимая на кнопку, вы даёте согласие на обработку персональных данных и соглашаетесь с
@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="wrap">
-                <button type="submit" class="btn">Отправить</button>
+                <button type="submit" class="btn" disabled>Отправить</button>
             </div>
 
             <div class="cta__status cta__status--loading">

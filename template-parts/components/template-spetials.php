@@ -256,10 +256,12 @@ global $Mammen;
                             </div>
                             <div class="under-slide">
                                 <div class="unslider--100">
-                                    <a class="unslider-arrow--round prev"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png" alt="" /></a>
-                                    <a class="unslider-arrow--round next"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png" alt="" /></a>
+                                    <a class="prev" style="display: none;"></a>
+                                    <a class="next" style="display: none;"></a>
+                                    <a class="unslider-arrow--round _prev"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png" alt="" /></a>
+                                    <a class="unslider-arrow--round _next"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png" alt="" /></a>
                                 </div>
-                                <div class="unslider--100 unslider--dotes">
+                                <div class="unslider--100 unslider--dotes unslider--lazy-load">
 									<?php echo $dotes; ?>
                                 </div>
                                 <div class="under-slide__line"></div>

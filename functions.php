@@ -31,7 +31,7 @@ function ajaxurl_scripts () {
                        array(
                            'url' => admin_url('admin-ajax.php')
                        ));
-    $v = '0.020';
+    $v = '0.022';
 
     wp_enqueue_script("jquery");
     

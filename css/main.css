@@ -1995,7 +1995,7 @@
 .services .services__items .center{
     position:relative;
     top:8.8vh;
-    height:67vh
+    height:75vh /*fix1 67h*/
 }
 .services .services__items .center ul:not(.cont-with-more) {
     display:block;

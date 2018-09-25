@@ -72,12 +72,21 @@ global $Mammen;
                                         <li>
                                             <?php
                                             $posts = tbs_list_post_by_post_type( 'hothours', $place['term_id'] );
+                                            $c = 0;
                                             foreach ( $posts as $post ) {
                                                 $title     = get_the_title( $post['ID'] );
                                                 $date      = strtotime( get_post_meta( $post['ID'], 'demo-meta-datepicker', true ) );
                                                 $time      = get_post_meta( $post['ID'], 'demo-meta-time', true );
                                                 $action_descr = get_post_meta( $post['ID'], 'cdihothours-meta-text-old-price', true );
     //											$new_price = get_post_meta( $post['ID'], 'cdihothours-meta-text-new-price', true );
+
+                                                $time_tmp = explode(":", $time);
+                                                $post_time = $time_tmp[0]*60*60 + $time_tmp[1]*60 + $date;
+	                                            date_default_timezone_set( 'Europe/Moscow' );
+//                                                print_r("{$time_tmp[0]} $post_time ". time());
+	                                            if ( time() > $post_time ) {
+	                                                continue;
+                                                }
                                                 ?>
                                                 <div class="desktop">
                                                     <div class="service__data__item">
@@ -145,6 +154,10 @@ global $Mammen;
                                                     </div>
                                                 </div>
                                                 <?php
+	                                            $c++;
+                                            }
+                                            if ( !$c ) {
+                                                echo "Горячих часов нет";
                                             }
                                             ?>
                                         </li>

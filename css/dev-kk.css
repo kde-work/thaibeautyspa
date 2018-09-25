@@ -162,6 +162,7 @@
 }
 /* активное состояние */
 .wrapper-dropdown-1.active .dropdown {
+    z-index: 10;
     opacity: 1;
     pointer-events: auto;
 }
@@ -915,7 +916,7 @@
         margin-bottom: 44px;
         font-size: 21px;
         font-style: italic;
-        height: 57vh;
+        height: 34vh;
     }
     .reviews .reviews__second .main .center .center__bottom .reviews__form .reviews__form__input {
         font-size: 21px;

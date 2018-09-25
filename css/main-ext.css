@@ -1,3 +1,4 @@
+
 .fp-enabled #second {
     overflow-y: hidden;
 }
@@ -651,13 +652,13 @@
     height: 32px;
     margin: auto;
 }
-.unslider-arrow--round.prev {
+.unslider-arrow--round.prev, .unslider-arrow--round._prev {
     left: 20px;
 }
-.unslider-arrow--round.next {
+.unslider-arrow--round.next, .unslider-arrow--round._next {
     right: 20px;
 }
-.unslider-arrow--round.next img {
+.unslider-arrow--round.next img, .unslider-arrow--round._next img {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
 }
@@ -668,14 +669,14 @@
     width: 100%;
     z-index: 10;
 }
-.special .unslider--dotes {
-    bottom: -73px;
-}
+/*.special .unslider--dotes {*/
+    /*bottom: -73px;*/
+/*}*/
 .main.second .center .container .unslider--100 {
     bottom: 0;
 }
 .main.second .center .container .unslider--dotes {
-    bottom: -94px;
+    bottom: -116px;
 }
 .unslider--dotes {
     bottom: -94px;
@@ -710,7 +711,16 @@
     font-family: Cambria, Times New Roman, Times, serif;
     font-size: 17px;
     font-style: italic;
+    height: 60px;
     margin-top: 2px;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    position: relative;
+}
+.dot-item__title .mCSB_inside > .mCSB_container {
+    margin-right: 17px;
 }
 /*.service-slider .scroll-box__slide, .service-slider .dot__item {*/
     /*display: none;*/
@@ -1171,7 +1181,7 @@ body.services:not(.special) .under-slide {
 }
 .special__big-price {
     font-family: "Roboto Condensed", Arial, serif;
-    font-size: 67px;
+    font-size: 45px;/*fix1*/
     font-weight: bold;
     letter-spacing: -0.01em;
     line-height: 1;
@@ -1186,21 +1196,21 @@ body.services:not(.special) .under-slide {
     background: transparent no-repeat center center / contain;
 }
 #fullpage .img--card {
-    height: 177px;
-    width: 287px;
+    /*height: 177px;
+    width: 287px; fix1*/
 }
 .services.special .services__items .center .services__items__block .services__item__right {
     width: calc(100% - 337px);
     padding-left: 0;
 }
 .services.special .services__items .center .services__items__block .services__item__right h3 {
-    font-size: 50px;
+    font-size: 24px;/*fix1*/
     font-weight: bold;
     letter-spacing: -0.01em;
 }
 .special .services__item__bottom__left p {
     font-family: "Roboto Condensed", Arial, serif;
-    font-size: 21px;
+    font-size: 16px;
 }
 
 .special-presents {
@@ -1231,14 +1241,18 @@ body.services:not(.special) .under-slide {
     letter-spacing: -0.01em;
     line-height: 29px;
     margin-bottom: 34px;
+    padding-right: 30px; /*fix1*/
 }
 .special-presents__bg {
     background: transparent no-repeat center right / contain;
     background-image: none;
-    height: 94%;
+    /*height: 94%;*/
     position: absolute;
-    width: 100%;
+    /*width: 100%;*/
     z-index: 1;
+    right: 0;/*fix1 -30%*/
+    height: 100%; /*fix1*/
+    width:60%;/*fix1*/
 }
 #fullpage .special-presents__btn .btn {
     padding: 25px 48px !important;
@@ -1510,6 +1524,7 @@ body.services:not(.special) .under-slide {
     font-size: 67px;
     font-weight: bold;
     letter-spacing: -0.01em;
+    white-space: nowrap;/*fix1*/
 }
 .big-date__months {
     display: flex;
@@ -1764,4 +1779,136 @@ body.services:not(.special) .under-slide {
     max-width: 100%;
     outline: 3px solid #b39658;
     width: 100%;
+}
+@media (max-width: 767px){
+    .main.first .center__info h3, .main.first .center__info h3, .services .text--italic.slider-up{
+        text-align: center;
+    }
+    .special__h2, .special__title, .special__big-text {
+        font-size: 35px;
+    }
+    .main.first .center__info p, .main.first .center__info p{
+        text-align: justify;
+    }
+    .best-service-m__title{
+        text-align: center;
+        font-size: 24px;
+    }
+    .home p{
+        text-align: center;
+    }
+    .special__cont{
+        text-align: center!important;
+    }
+    .master-descr-for-mobile{
+        text-align: justify;
+    }
+    .master-call_text{
+        width: inherit;
+    }
+    .hot-hours-ext .main .center .hot-hours__text{
+        text-align: justify;
+    }
+    #fullpage .main__menu__button--mobile .main__menu__btn{
+        position: fixed;
+        right: 14px!important;
+        left: inherit;
+        z-index: 99999;
+    }
+    .contact__map{
+        height: 300px;
+    }
+    .page-id-792 .special__big-text{
+        text-align: center;
+    }
+    .special__big-price-m{
+        text-align: center;
+    }
+    .special__h2, .special__title, .special__big-text{
+        /*font-size: 36px!important;*/
+        font-size: 36px;
+    }
+    .services__m-content.services__m-content--3.services__m-content--open .special__big-text{
+        display: none;
+    }
+    ul.youtubewall li{
+        width: 100%!important;
+    }
+    #fullpage .border-cont .schedule__title{
+        width: 100%;
+        text-align: center;
+    }
+    .border-cont__title.border-cont__title--left-cont .container__title{
+        width: 100%;
+    }
+    .slick-dots button{
+        margin: 0 auto;
+    }
+    .reviews .slick-dots{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .reviews #youtubelist .slick-dots li{
+        width: 17px!important;
+    }
+    .contact__map{
+        height: 300px!important;
+    }
+    #fullpage .main .center .container__right .slider li h3{
+    	max-width: 100%;
+    	text-align: center;
+    }
+    .header-phones{
+    	position: fixed;
+    	z-index: 9;
+    }
+    .special__title{
+    	font-size: 27px!important;
+    }
+    #fullpage .header-btn .btn{
+    	margin: auto!important;
+    	margin-top: 45px!important;
+    }
+    .scroller{
+    	height: 350px;
+    	overflow-y: scroll;
+    }
+    .scroller::-webkit-scrollbar {
+        width: 1px;
+    }
+
+    .scroller::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.scroller::-webkit-scrollbar-track {
+    background: rgb(0,0,0);
+    border: 2px solid transparent;
+
+    background-clip: content-box;   /* THIS IS IMPORTANT */
+}
+
+/* Handle */
+.scroller::-webkit-scrollbar-thumb {
+    background: rgb(25,25,25);
+    border-radius: 4px;
+    border: 1px solid rgb(0,0,0);
+}
+    .about .main .center .container__right ul{
+        margin-bottom: 60px;
+    }
+    #fullpage .unslider{
+        /*bottom: -35px;*/
+    }
+
+}
+#fullpage .main .center .container__right .slider .btn, #fullpage .services__slider .wrap.slider-left .btn{
+    border-radius: 50px;
+}
+@media (min-width: 767px){
+    .contact-ext--active{
+        height: 400px;
+    }   
 }

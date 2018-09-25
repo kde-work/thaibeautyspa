@@ -93,9 +93,9 @@ global $Mammen;
                                                 $img = $image->get_img( 'Сертификат', 'large' )[0]['src'];
                                                 $img_s = $image->get_img( 'Сертификат', 'thumbnail' )[0]['src'];
                                                 ?>
-                                                <a href="<?php echo $img; ?>" target="_blank" class="prices__cert prices__cert--<?php echo $k; ?>">
+                                                <div  onclick="popup_img_cta({'img':'<?php echo $img; ?>'});" class="prices__cert prices__cert--<?php echo $k; ?>">
                                                     <div class="img--image" style="background-image: url('<?php echo $img_s; ?>');"></div>
-                                                </a>
+                                                </div>
                                                 <?php
                                             }
                                             ?>

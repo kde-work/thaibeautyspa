@@ -33,7 +33,7 @@
 }
 @media screen and (max-width: 1550px) {
     .special__big-price {
-        font-size: 57px;
+        /*font-size: 57px;*/
     }
     .services.special .services__items .center .services__items__block .services__item__right {
         margin-left: 0;
@@ -297,18 +297,25 @@
     }
 }
 @media screen and (max-width: 1350px) {
+    .event__name{
+        font-size: 18px;
+    }
+    .dot__item:nth-child(6){
+        display: none;
+    }
+    .special-presents__bg{
+        height: 75%;
+        transform: translateX(-10%);
+    }
     #fullpage .img--card {
-        height: 142px;
-        width: 230px;
+        /*height: 142px;
+        width: 230px; fix1*/
     }
     .services.special .services__items .center .services__items__block .services__item__right {
         width: calc(100% - 246px);
     }
     .special .services__item__bottom__left p {
         font-size: 17px;
-    }
-    .special-presents__bg {
-        right: -30%;
     }
 }
 @media screen and (max-width: 1200px) {
@@ -360,6 +367,9 @@
     /*горячие часы конец*/
 }
 @media screen and (max-width: 1080px) {
+    .services.about .unslider {
+        left: 41px;
+    }
     .desktop {
         display: none !important;
     }
@@ -500,11 +510,12 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: top;
         width: 100% !important;
         max-width: 1000% !important;
         left: 0 !important;
         top: 0 !important;
-        height: 168px !important;
+        height: 40vh !important;
         display: block;
         position: relative;
     }
@@ -751,7 +762,7 @@
     /*page-id-792  страница спецпредложений конец*/
     .special__cont {
         display: block;
-        font-family: Cambria, Times New Roman, Times, serif;
+         font-family: "Roboto Condensed", Arial, serif;
         font-size: 20px;
         margin-bottom: 28px;
         text-align: left;
@@ -831,7 +842,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        height: 120px;
+        height: 229px;
         width: 100%;
     }
     .services__list--mobile hr {
@@ -1353,6 +1364,7 @@
     }
     .event__name {
         margin-bottom: 22px;
+        text-align: center;/*fix1*/
     }
     .big-date__date {
         color: #b39658;
@@ -1545,5 +1557,68 @@
     }
     .gallery .center .container__top__btns {
         margin: -10px 0 0 !important;
+    }
+}
+@media (min-width: 1920px){
+    .services .services__items .center .services__items__block .services__item__left{
+        width: 50%;
+    }
+    .services .services__items .services__item__left{
+        min-height: 190px;
+    }
+    .services.special .services__items .center .services__items__block .services__item__right h3{
+        font-size: 36px;
+    }
+    .special .services__item__bottom__left p{
+        font-size: 24px;
+    }
+}
+@media (max-width: 1300px){
+    .services .services__items .center ul:not(.cont-with-more) {
+         margin-left:0;
+    }
+}
+@media (max-width: 575px){
+    .border-cont__title--left-cont h2{
+        font-size: 29px;
+    }
+}
+@media (max-width: 385px){
+    .border-cont__title--left-cont h2{
+        font-size: 24px;
+    }
+}
+@media (max-width: 1080px){
+    .services__content--mobile .master-call{
+        text-align: center;
+    }
+}
+@media (max-width: 776px){
+    .contacts-title .big-title{
+        text-align: center;
+    }
+    .wrapper-dropdown--contacts{
+        width: 100%;
+    }
+    .special__h2, .special__title, .special__big-text {
+        font-size: 35px;
+    }
+}
+@media (max-width: 770px){
+    .services.about .unslider {
+         left: 0px;
+     }
+}
+@media (max-width: 767px){
+    #fullpage .main .center .container__right .slider li hr {
+        margin: 7px auto!important;
+    }
+}
+@media (max-width: 480px){
+    .about .main .center .container__right ul li {
+        padding: 0;
+    }
+    .services__title-text, .services__slider h3 {
+        font-size: 19px;
     }
 }

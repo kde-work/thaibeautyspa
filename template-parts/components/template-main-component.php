@@ -81,7 +81,7 @@ global $Mammen;
 			</div>
 		</div>
 		<div class="mobile first__slider">
-			<div class="slick--slider">
+			<div class="slick--sliders slick--autoplay">
 				<div class="center__info">
 					<div class="slider-cont">
 						<h3><?php echo $Mammen->get_field( 'Заголовок 1' )?></h3>

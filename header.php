@@ -56,7 +56,7 @@ if (function_exists('get_field')) {
                 </div>
             </div>
             <div class="header-phones">
-                <a class="header-phone" href="tel:84951455262">+7 (495) 145-52-62</a>
+                <a class="header-phone" href="tel:84951455262">+7 (495) 451-52-62</a>
                 <div class="header-phones__split"></div>
                 <a class="header-phone" href="tel:89011842332">+7 (901) 184 23 32</a>
             </div>
@@ -74,7 +74,7 @@ if (function_exists('get_field')) {
     </div>
     <div class="main__right__top-mobile mobile">
         <div class="header-phones">
-            <a class="header-phone" href="tel:84951455262">+7 (495) 145-52-62</a>
+            <a class="header-phone" href="tel:84951455262">+7 (495) 451-52-62</a>
         </div>
         <div class="main__menu__button startMenuLeft main__menu__button--mobile mobile"><button class="main__menu__btn"></button></div>
         <div class="header-btn">
