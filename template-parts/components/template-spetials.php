@@ -372,12 +372,12 @@ global $Mammen;
 				<span><?php echo $Mammen->get_field('Название таба Акции'); ?></span>
 			</a>
 			<img src="<?php $img2 = $Mammen->get_img( 'Изображение hover-эффект Абонементы', 'large' )[0]['src']; echo $img2; ?>" alt="" class="img--hidden">
-			<a href="#" class="services__link" data-target="services__blocks 2" data-img="<?php echo $img2; ?>">
+			<a href="#абонементы" id="duck" class="services__link" data-target="services__blocks 2" data-img="<?php echo $img2; ?>">
 				<span>02</span>
 				<span><?php echo $Mammen->get_field('Название таба Абонементы'); ?></span>
 			</a>
 			<img src="<?php $img3 = $Mammen->get_img( 'Изображение hover-эффект Подарки', 'large' )[0]['src']; echo $img3; ?>" alt="" class="img--hidden">
-			<a href="#" class="services__link" data-target="services__blocks 3" data-img="<?php echo $img3; ?>">
+			<a href="#сертификаты" id="duffy" class="services__link" data-target="services__blocks 3" data-img="<?php echo $img3; ?>">
 				<span>03</span>
 				<span><?php echo $Mammen->get_field('Название таба Подарки'); ?></span>
 			</a>
@@ -385,6 +385,15 @@ global $Mammen;
 		<div class="services__main__right block--back-image hover-target-image" style="background-image: url('<?php echo $img1; ?>');"></div>
 	</div>
 
+	$( document ).ready(function() {
+     if(/#%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D1%8B/.test(location.href)){
+		console.log("все работает")
+		}
+	 if(){
+	
+		}
+	});
+	
 	<div class="sections">
 
 		<div class="section" id="section1">

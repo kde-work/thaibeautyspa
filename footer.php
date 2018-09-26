@@ -120,7 +120,12 @@
 </div>
 
 <div id="overlay"></div><!-- Подложка -->
+<link rel="stylesheet" href="<?php echo get_template_directory_uri()?>/css/social.css">
+<script>
 
+
+
+</script>
 <?php wp_footer(); ?>
 
 </body>

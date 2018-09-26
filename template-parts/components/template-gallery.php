@@ -20,7 +20,7 @@ tbs_video_style_js_init ();
 ?>
 
 <div class="main">
-	<div class="center">
+	<div class="center desktop">
 		<div class="m"><img src="<?php echo get_template_directory_uri(); ?>/img/G.png" alt=""></div>
 		<span class="s">S</span>
 		<span class="t">T</span>
@@ -29,7 +29,6 @@ tbs_video_style_js_init ();
 		<div class="container__top">
             <div class="border-line border-line--30"></div>
 			<h2 class="desktop">&nbsp;&nbsp;Галерея</h2>
-			<h2 class="mobile">Галерея</h2>
             <div class="border-line"></div>
 			<div class="container__top__btns">
 				<button class="gallery__btn gallery__btn--active btn" data-target="b1">Фото</button>
@@ -84,6 +83,47 @@ tbs_video_style_js_init ();
 			</div>
 		</div>
 	</div>
+    <div class="mobile" style="width: 100%;">
+        <div class="m"><img src="<?php echo get_template_directory_uri(); ?>/img/G.png" alt=""></div>
+        <span class="s">S</span>
+        <span class="t">T</span>
+        <span class="b">B</span>
+
+        <div class="center__top">
+            <h2 class="big-title">Галерея</h2>
+            <div class="content__block slick--go">
+	            <?php
+	            $images = $Mammen->get_img( 'Картинки', 'large' );
+	            foreach ( $images as $image ) : ?>
+                    <div class="review__photo" style='background-image: url("<?php echo $image['src'] ?>");' data-src="<?php echo $image['src'] ?>"></div>
+	            <?php endforeach; ?>
+            </div>
+            <div class="pattern-line"></div>
+        </div>
+        <div class="center__top" style="margin-bottom: 70px;">
+            <h2 class="big-title">Видео</h2>
+            <div class="container__video">
+                <ul id="youtubelist" class="slick--go youtubelist--go">
+			        <?php
+			        $videos = $Mammen->get_fields( 'Видео' );
+			        if ( count( $videos ) ) {
+				        foreach ( $videos as $video ) {
+					        ?>
+                            <li><a href="<?php echo $video->get_field('Ссылка на Youtube видео'); ?>"
+                                   data-url="<?php echo $video->get_field('Ссылка на Youtube видео'); ?>"><?php echo $video->get_field('Название видео'); ?></a></li>
+					        <?php
+				        }
+			        }
+			        ?>
+                </ul>
+                <script>
+                    jQuery(function(){ // on DOM load
+                        $('.youtubelist--go').youtubegallery();
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
 </div>
 <!--<div class="gallery__content">-->
 <!--	-->

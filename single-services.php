@@ -21,6 +21,9 @@ $time2              = get_post_meta( $id, 'cdiservices-meta-text-time-2', true )
 $cost2              = get_post_meta( $id, 'cdiservices-meta-text-cost-2', true );
 $time3              = get_post_meta( $id, 'cdiservices-meta-text-time-3', true );
 $cost3              = get_post_meta( $id, 'cdiservices-meta-text-cost-3', true );
+$selection1         = get_post_meta( $id, 'cdiservices-meta-select-cost-1', true );
+$selection2         = get_post_meta( $id, 'cdiservices-meta-select-cost-2', true );
+$selection3         = get_post_meta( $id, 'cdiservices-meta-select-cost-3', true );
 ?>
     <div class="y"><img src="<?php echo get_template_directory_uri(); ?>/img/y.png" alt=""></div>
     <div class="s">S</div>
@@ -52,8 +55,14 @@ $cost3              = get_post_meta( $id, 'cdiservices-meta-text-cost-3', true )
                                             <p><?php echo $time1; ?></p>
                                             <hr>
                                             <p>мин</p>
+	                                        <?php print_r($selection1); ?>
                                         </div>
                                         <p class="text--price"><?php echo $cost1; ?> <sup>РУБ</sup></p>
+                                        <?php
+                                        if ( $selection1 ) {
+                                            echo "<div class='services-icon services-icon--$selection1'></div>";
+                                        }
+                                        ?>
                                     </div>
                                 <?php endif; ?>
                                 <?php if ($time2 AND $cost2) : ?>
@@ -64,6 +73,11 @@ $cost3              = get_post_meta( $id, 'cdiservices-meta-text-cost-3', true )
                                             <p>мин</p>
                                         </div>
                                         <p class="text--price"><?php echo $cost2; ?> <sup>РУБ</sup></p>
+	                                    <?php
+	                                    if ( $selection2 ) {
+		                                    echo "<div class='services-icon services-icon--$selection2'></div>";
+	                                    }
+	                                    ?>
                                     </div>
                                 <?php endif; ?>
                                 <?php if ($time3 AND $cost3) : ?>
@@ -74,6 +88,11 @@ $cost3              = get_post_meta( $id, 'cdiservices-meta-text-cost-3', true )
                                             <p>мин</p>
                                         </div>
                                         <p class="text--price"><?php echo $cost3; ?> <sup>РУБ</sup></p>
+	                                    <?php
+	                                    if ( $selection3 ) {
+		                                    echo "<div class='services-icon services-icon--$selection3'></div>";
+	                                    }
+	                                    ?>
                                     </div>
                                 <?php endif; ?>
                             </div>

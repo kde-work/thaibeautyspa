@@ -65,6 +65,9 @@ $services_category = tbs_list_of_cat('cdiservices-category');
 						                    $cost2              = get_post_meta( $post['ID'], 'cdiservices-meta-text-cost-2', true );
 						                    $time3              = get_post_meta( $post['ID'], 'cdiservices-meta-text-time-3', true );
 						                    $cost3              = get_post_meta( $post['ID'], 'cdiservices-meta-text-cost-3', true );
+						                    $selection1         = get_post_meta( $post['ID'], 'cdiservices-meta-select-cost-1', true );
+						                    $selection2         = get_post_meta( $post['ID'], 'cdiservices-meta-select-cost-2', true );
+						                    $selection3         = get_post_meta( $post['ID'], 'cdiservices-meta-select-cost-3', true );
 						                    ?>
                                             <li class="services__reach-slider">
                                                 <div class="services__first">
@@ -93,6 +96,11 @@ $services_category = tbs_list_of_cat('cdiservices-category');
                                                                 <p class="service__min">мин</p>
                                                             </div>
                                                             <p class="text--price"><?php echo $cost1; ?> <sup>РУБ</sup></p>
+	                                                        <?php
+	                                                        if ( $selection1 ) {
+		                                                        echo "<div class='services-icon services-icon--$selection1'></div>";
+	                                                        }
+	                                                        ?>
                                                         </div>
                                                         <?php endif; ?>
                                                         <?php if ($time2 AND $cost2) : ?>
@@ -103,6 +111,11 @@ $services_category = tbs_list_of_cat('cdiservices-category');
                                                                 <p class="service__min">мин</p>
                                                             </div>
                                                             <p class="text--price"><?php echo $cost2; ?> <sup>РУБ</sup></p>
+	                                                        <?php
+	                                                        if ( $selection2 ) {
+		                                                        echo "<div class='services-icon services-icon--$selection2'></div>";
+	                                                        }
+	                                                        ?>
                                                         </div>
                                                         <?php endif; ?>
                                                         <?php if ($time3 AND $cost3) : ?>
@@ -113,6 +126,11 @@ $services_category = tbs_list_of_cat('cdiservices-category');
                                                                 <p class="service__min">мин</p>
                                                             </div>
                                                             <p class="text--price"><?php echo $cost3; ?> <sup>РУБ</sup></p>
+	                                                        <?php
+	                                                        if ( $selection3 ) {
+		                                                        echo "<div class='services-icon services-icon--$selection3'></div>";
+	                                                        }
+	                                                        ?>
                                                         </div>
                                                         <?php endif; ?>
                                                     </div>
@@ -186,6 +204,9 @@ $services_category = tbs_list_of_cat('cdiservices-category');
 									$type_m             = get_post_meta( $post['ID'], 'cdiservices-meta-type-m', true );
 									$type_f             = get_post_meta( $post['ID'], 'cdiservices-meta-type-f', true );
 									$type_mf            = get_post_meta( $post['ID'], 'cdiservices-meta-type-mf', true );
+									$selection1         = get_post_meta( $post['ID'], 'cdiservices-meta-select-cost-1', true );
+									$selection2         = get_post_meta( $post['ID'], 'cdiservices-meta-select-cost-2', true );
+									$selection3         = get_post_meta( $post['ID'], 'cdiservices-meta-select-cost-3', true );
                                     ?>
                                     <div class="services__items__block <?php
                                     echo ($type_m) ? "services__items__block--man " : '';
@@ -242,6 +263,11 @@ $services_category = tbs_list_of_cat('cdiservices-category');
                                                                 <p>мин</p>
                                                             </div>
                                                             <p class="text--price"><?php echo $cost1; ?> <sup>РУБ</sup></p>
+	                                                        <?php
+	                                                        if ( $selection1 ) {
+		                                                        echo "<div class='services-icon services-icon--$selection1'></div>";
+	                                                        }
+	                                                        ?>
                                                         </div>
                                                         <?php endif; ?>
 									                    <?php if ($time2 AND $cost2) : ?>
@@ -252,6 +278,11 @@ $services_category = tbs_list_of_cat('cdiservices-category');
                                                                 <p>мин</p>
                                                             </div>
                                                             <p class="text--price"><?php echo $cost2; ?> <sup>РУБ</sup></p>
+	                                                        <?php
+	                                                        if ( $selection2 ) {
+		                                                        echo "<div class='services-icon services-icon--$selection2'></div>";
+	                                                        }
+	                                                        ?>
                                                         </div>
 									                    <?php endif; ?>
 										                <?php if ($time3 AND $cost3) : ?>
@@ -262,6 +293,11 @@ $services_category = tbs_list_of_cat('cdiservices-category');
                                                                 <p>мин</p>
                                                             </div>
                                                             <p class="text--price"><?php echo $cost3; ?> <sup>РУБ</sup></p>
+	                                                        <?php
+	                                                        if ( $selection3 ) {
+		                                                        echo "<div class='services-icon services-icon--$selection3'></div>";
+	                                                        }
+	                                                        ?>
                                                         </div>
 										                <?php endif; ?>
                                                     </div>

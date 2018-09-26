@@ -29,11 +29,11 @@ global $Mammen;
                         ++ $j;
                         ?>
                         <div class="services__m-content services__m-content--<?php echo $j; ?>" data-id="<?php echo $j; ?>">
-	                        <?php
-	                        if ($j > 1) {
-		                        echo "<div class=\"pattern-line\"></div>";
-	                        }
-	                        ?>
+                            <?php
+                            if ($j > 1) {
+                                echo "<div class=\"pattern-line\"></div>";
+                            }
+                            ?>
                             <div class="container__left">
                                 <div class="container__title">
                                 </div>
@@ -51,6 +51,7 @@ global $Mammen;
                                     $posts = $cat->get_fields( 'Слайд' );
                                     if ( count( $posts ) ) {
                                         foreach ( $posts as $tab ) {
+                                            $TypeB              = $tab->get_field('TypeB');
                                             $title              = $cat->get_field('Заголовок');
                                             $image_url          = $tab->get_img( 'Картинка Мобильная', 'large' )[0]['src'];
                                             $short_text         = $tab->get_field('Описание слайда');
@@ -67,18 +68,43 @@ global $Mammen;
                                                     <p class="text--italic slider-up"><?php echo htmlspecialchars_decode($short_text); ?></p>
                                                     <div class="wrap slider-left"><div class="btn services__more">Подробнее</div></div>
                                                 </div>
-                                                <div class="services__second">
-                                                    <div class="container__img container__img--desc"
-                                                         style="background-image: url('<?php echo $image_url; ?>');">
-                                                    </div>
-                                                    <div class="text-slide-box">
-                                                        <?php tbs_text_slider(htmlspecialchars_decode($main_text), 57); ?>
-                                                    </div>
-                                                    <p class="text--italic slider-up"><?php echo htmlspecialchars_decode($ext_text); ?></p>
-                                                    <div class="wrap slider-left"><button class="btn btn--zap" onclick="popup_c({'cat':'<?php echo get_the_title(); ?>', 'title':'<?php echo $cat->get_field('Текст кнопки окна Подробнее'); ?>', 'email': 1, 'time': 0, 'gender': 0, 'description': 'Услуга: <?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Заголовок окна')); ?>. /<?php echo str_replace(array('<br>', '<br />'), ' ', $cat->get_field( 'Заголовок')); ?>/'}, this);"><?php echo $cat->get_field('Текст кнопки окна Подробнее'); ?></button></div>
+                                                <?php if ($TypeB) { ?>
+                                                    <div class="services__second">
+                                                        <div class="container__img container__img--desc"
+                                                             style="background-image: url('<?php echo $image_url; ?>'); left: calc(-21.3px - 2.5%)!important; width: 100vw;">
+                                                        </div>
+                                                        <div class="type_b_mobi_title">
+                                                            <h2><?= $short_text ?></h2>
+                                                        </div>
+                                                        <div class="text-slide-box scrollable" style=" max-height: 30vh!important; ">
+                                                            <?php echo htmlspecialchars_decode($ext_text); ?>
+                                                        </div>
+                                                        <p class="text--italic slider-up"></p>
+                                                        <div class="type_b_mobi_btn">
+                                                            <div class="left_btn_write">
+                                                                <button class="btn" style="position: relative!important;">написать директору</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mobi_after_bt">
 
-                                                    <button class="btn btn__back btn--back">НАЗАД</button>
-                                                </div>
+                                                            <?php tbs_text_slider(htmlspecialchars_decode($main_text), 57); ?>
+                                                        </div>
+                                                        <!--                                                    <button class="btn btn__back btn--back">НАЗАД</button>-->
+                                                    </div>
+                                                <?php } else { ?>
+                                                    <div class="services__second">
+                                                        <div class="container__img container__img--desc"
+                                                             style="background-image: url('<?php echo $image_url; ?>');">
+                                                        </div>
+                                                        <div class="text-slide-box">
+                                                            <?php tbs_text_slider(htmlspecialchars_decode($main_text), 57); ?>
+                                                        </div>
+                                                        <p class="text--italic slider-up"><?php echo htmlspecialchars_decode($ext_text); ?></p>
+                                                        <div class="wrap slider-left"><button class="btn btn--zap" onclick="popup_c({'cat':'<?php echo get_the_title(); ?>', 'title':'<?php echo $cat->get_field('Текст кнопки окна Подробнее'); ?>', 'email': 1, 'time': 0, 'gender': 0, 'description': 'Услуга: <?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Заголовок окна')); ?>. /<?php echo str_replace(array('<br>', '<br />'), ' ', $cat->get_field( 'Заголовок')); ?>/'}, this);"><?php echo $cat->get_field('Текст кнопки окна Подробнее'); ?></button></div>
+
+                                                        <button class="btn btn__back btn--back">НАЗАД</button>
+                                                    </div>
+                                                <?php } ?>
                                             </li>
                                             <?php
                                         }
@@ -90,11 +116,11 @@ global $Mammen;
                                     <a class="unslider-arrow next"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png" alt="" /></a>
                                 </div>
                             </div>
-	                        <?php
-	                        if ($j < count($services_category)) {
-		                        echo "<div class=\"pattern-line\"></div>";
-	                        }
-	                        ?>
+                            <?php
+                            if ($j < count($services_category)) {
+                                echo "<div class=\"pattern-line\"></div>";
+                            }
+                            ?>
                         </div>
                         <h3 class="services__title services__title--<?php echo $j; ?>" data-id="<?php echo $j; ?>">
                             <span class="services__title-num"><?php echo tbs_get_number_with_zero($j); ?></span>
@@ -116,114 +142,140 @@ global $Mammen;
             if ( count( $tabs ) ) {
                 foreach ( $tabs as $tab ) {
                     ++$k;
+                    $slides = $tab->get_fields( 'Слайд' );
                     ?>
                     <div id="<?php echo $k; ?>">
                         <div class="main services__items">
-                            <div class="center">
+                            <?php foreach ( $slides as $slide ) { ?>
+                            <?php if ($slide->get_field('TypeB') == 1) { ?>
+                                <?php include('custom_components/type_b.php');
+                                } elseif ($slide->get_field('TypeA') == 1) {
+                                    include('custom_components/type_a.php');
+                                } elseif ($slide->get_field('TypeC') == 1) {
+                                    include('custom_components/type_c.php');
+                                }
+                                ?>
+                            <?php } ?>
+                            <?php /* <div class="center">
                                 <div class="container__wrap"><img src="<?php echo get_template_directory_uri(); ?>/img/border-6.png" alt=""></div>
-                                    <ul class="slider">
-                                        <li>
+                                <ul class="slider">
+                                    <li>
                                         <?php
-                                        $slides = $tab->get_fields( 'Слайд' );
-                                        if ( count( $slides ) ) {
-                                            $y = 0;
-                                            foreach ( $slides as $slide ) {
-                                                if ( ( $y % 3 ) == 0 AND $y ) {
-                                                    echo '</li>';
-                                                    echo '<li>';
-                                                }
-                                                ++ $y;
-                                                ++ $p;
-                                                if ($Mammen->get_field( 'Шаблон' ) == 'Бизнес Линч') :
-                                                ?>
-                                                    <div class="services__items__block">
-                                                        <div class="services__item__left container__img--desc block--back-image" style="background-image: url('<?php echo $slide->get_img( 'Картинка Большая', 'large' )[0]['src']; ?>'); <?php if ($tab->get_field('background-size')) echo 'background-size: cover;' ?> <?php if (intval($tab->get_field('min-height'))) echo 'min-height: '. intval($tab->get_field('min-height')) .'px;' ?>"></div>
-                                                        <div class="services__item__right">
-                                                            <div class="services__item__right__text">
-                                                                <h3><?php echo $slide->get_field('Заголовок слайда'); ?></h3>
-                                                                <hr>
-                                                                <p class="text--italic"><?php echo $slide->get_field('Описание слайда'); ?></p>
-                                                            </div>
-                                                            <div class="services__item__right__btn"><button class="btn" data-target="services__enroll <?php echo $p; ?>">Подробнее</button></div>
-                                                        </div>
+//count( $slides )
+                                        if ( false ) {
+                                        $y = 0;
+                                        foreach ( $slides as $slide ) {
+                                        if ( ( $y % 3 ) == 0 AND $y ) {
+                                            echo '</li>';
+                                            echo '<li>';
+                                        }
+                                        ++ $y;
+                                        ++ $p; ?>
+                                       <?php if ($Mammen->get_field( 'Шаблон' ) == 'Бизнес Линч') :
+                                            ?>
+                                            <div class="services__items__block">
+                                                <div class="services__item__left container__img--desc block--back-image" style="background-image: url('<?php echo $slide->get_img( 'Картинка Большая', 'large' )[0]['src']; ?>'); <?php if ($tab->get_field('background-size')) echo 'background-size: cover;' ?> <?php if (intval($tab->get_field('min-height'))) echo 'min-height: '. intval($tab->get_field('min-height')) .'px;' ?>"></div>
+                                                <div class="services__item__right">
+                                                    <div class="services__item__right__text">
+                                                        <h3><?php echo $slide->get_field('Заголовок слайда'); ?></h3>
+                                                        <hr>
+                                                        <p class="text--italic"><?php echo $slide->get_field('Описание слайда'); ?></p>
                                                     </div>
-                                                <?php else : ?>
-                                                    <div class="services__items__block">
-                                                        <div class="services__item__left container__img--desc block--back-image" style="background-image: url('<?php echo $slide->get_img( 'Картинка Большая', 'large' )[0]['src']; ?>'); <?php if ($tab->get_field('CONTAIN')) echo 'background-size: contain;' ?> <?php if (intval($tab->get_field('min-height'))) echo 'min-height: '. intval($tab->get_field('min-height')) .'px;' ?>"></div>
-                                                        <div class="services__item__right">
-                                                            <h3><?php echo $slide->get_field('Заголовок слайда'); ?></h3>
-                                                            <div class="services__item__right__bottom">
-                                                                <div class="services__item__bottom__left">
-                                                                    <hr>
-                                                                    <p class="text--italic"><?php echo $slide->get_field('Описание слайда'); ?></p>
-                                                                </div>
-                                                                <div class="services__item__bottom__right"><button class="btn" data-target="services__enroll <?php echo $p; ?>">Подробнее</button></div>
-                                                            </div>
+                                                    <div class="services__item__right__btn "><button class="btn with_slider" data-target="services__enroll <?php echo $p; ?>">Подробнее</button></div>
+                                                </div>
+                                            </div>
+                                        <?php else : ?>
+                                            <div class="services__items__block">
+                                                <div class="services__item__left container__img--desc block--back-image" style="background-image: url('<?php echo $slide->get_img( 'Картинка Большая', 'large' )[0]['src']; ?>'); <?php if ($tab->get_field('CONTAIN')) echo 'background-size: contain;' ?> <?php if (intval($tab->get_field('min-height'))) echo 'min-height: '. intval($tab->get_field('min-height')) .'px;' ?>"></div>
+                                                <div class="services__item__right">
+                                                    <h3><?php echo $slide->get_field('Заголовок слайда'); ?></h3>
+                                                    <div class="services__item__right__bottom">
+                                                        <div class="services__item__bottom__left">
+                                                            <hr>
+                                                            <p class="text--italic"><?php echo $slide->get_field('Описание слайда'); ?></p>
                                                         </div>
+                                                        <div class="services__item__bottom__right"><button class="btn with_slider"  data-target="services__enroll <?php echo $p; ?>">Подробнее</button></div>
                                                     </div>
-                                                <?php
-                                                endif;
+                                                </div>
+                                            </div>
+                                        <?php
+                                        endif;
 
-                                                // Формирование "Подробнее"
-                                                ob_start();
-                                                ?>
-                                                <div id="<?php echo $p; ?>">
-                                                    <div class="main enroll">
-                                                        <div class="center">
-                                                            <div class="container__wrap"><img src="<?php echo get_template_directory_uri(); ?>/img/border-6.png" alt=""></div>
-                                                            <button class="btn btn__back">НАЗАД</button>
-                                                            <?php
-                                                            $class_name = MM_Component_Page::clear_name($tab->get_field('Текст кнопки окна Подробнее'));
-                                                            ?>
-                                                            <style type="text/css">
-                                                                #fullpage .<?php echo $class_name; ?>::after, #fullpage .<?php echo $class_name; ?>::before {
-                                                                    content: '<?php echo $tab->get_field('Текст кнопки окна Подробнее'); ?>' !important;
-                                                                }
-                                                            </style>
-                                                            <button class="btn btn__enroll <?php echo $class_name; ?>" onclick="popup_c({'cat':'<?php echo get_the_title(); ?>', 'title':'<?php echo $tab->get_field('Текст кнопки окна Подробнее'); ?>', 'email': 1, 'time': 0, 'gender': 0, 'description': 'Услуга: <?php echo str_replace(array('<br>', '<br />'), ' ', $slide->get_field('Заголовок окна')); ?>. /<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field( 'Заголовок')); ?>/'}, this);"><?php echo $tab->get_field('Текст кнопки окна Подробнее'); ?></button>
+                                        // Формирование "Подробнее"
+                                        ob_start();
+                                        ?>
+                                        <div id="<?php echo $p; ?>">
+                                            <div class="main enroll">
+                                                <?php if ($slide->get_field('TypeA') == 1) { ?>
+                                                    <?php include('custom_components/type_a.php');  ?>
 
-                                                            <div class="enroll__top">
-                                                                <div class="enroll__top__left">
-                                                                    <h3><?php echo $slide->get_field('Заголовок окна'); ?></h3>
-                                                                    <hr>
-                                                                    <p class="text--italic"><?php echo $slide->get_field('Подзаголовок окна'); ?></p>
-                                                                </div>
-                                                                <div class="enroll__top__right block--back-image" style="background-image: url('<?php echo $slide->get_img( 'Картинка Большая', 'large' )[0]['src']; ?>'); <?php if ($tab->get_field('CONTAIN')) echo 'background-size: contain;' ?>">
-    <!--                                                                <img src="--><?php //echo $slide->get_img( 'Картинка Большая', 'large' )[0]['src']; ?><!--" alt="">-->
-                                                                </div>
-                                                            </div>
-                                                            <div class="enroll__bottom">
-                                                                <div class="enroll__bottom__left">
-                                                                    <div class="align--left">
-                                                                        <?php echo $slide->get_field('Описание слева окна'); ?>
+                                                    <?php } else if ($slide->get_field('TypeB') == 1) { ?>
+                                                        <?php include('custom_components/type_b.php'); ?>
+
+                                                    <?php }  else if ($slide->get_field('TypeC') == 1) { ?>
+                                                            <?php include('custom_components/type_c.php'); ?>
+
+
+
+                                                            <?php } else { ?>
+                                                            <div class="center">
+                                                                <div class="container__wrap"><img src="<?php echo get_template_directory_uri(); ?>/img/border-6.png" alt=""></div>
+                                                                <button class="btn btn__back">НАЗАД</button>
+                                                                <?php
+                                                                $class_name = MM_Component_Page::clear_name($tab->get_field('Текст кнопки окна Подробнее'));
+                                                                ?>
+                                                                <style type="text/css">
+                                                                    #fullpage .<?php echo $class_name; ?>::after, #fullpage .<?php echo $class_name; ?>::before {
+                                                                        content: '<?php echo $tab->get_field('Текст кнопки окна Подробнее'); ?>' !important;
+                                                                    }
+                                                                </style>
+                                                                <button class="btn btn__enroll <?php echo $class_name; ?>" onclick="popup_c({'cat':'<?php echo get_the_title(); ?>', 'title':'<?php echo $tab->get_field('Текст кнопки окна Подробнее'); ?>', 'email': 1, 'time': 0, 'gender': 0, 'description': 'Услуга: <?php echo str_replace(array('<br>', '<br />'), ' ', $slide->get_field('Заголовок окна')); ?>. /<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field( 'Заголовок')); ?>/'}, this);"><?php echo $tab->get_field('Текст кнопки окна Подробнее'); ?></button>
+
+
+                                                                <div class="enroll__top">
+                                                                    <div class="enroll__top__left">
+                                                                        <h3><?php echo $slide->get_field('Заголовок окна'); ?></h3>
+                                                                        <hr>
+                                                                        <p class="text--italic"><?php echo $slide->get_field('Подзаголовок окна'); ?></p>
+                                                                    </div>
+                                                                    <div class="enroll__top__right block--back-image" style="background-image: url('<?php echo $slide->get_img( 'Картинка Большая', 'large' )[0]['src']; ?>'); <?php if ($tab->get_field('CONTAIN')) echo 'background-size: contain;' ?>">
+                                                                        <!--                                                                <img src="--><?php //echo $slide->get_img( 'Картинка Большая', 'large' )[0]['src']; ?><!--" alt="">-->
                                                                     </div>
                                                                 </div>
+                                                                <div class="enroll__bottom">
+                                                                    <div class="enroll__bottom__left">
+                                                                        <div class="align--left">
+                                                                            <?php echo $slide->get_field('Описание слева окна'); ?>
+                                                                        </div>
+                                                                    </div>
 
-                                                                <div class="enroll__bottom__right">
-                                                                    <div class="scroll-box__cont scroll-box__cont--100per">
-                                                                        <div class="scrollable--tmp scrollable--set-height">
-                                                                            <?php echo htmlspecialchars_decode($slide->get_field('Описание справа окна')); ?>
-        <!--                                                                    <p>--><?php //echo $slide->get_field('Описание справа окна'); ?><!--</p>-->
+                                                                    <div class="enroll__bottom__right">
+                                                                        <div class="scroll-box__cont scroll-box__cont--100per">
+                                                                            <div class="scrollable--tmp scrollable--set-height">
+                                                                                <?php echo htmlspecialchars_decode($slide->get_field('Описание справа окна')); ?>
+                                                                                <!--                                                                    <p>--><?php //echo $slide->get_field('Описание справа окна'); ?><!--</p>-->
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                                <?php }?>
+
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <?php
-                                                $more_html .= ob_get_contents();
-                                                ob_end_clean(); // втихую отбрасывает содержимое буфера
-                                            }
-                                        }
-                                        ?>
-                                        </li>
-                                    </ul>
+                                                    <?php
+                                                    $more_html .= ob_get_contents();
+                                                    ob_end_clean(); // втихую отбрасывает содержимое буфера
+                                                    }
+                                                    }
+                                                    ?>
+                                    </li>
+                                </ul>
                                 <div class="unslider">
                                     <a class="unslider-arrow prev"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png" alt="" /></a>
                                     <a class="unslider-arrow next"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png" alt="" /></a>
                                 </div>
-                            </div>
+                            </div> */ ?>
                         </div>
                     </div>
                     <?php
@@ -247,8 +299,10 @@ global $Mammen;
             $tabs = $Mammen->get_fields( 'Таб' );
             $k = 0;
             if ( count( $tabs ) ) {
+                $i=0;
                 foreach ( $tabs as $tab ) {
                     ++$k;
+                    $i++;
                     $img_id = $tab->get_img( 'Изображение hover-эффект', 'large' )[0]['id'];
                     $img = $tab->get_img( 'Изображение hover-эффект', 'large' )[0]['src'];
                     if (!$img_id) {
@@ -259,7 +313,7 @@ global $Mammen;
                     }
                     ?>
                     <img src="<?php echo $img; ?>" alt="" class="img--hidden">
-                    <a href="#" class="services__link" data-target="services__blocks <?php echo $k; ?>" data-img="<?php echo $img; ?>">
+                    <a href="#" class="services__link with_slide_<?= $i ?>" data-target="services__blocks <?php echo $k; ?>" data-img="<?php echo $img; ?>">
                         <span><?php echo tbs_get_number_with_zero($k); ?></span>
                         <span><?php echo $tab->get_field('Заголовок'); ?></span>
                     </a>

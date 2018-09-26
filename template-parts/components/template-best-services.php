@@ -17,14 +17,14 @@ global $Mammen;
 
 <div class="section" id="second">
 
-	<div class="main second best-services slide">
-		<div class="center startPosition">
-			<div class="plus"></div>
-			<span class="s">S</span>
-			<span class="t">T</span>
-			<span class="b"><img src="<?php echo get_template_directory_uri(); ?>/img/B.png" alt=""></span>
-			<div class="flower"><img src="<?php echo get_template_directory_uri(); ?>/img/flower.png" alt=""></div>
-			<div class="container border-cont service-slider service-slider--pre">
+    <div class="main second best-services slide">
+        <div class="center startPosition">
+            <div class="plus"></div>
+            <span class="s">S</span>
+            <span class="t">T</span>
+            <span class="b"><img src="<?php echo get_template_directory_uri(); ?>/img/B.png" alt=""></span>
+            <div class="flower"><img src="<?php echo get_template_directory_uri(); ?>/img/flower.png" alt=""></div>
+            <div class="container desktop border-cont service-slider service-slider--pre">
                 <div class="container__left">&nbsp;<br>&nbsp;<br>&nbsp;</div>
                 <div class="border-cont__title border-cont__title--left-cont">
                     <div class="border-line border-line--desc border-line--30"></div>
@@ -33,7 +33,7 @@ global $Mammen;
                         <h2 class="schedule__title h2--one-line mobile"><?php echo str_replace(' ', '&nbsp;', $title); ?></h2>
                         <h2 class="schedule__title h2--one-line desktop"><?php echo $title; ?></h2>
                     </div>
-                    <div class="border-line border-line--desc"></div>
+                    <div class="border-line border-line--desc"><div class="btn btn--back btn--best-service">Назад</div></div>
                 </div>
                 <div class="container__pre best-s-pre">
                     <div class="best-s-pre__cont">
@@ -53,11 +53,11 @@ global $Mammen;
                         </div>
                     </div>
                 </div>
-				<div class="container__right">
-<!--					<div class="container__slider__number">-->
-<!--						<span>01</span><span>/00</span>-->
-<!--					</div>-->
-					<ul class="slider scroll-box">
+                <div class="container__right--source">
+                    <!--					<div class="container__slider__number">-->
+                    <!--						<span>01</span><span>/00</span>-->
+                    <!--					</div>-->
+                    <ul class="slider scroll-box">
 						<?php
 						$posts = tbs_get_best_services();
 						if ( count( $posts ) ) {
@@ -74,20 +74,20 @@ global $Mammen;
 								$type_m          = get_post_meta( $post['ID'], 'cdiservices-meta-type-m', true );
 								$type_f          = get_post_meta( $post['ID'], 'cdiservices-meta-type-f', true );
 								$type_mf          = get_post_meta( $post['ID'], 'cdiservices-meta-type-mf', true );
-                                if (!$best_text) {
-	                                $best_text      = get_post_meta( $post['ID'], 'cdiservices-meta-textarea', true );
-                                }
+								if (!$best_text) {
+									$best_text      = get_post_meta( $post['ID'], 'cdiservices-meta-textarea', true );
+								}
 								?>
                                 <li class="scroll-box__slide scroll-box__slide--<?php echo $post['ID']; ?> <?php
-                                                echo ($type_m) ? "scroll-box__slide--man " : '';
-                                                echo ($type_f) ? "scroll-box__slide--female " : '';
-                                                echo ($type_mf) ? "scroll-box__slide--couple " : '';
-                                                ?>" style="display: none;">
+								echo ($type_m) ? "scroll-box__slide--man " : '';
+								echo ($type_f) ? "scroll-box__slide--female " : '';
+								echo ($type_mf) ? "scroll-box__slide--couple " : '';
+								?>" style="display: none;">
                                     <div class="container__img container__img--desc"
                                          style="background-image: url('<?php echo $image_url; ?>');">
                                     </div>
                                     <div class="scroll-box__cont">
-                                        <div class="scrollable">
+                                        <div class="scrollable--lazy-load">
                                             <h3 class="slider-up"><?php echo $title; ?></h3>
                                             <p class="text--italic slider-up"><?php echo $short_text; ?></p>
                                             <hr>
@@ -100,11 +100,11 @@ global $Mammen;
 								ob_start();
 								?>
                                 <div class="dot__item dot__item--<?php echo $j; ?> <?php
-                                                echo ($j === 0) ? 'dot__item--active ' : '';
-                                                echo ($type_m) ? "dot__item--man " : '';
-                                                echo ($type_f) ? "dot__item--female " : '';
-                                                echo ($type_mf) ? "dot__item--couple " : '';
-                                                ?>" data-id="<?php echo $j; ?>">
+								echo ($j === 0) ? 'dot__item--active ' : '';
+								echo ($type_m) ? "dot__item--man " : '';
+								echo ($type_f) ? "dot__item--female " : '';
+								echo ($type_mf) ? "dot__item--couple " : '';
+								?>" data-id="<?php echo $j; ?>">
                                     <div class="dot-item__img"><img src="<?php echo $image_url; ?>"></div>
                                     <div class="dot-item__title"><?php echo ( $title_short ) ? $title_short : $title; ?></div>
                                 </div>
@@ -115,7 +115,11 @@ global $Mammen;
 								// mobile template
 								ob_start();
 								?>
-                                <div class="best-service-m__item" data-id="<?php echo $j; ?>">
+                                <div class="best-service-m__item scroll-box__slide scroll-box__slide--<?php echo $post['ID']; ?> <?php
+                                echo ($type_m) ? "scroll-box__slide--man " : '';
+                                echo ($type_f) ? "scroll-box__slide--female " : '';
+                                echo ($type_mf) ? "scroll-box__slide--couple " : '';
+                                ?>" data-id="<?php echo $j; ?>">
                                     <div class="best-service-m__center">
                                         <div class="best-service-m__img"
                                              style="background-image: url('<?php echo $image_url; ?>');">
@@ -133,11 +137,11 @@ global $Mammen;
 								$j++;
 							}
 						}
-                        ?>
-					</ul>
-					<div class="img__tmp"></div>
-				</div>
-                <div class="under-slide">
+						?>
+                    </ul>
+                    <div class="img__tmp"></div>
+                </div>
+                <div class="under-slide--source">
                     <div class="unslider--100">
                         <a class="prev" style="display: none;"></a>
                         <a class="next" style="display: none;"></a>
@@ -145,14 +149,37 @@ global $Mammen;
                         <a class="unslider-arrow--round _next"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.png" alt="" /></a>
                     </div>
                     <div class="unslider--100 unslider--dotes unslider--lazy-load">
-		                <?php echo $dotes; ?>
+						<?php echo $dotes; ?>
                     </div>
                 </div>
-			</div>
-            <div class="best-service-m slick--slider mobile">
-	            <?php echo $mobile; ?>
             </div>
-
-		</div>
-	</div>
+            <div class="best-service-m _slick--slider mobile service-slider service-slider--pre">
+                <div class="special__big-text f--center"><?php echo $Mammen->get_field( 'Заголовок' ); ?></div>
+                <div class="container__pre best-s-pre">
+                    <div class="best-s-pre__cont">
+                        <div class="best-s-pre__desc">Здесь мы поможем вам с выбором лучшей программы, выберите<br>категорию для лучшего подбора программ для вас </div>
+                        <div class="best-s-pre__big-text">Кто вы?</div>
+                        <div class="best-s-pre__hr"></div>
+                        <div class="best-s-pre__inputs">
+                            <div class="best-s-pre__input best-s-pre__input--man" data-id="man">
+                                <div class="best-s-pre__input-ins">Муж</div>
+                            </div>
+                            <div class="best-s-pre__input best-s-pre__input--female" data-id="female">
+                                <div class="best-s-pre__input-ins">Жен</div>
+                            </div>
+                            <div class="best-s-pre__input best-s-pre__input--couple" data-id="couple">
+                                <div class="best-s-pre__input-ins">Пара</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container__right--slick container__right--source">
+				<?php echo $mobile; ?>
+                </div>
+                <div class="best-service-m__btn">
+                    <div class="best-service-m__back" title="К выбору">Назад</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

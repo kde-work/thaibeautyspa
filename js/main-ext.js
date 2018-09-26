@@ -44,17 +44,25 @@
                 $prev = $('.prev', $under_slide),
                 $next = $('.next', $under_slide);
 
-            if ($slider__prev.length && $this.hasClass('_prev')) {
-                $slick_slider.slick('slickPrev');
-                setTimeout(function () {
-                    $prev.trigger('click');
-                }, 240);
+            if ($this.hasClass('_prev')) {
+                if ($slider__prev.length) {
+                    $slick_slider.slick('slickPrev');
+                    setTimeout(function () {
+                        $prev.trigger('click');
+                    }, 240);
+                } else {
+                    // $prev.trigger('click');
+                }
             }
-            if ($slider__next.length && $this.hasClass('_next')) {
-                $slick_slider.slick('slickNext');
-                setTimeout(function () {
-                    $next.trigger('click');
-                }, 240);
+            if ($this.hasClass('_next')) {
+                if ($slider__prev.length) {
+                    $slick_slider.slick('slickNext');
+                    setTimeout(function () {
+                        $next.trigger('click');
+                    }, 240);
+                } else {
+                    // $next.trigger('click');
+                }
             }
 
             if ($slider__prev.length && $this.hasClass('prev')) {
@@ -295,7 +303,7 @@
     // Мобильная версия Услуг. Подробнее
     $(function () {
         var $services__more = $('.services__more'),
-            $btn__back = $('.btn--back');
+            $btn__back = $('.btn--back:not(.btn--best-service)');
 
         $services__more.on('click', function () {
             var $this = $(this),
@@ -451,7 +459,7 @@
     });
 
     $(function () {
-        var $slider = $('.reviews #youtubelist, .reviews .guest_foto, .reviews .guests_reviews'),
+        var $slider = $('.reviews #youtubelist, .reviews .guest_foto, .reviews .guests_reviews, .slick--go'),
             $body = $('body');
 
         if ($body.width() < 600) {
@@ -645,14 +653,29 @@
             var $this = $(this),
                 this_gender = $this.data('id'),
                 $service_slider__pre = $this.closest('.service-slider--pre'),
-                $scroll_box__slide = $('.scroll-box__slide:not(".scroll-box__slide--'+this_gender+'")', $service_slider__pre),
-                $dot__item = $('.dot__item:not(".dot__item--'+this_gender+'")', $service_slider__pre);
+                $container_right__source = $('.container__right--source', $service_slider__pre),
+                $container_right = $container_right__source.clone(true),
+                $under_slide__source = $('.under-slide--source', $service_slider__pre),
+                $under_slide = $under_slide__source.clone(true);
+
+            $container_right__source.removeClass('container__right--source').addClass('container__right');
+            $container_right__source.after($container_right);
+
+            $under_slide__source.removeClass('under-slide--source').addClass('under-slide');
+            $under_slide__source.after($under_slide);
+
+            var $scrollable_lazy_load = $('.container__right .scrollable--lazy-load', $service_slider__pre);
+            $scrollable_lazy_load.mCustomScrollbar();
+            $scrollable_lazy_load.removeClass('scrollable--lazy-load').addClass('scrollable');
+
+            var $scroll_box__slide = $('.container__right .scroll-box__slide:not(".scroll-box__slide--'+this_gender+'")', $service_slider__pre),
+                $dot__item = $('.under-slide .dot__item:not(".dot__item--'+this_gender+'")', $service_slider__pre);
 
             $service_slider__pre.removeClass('service-slider--pre');
             $scroll_box__slide.remove();
             $dot__item.remove();
 
-            var $dot__item = $('.dot__item', $service_slider__pre);
+            var $dot__item = $('.under-slide .dot__item', $service_slider__pre);
             $dot__item.first().trigger('click');
 
             var i = 0;
@@ -668,11 +691,43 @@
 
             setTimeout(function () {
                 var $par = $this.closest('.service-slider'),
-                    $scrollable_lazy_load = $('.scrollable--lazy-load', $par);
+                    $scrollable_lazy_load = $('.under-slide .scrollable--lazy-load, .container__right .scrollable--lazy-load', $par),
+                    $container__right = $('.container__right', $par);
 
-                thai_unslider__dotes('unslider--qwe', $par, false);
+                //enable slick for mobile
+                if ($container__right.hasClass('container__right--slick')) {
+                    $container__right.slick({
+                        "dots": true,
+                        "infinite": true,
+                        "prevArrow": '<div class="slider__prev"></div>',
+                        "nextArrow": '<div class="slider__next"></div>',
+                        "slidesToShow": 1,
+                        "slidesToScroll": 1,
+                        "autoplay": true
+                    });
+                }
+
+                thai_unslider__dotes('unslider--qwe', $('.under-slide', $par), false);
                 $scrollable_lazy_load.mCustomScrollbar();
             }, 400);
+        });
+
+        var $btn__back = $('.service-slider .btn--back, .best-service-m__back');
+
+        $btn__back.on('click', function () {
+            var $this = $(this),
+                $service_slider = $this.closest('.service-slider'),
+                $container_right = $('.container__right', $service_slider),
+                $under_slide = $('.under-slide', $service_slider),
+                $scroll_box = $("html, body");
+
+            if ($service_slider.hasClass('mobile')) {
+                $scroll_box.animate({ scrollTop: $service_slider.offset().top }, "slow");
+            }
+
+            $service_slider.addClass('service-slider--pre');
+            $container_right.remove();
+            $under_slide.remove();
         });
     });
 

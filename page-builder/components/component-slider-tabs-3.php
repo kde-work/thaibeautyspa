@@ -47,6 +47,12 @@
  *          Описание слайда: Textarea
  *       Показ в слайдере: GROUP END
  *       Окно Подробнее: GROUP BEGIN
+ *          page-type: Checkbox
+ *          page-type '1': TypeA
+ *          page-type-b: Checkbox
+ *          page-type-b '1': TypeB
+ *          page-type-c: Checkbox
+ *          page-type-c '1': TypeC
  *          Заголовок окна: Textarea
  *          Заголовок окна OPTION 'limited': 150
  *          Заголовок окна OPTION 'help': Limit 150 characters
@@ -55,6 +61,13 @@
  *          Подзаголовок окна OPTION 'help': Limit 250 characters
  *          Описание слева окна: WYSIWYG
  *          Описание справа окна: WYSIWYG
+ *          Картинка для типа А: Media Upload
+ *          Офраншизе: GROUP BEGIN
+ *          Офраншизе OPTION 'type': Repeating Group
+ *              Заголовок офраншизе: Textarea
+ *              Картинка офраншизе: Media Upload
+ *              Описание офраншизе: WYSIWYG
+ *          Офраншизе: GROUP END
  *       Окно Подробнее: GROUP END
  *    Слайд: GROUP END
  * Таб: GROUP END
@@ -62,5 +75,5 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+    exit; // Exit if accessed directly.
 }
