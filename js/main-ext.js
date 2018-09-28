@@ -4,6 +4,8 @@
         return;
     }
 
+    // $('#fullpage').fullpage.moveTo(2);
+
     // Карусель кружочков в Лучших программах и Акциях
     $(function () {
         thai_unslider__dotes('unslider--lazy-load', $('body'), false);

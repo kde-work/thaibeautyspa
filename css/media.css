@@ -1296,6 +1296,8 @@
     }
     .best-service-m__back {
         color: #b39658;
+        font-family: Roboto Condensed,sans-serif;
+        font-size: 25px;
         font-weight: bold;
         text-transform: uppercase;
         border-bottom: 2px solid;

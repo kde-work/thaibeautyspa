@@ -35,7 +35,17 @@ $selection3         = get_post_meta( $id, 'cdiservices-meta-select-cost-3', true
                 <div class="main enroll">
                     <div class="center">
                         <div class="container__wrap"><img src="<?php echo get_template_directory_uri(); ?>/img/border-7.png" alt=""></div>
-                        <a href="/услуги/" class="btn btn__back">« УСЛУГИ</a>
+                        <?php
+                        if ( !empty( $_GET['param'] ) AND $_GET['param'] == 'main' ) :
+                            ?>
+                            <a href="/?param=back" class="btn btn__back btn__back--back">Назад</a>
+                            <?php
+                        else :
+                            ?>
+                            <a href="/услуги/" class="btn btn__back">« УСЛУГИ</a>
+                            <?php
+                        endif;
+                        ?>
                         <button class="btn btn__enroll" onclick="popup_c({'cat':'услуги', 'title':'Заказ услуги', 'email': 1, 'time': 1, 'gender': 1, 'description': 'Услуга: <?php echo $title; ?>'}, this);">ЗАПИСАТЬСЯ</button>
 
                         <div class="enroll__top">
@@ -55,7 +65,6 @@ $selection3         = get_post_meta( $id, 'cdiservices-meta-select-cost-3', true
                                             <p><?php echo $time1; ?></p>
                                             <hr>
                                             <p>мин</p>
-	                                        <?php print_r($selection1); ?>
                                         </div>
                                         <p class="text--price"><?php echo $cost1; ?> <sup>РУБ</sup></p>
                                         <?php
@@ -177,6 +186,19 @@ $selection3         = get_post_meta( $id, 'cdiservices-meta-select-cost-3', true
                                                 </style>
                                                 <div class="best-service-m__center">
                                                     <button class="btn btn--small-more best-service-m__btn <?php echo $class_name; ?>" onclick="popup_c({'cat':'услуги', 'title':'Заказ услуги', 'email': 1, 'time': 1, 'gender': 1, 'description': 'Услуга: <?php echo $title; ?>'}, this);">ЗАПИСАТЬСЯ</button>
+                                                </div>
+                                                <div class="" style="text-align: center;">
+                                                    <?php
+                                                    if ( !empty( $_GET['param'] ) AND $_GET['param'] == 'main' ) :
+                                                        ?>
+                                                        <a href="/?param=back" class="best-service-m__back" title="К выбору">Назад</a>
+                                                    <?php
+                                                    else :
+                                                        ?>
+                                                        <a href="/услуги/" class="best-service-m__back" title="К выбору">« УСЛУГИ</a>
+                                                    <?php
+                                                    endif;
+                                                    ?>
                                                 </div>
                                             </div>
                                         </div>

@@ -22,7 +22,7 @@
         </div>
         <div class="last_section_b">
             <div class="left_btn_write">
-                <button class="btn">написать директору</button>
+                <button class="btn onclick="popup_c({'cat':'обратный-звонок', 'title':'Обратный звонок', 'email': 1, 'time': 0, 'gender': 0, 'description': 'Заказ обратного звонка'}, this);"">написать директору</button>
             </div>
             <div class="right_after_btn">
                 <?php echo htmlspecialchars_decode($slide->get_field('Описание справа окна')); ?>

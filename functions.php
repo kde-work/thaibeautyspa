@@ -31,7 +31,7 @@ function ajaxurl_scripts () {
                        array(
                            'url' => admin_url('admin-ajax.php')
                        ));
-    $v = '0.022';
+    $v = '0.025';
 
     wp_enqueue_script("jquery");
     
@@ -61,6 +61,9 @@ function ajaxurl_scripts () {
 
     wp_register_script('main-ext', get_template_directory_uri() . '/js/main-ext.js', array(), $v);
     wp_enqueue_script('main-ext');
+
+    wp_register_script('madlonk', get_template_directory_uri() . '/js/madlonk.js', array(), $v);
+    wp_enqueue_script('madlonk');
 
 
 	wp_register_style( 'g-font', 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700' );

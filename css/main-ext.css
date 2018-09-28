@@ -9,7 +9,7 @@
 .services .services__content--mobile {
     display: none;
 }
-.single-services .enroll .center .btn__back::after, .single-services .enroll .center .btn__back::before {
+.single-services .enroll .center .btn__back:not(.btn__back--back)::after, .single-services .enroll .center .btn__back:not(.btn__back--back)::before {
     content: "« УСЛУГИ";
     font-size: 25px;
 }

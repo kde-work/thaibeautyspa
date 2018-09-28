@@ -15,8 +15,28 @@
 global $Mammen;
 ?>
 
-<div class="section" id="second">
+<?php
+if ( !empty( $_GET['param'] ) AND $_GET['param'] == 'back' ) :
+?>
+    <script>
+        jQuery(function(){ // on DOM load
+            var $scroll_box = $("html, body");
 
+            if ($('body').width() < 1080) {
+                setTimeout(function () {
+                    $scroll_box.animate({ scrollTop: $('.best-services').offset().top }, "slow");
+                }, 800);
+            } else {
+                $.fn.fullpage.silentMoveTo(2);
+            }
+        });
+    </script>
+
+<?php
+endif;
+?>
+
+<div class="section" id="second">
     <div class="main second best-services slide">
         <div class="center startPosition">
             <div class="plus"></div>
@@ -93,7 +113,7 @@ global $Mammen;
                                             <hr>
                                             <p class="slider-up"><?php echo $best_text; ?> <?php echo $best_text; ?></p>
                                         </div>
-                                        <div class="wrap slider-left"><a href="<?php echo get_the_permalink($post['ID']); ?>" class="btn">Подробнее</a></div>
+                                        <div class="wrap slider-left"><a href="<?php echo get_the_permalink($post['ID']); ?>?param=main" class="btn">Подробнее</a></div>
                                     </div>
                                 </li>
 								<?php
@@ -128,7 +148,7 @@ global $Mammen;
                                     <div class="best-service-m__title"><?php echo str_replace('&nbsp;', ' ', $title); ?></div>
                                     <p class="best-service-m__sub-title text--italic slider-up"><?php echo $short_text; ?></p>
                                     <div class="best-service-m__center">
-                                        <a href="<?php echo get_the_permalink($post['ID']); ?>" class="btn btn--small-more best-service-m__btn">Подробнее</a>
+                                        <a href="<?php echo get_the_permalink($post['ID']); ?>?param=main" class="btn btn--small-more best-service-m__btn">Подробнее</a>
                                     </div>
                                 </div>
 								<?php

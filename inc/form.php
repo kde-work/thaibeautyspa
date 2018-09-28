@@ -21,7 +21,7 @@ add_action('wp_ajax_tbs_form', 'tbs_form_callback');
 add_action('wp_ajax_nopriv_tbs_form', 'tbs_form_callback');
 function tbs_form_callback() {
 	if ($_POST) { // если передан массив POST
-		$email_to = "omigos99@yandex.ru";
+		$email_to = "9936062@gmail.com";
 //		$email = "vash.stroi@yandex.ru";
 		$from_email = "from-site@thaibeautyspa.ru";
 
