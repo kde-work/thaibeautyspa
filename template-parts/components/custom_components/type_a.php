@@ -3,7 +3,8 @@
     <div class="type_b_tab type_a_tab">
         <div class="top_b_text">
             <h3><?php echo $slide->get_field('Заголовок окна'); ?></h3>
-            <h6><?php echo $slide->get_field('Подзаголовок окна'); ?></h6>
+            <h2><?php echo $slide->get_field('Подзаголовок окна'); ?></h2>
+            <h6 style="font-size: 16px; color: #fff;  font-family: Cambria, Times New Roman, Times, serif;"><?php echo $slide->get_field('С описание окна'); ?></h6>
         </div>
         <div class="second_a_section">
             <div class="all_line">
@@ -46,6 +47,15 @@
                 <div class="clear" style="clear: both"></div>
             </div>
 
+        </div>
+        <div class="last_section_b">
+            <div class="left_btn_write">
+                <button class="btn" onclick="popup_c({'cat':'бизнес-линч', 'title':'Написать директору', 'email': 1, 'time': 0, 'gender': 0, 'description': 'Написать директору'}, this);">написать директору</button>
+            </div>
+            <div class="right_after_btn">
+                <?php echo htmlspecialchars_decode($slide->get_field('Текст возле кнопки А')); ?>
+            </div>
+            <div style="clear: both;"></div>
         </div>
     </div>
 </div>

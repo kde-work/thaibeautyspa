@@ -1,4 +1,3 @@
-
 .fp-enabled #second {
     overflow-y: hidden;
 }
@@ -13,6 +12,11 @@
     content: "« УСЛУГИ";
     font-size: 25px;
 }
+.single-stocks .enroll .center .btn__back:not(.btn__back--back)::after, .single-stocks .enroll .center .btn__back:not(.btn__back--back)::before {
+    content: "« Акции";
+    font-size: 25px;
+}
+
 .startMenuRight .main__right__bottom {
     visibility: collapse;
 }
@@ -257,9 +261,9 @@
 .cta__status {
     /*background-color: rgba(255, 255, 255, 0.94);*/
     display: none;
-    height: 100%;
+    height: auto;
     left: 0;
-    position: absolute;
+    /*position: absolute;*/
     top: 0;
     width: 100%;
     z-index: 10;
@@ -272,13 +276,13 @@
 /*.cta--success, .cta--error, .cta--loading {*/
 /*overflow: hidden !important;*/
 /*}*/
-.cta__block .cta--success > *, .cta__block .cta--error > *, .cta__block .cta--loading > * {
+.cta__block .cta--success .mCSB_container > *, .cta__block .cta--error .mCSB_container > *, .cta__block .cta--loading .mCSB_container > * {
     display: none;
 }
 .cta--success, .cta--error, .cta--loading {
     height: 178px;
 }
-.cta--success .cta__status--success, .cta--error .cta__status--error, .cta--loading .cta__status--loading {
+.cta--success .mCSB_container .cta__status--success, .cta--error .mCSB_container .cta__status--error, .cta--loading .mCSB_container .cta__status--loading {
     display: flex;
 }
 .cta__status-title {
@@ -1056,6 +1060,15 @@
     font-size: 30px;
     font-family: Times New Roman,Times,serif;
     text-transform: uppercase;
+}
+.event__name-e {
+    font-weight: bold;
+    font-size: 27px;
+    font-family: Times New Roman,Times,serif;
+    text-transform: uppercase;
+}
+.event-mobile .event__name-e, .event-mobile .big-date__month--m {
+    margin-bottom: 12px;
 }
 .more-box__center .enroll__top__left hr {
     border-bottom: 4px solid #000;
@@ -1972,4 +1985,69 @@ body.services:not(.special) .under-slide {
     padding-bottom: 27px !important;
     text-align: center;
     text-transform: uppercase;
+}
+
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+.aligncenter, div.aligncenter {
+    margin: auto;
+}
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+.alignleft {
+    float:left;
+    margin: 5px 20px 20px 0;
+}
+.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+a img.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+a img.alignleft {
+    float:left;
+    margin: 5px 20px 20px 0;
+}
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin:0;
+    max-width: 98.5%;
+    padding:0;
+    width: auto;
+}
+.wp-caption p.wp-caption-text {
+    font-size:11px;
+    line-height:17px;
+    margin:0;
+    padding:0 4px 5px;
 }

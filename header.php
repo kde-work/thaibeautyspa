@@ -52,9 +52,9 @@ if (function_exists('get_field')) {
 <!--            <p class="text--italic">Мы в соц, сетях:</p>-->
             <div class="header-social">
                 <div class="main__social">
-                    <a href="https://www.facebook.com/waithairechnoi/posts/1661690440595965" target="_blank"></a>
-                    <a href="https://www.instagram.com/waithairechnoi/" target="_blank"></a>
                     <a href="https://vk.com/thaispasalon" target="_blank"></a>
+                    <a href="https://www.instagram.com/thaibeautyspa_/" target="_blank"></a>
+                    <a href="https://www.facebook.com/waithairechnoi/posts/1661690440595965" target="_blank"></a>
                 </div>
             </div>
             <div class="header-phones">

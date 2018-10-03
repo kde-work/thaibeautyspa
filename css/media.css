@@ -1503,6 +1503,12 @@
     .education .main.application .container form {
         width: 100%;
     }
+    img.alignnone, img.alignleft, img.alignright {
+        height: auto;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
 }
 @media screen and (max-width: 540px) {
     #fullpage .main .center .container__right .slider .btn::after, #fullpage .services__slider .wrap.slider-left .btn::after {

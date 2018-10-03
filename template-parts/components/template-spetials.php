@@ -367,7 +367,7 @@ global $Mammen;
 	<div class="services__main ">
 		<div class="services__main__left">
 			<img src="<?php $img1 = $Mammen->get_img( 'Изображение hover-эффект Акции', 'large' )[0]['src']; echo $img1; ?>" alt="" class="img--hidden">
-			<a href="#" class="services__link" data-target="services__blocks 1" data-img="<?php echo $img1; ?>">
+			<a href="#акции" id="stocks" class="services__link" data-target="services__blocks 1" data-img="<?php echo $img1; ?>">
 				<span>01</span>
 				<span><?php echo $Mammen->get_field('Название таба Акции'); ?></span>
 			</a>
@@ -384,16 +384,25 @@ global $Mammen;
 		</div>
 		<div class="services__main__right block--back-image hover-target-image" style="background-image: url('<?php echo $img1; ?>');"></div>
 	</div>
-
+	<script>
 	$( document ).ready(function() {
-     if(/#%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D1%8B/.test(location.href)){
-		console.log("все работает")
-		}
-	 if(){
-	
-		}
-	});
-	
+     	if(/#%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D1%8B/.test(location.href)){
+			setTimeout(function(){
+  				$('#duffy').click();
+				}, 600);
+			}
+	 	if(/#%D0%B0%D0%B1%D0%BE%D0%BD%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D1%8B/.test(location.href)){
+			setTimeout(function(){
+  				$('#duck').click();
+				}, 600);
+			}
+		if(/#%D0%B0%D0%BA%D1%86%D0%B8%D0%B8/.test(location.href)){
+			setTimeout(function(){
+  				$('#stocks').click();
+				}, 600);			
+			}		
+		});
+	</script>	
 	<div class="sections">
 
 		<div class="section" id="section1">

@@ -134,7 +134,8 @@ global $Mammen;
                                                     content: '<? echo $btn; ?>' !important;
                                                 }
                                             </style>
-                                            <button class="social_content_slides_hode btn btn__enroll <?php echo $class_name; ?>" onclick="popup_c({'cat':'Акции', 'title':'<?php echo $btn; ?>', 'subtitle':'<?php echo $tab->get_field('Заголовок окна'); ?>', 'email': 1, 'time': 0, 'gender': 0, 'modal_text': '<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Подзаголовок окна')); ?>', 'description': 'Акция: <?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Заголовок окна')); ?>. /<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field( 'Подзаголовок окна')); ?>/', 'template': 'wide'}, this);"><? echo $btn; ?></button>
+                                            <button class="social_content_slides_hode btn btn__enroll <?php echo $class_name; ?>" onclick="popup_c({'cat':'Акции', 'title':'<?php echo $btn; ?>', 'subtitle':'<?php echo $tab->get_field('Заголовок окна'); ?>', 'email': 1, 'time': 0, 'gender': 0, 'modal_text': '<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Подзаголовок окна')); ?>', 'description': 'Акция: <?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Заголовок окна')); ?>. /<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field( 'Подзаголовок окна')); ?>/', 'template': 'wide'}, this);" style="right: 18%;
+    transform: translateX(50%);"><? echo $btn; ?></button>
 
                                             <div class="social_content_slides">
                                                 <div class="content_social">
@@ -148,28 +149,6 @@ global $Mammen;
                                                         <div class="social-bt">
                                                             <div class="social_cont">
                                                                 <div class="social_wrap">
-                                                                    <a href="https://www.facebook.com/waithairechnoi/" target="_blank">
-                                                                        <div class="social_wrap_img">
-                                                                            <i class="fab fa-facebook-f fa-2x"></i>
-                                                                        </div>
-                                                                    </a>
-
-                                                                </div>
-                                                                <a href="https://www.facebook.com/waithairechnoi/" target="_blank"><?php _e('Вступить') ?></a>
-                                                            </div>
-                                                            <div class="social_cont">
-                                                                <div class="social_wrap">
-                                                                    <a href="https://www.instagram.com/waithairechnoi/" target="_blank">
-                                                                        <div class="social_wrap_img">
-                                                                            <i class="fab fa-instagram fa-2x"></i>
-                                                                        </div>
-                                                                    </a>
-
-                                                                </div>
-                                                                <a href="https://www.instagram.com/waithairechnoi/" target="_blank"><?php _e('Вступить') ?></a>
-                                                            </div>
-                                                            <div class="social_cont">
-                                                                <div class="social_wrap">
                                                                     <a href="https://vk.com/thaispasalon" target="_blank">
                                                                         <div class="social_wrap_img">
                                                                             <i class="fab fa-vk fa-2x"></i>
@@ -178,6 +157,28 @@ global $Mammen;
 
                                                                 </div>
                                                                 <a href="https://vk.com/thaispasalon" target="_blank"><?php _e('Вступить') ?></a>
+                                                            </div>
+                                                            <div class="social_cont">
+                                                                <div class="social_wrap">
+                                                                    <a href="https://www.instagram.com/thaibeautyspa_/" target="_blank">
+                                                                        <div class="social_wrap_img">
+                                                                            <i class="fab fa-instagram fa-2x"></i>
+                                                                        </div>
+                                                                    </a>
+
+                                                                </div>
+                                                                <a href="https://www.instagram.com/thaibeautyspa_/" target="_blank"><?php _e('Вступить') ?></a>
+                                                            </div>
+                                                            <div class="social_cont">
+                                                                <div class="social_wrap">
+                                                                    <a href="https://www.facebook.com/waithairechnoi/" target="_blank">
+                                                                        <div class="social_wrap_img">
+                                                                            <i class="fab fa-facebook-f fa-2x"></i>
+                                                                        </div>
+                                                                    </a>
+
+                                                                </div>
+                                                                <a href="https://www.facebook.com/waithairechnoi/" target="_blank"><?php _e('Вступить') ?></a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -209,7 +210,7 @@ global $Mammen;
                                                                 <span><?php _e('Вступить') ?></span>
                                                                 <i class="fab fa-facebook-f"></i>
                                                             </a>
-                                                            <a href="https://www.instagram.com/waithairechnoi/" target="_blank">
+                                                            <a href="https://www.instagram.com/thaibeautyspa_/" target="_blank">
                                                                 <span><?php _e('Вступить') ?></span>
                                                                 <i class="fab fa-instagram"></i>
                                                             </a>

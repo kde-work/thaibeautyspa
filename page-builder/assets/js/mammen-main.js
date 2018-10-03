@@ -133,7 +133,9 @@
 
             $switch_html.trigger('click'); // switch WYSIWYG editors to the Text mode
             content_val = content_val
-                .replace(/\n<br>|\r<br>|\r|\n/g, '<br>')
+                .replace(/\n<br>|\r<br>/g, '<br>')
+                .replace(/\r|\n/g, ' ')
+                .replace(/ \= \"| \=\"|\= "/g, '="')
                 .replace(/mammen com/g, '[mammen com')
                 .replace(/\[\[/g, '[');
 

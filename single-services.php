@@ -38,7 +38,7 @@ $selection3         = get_post_meta( $id, 'cdiservices-meta-select-cost-3', true
                         <?php
                         if ( !empty( $_GET['param'] ) AND $_GET['param'] == 'main' ) :
                             ?>
-                            <a href="/?param=back" class="btn btn__back btn__back--back">Назад</a>
+                            <a href="/?param=back&g=<?php echo $_GET['g']; ?>" class="btn btn__back btn__back--back">Назад</a>
                             <?php
                         else :
                             ?>
@@ -191,7 +191,7 @@ $selection3         = get_post_meta( $id, 'cdiservices-meta-select-cost-3', true
                                                     <?php
                                                     if ( !empty( $_GET['param'] ) AND $_GET['param'] == 'main' ) :
                                                         ?>
-                                                        <a href="/?param=back" class="best-service-m__back" title="К выбору">Назад</a>
+                                                        <a href="/?param=back&g=<?php echo $_GET['g']; ?>" class="best-service-m__back" title="К выбору">Назад</a>
                                                     <?php
                                                     else :
                                                         ?>

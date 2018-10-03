@@ -26,6 +26,7 @@ class MM_Install {
 	public static function init() {
 		add_action( 'init', array( __CLASS__, 'init_components' ), 5 );
 		add_action( 'init', array( __CLASS__, 'start_parsing_components' ), 7 );
+		add_filter( 'wp_default_editor', array( __CLASS__, 'set_default_editor' ) );
 //		add_action( 'init', array( __CLASS__, 'init_background_updater' ), 5 );
 //		add_action( 'admin_init', array( __CLASS__, 'install_actions' ) );
 //		add_action( 'in_plugin_update_message-woocommerce/woocommerce.php', array( __CLASS__, 'in_plugin_update_message' ) );
@@ -35,6 +36,14 @@ class MM_Install {
 //		add_filter( 'plugin_row_meta', array( __CLASS__, 'plugin_row_meta' ), 10, 2 );
 //		add_filter( 'wpmu_drop_tables', array( __CLASS__, 'wpmu_drop_tables' ) );
 //		add_filter( 'cron_schedules', array( __CLASS__, 'cron_schedules' ) );
+	}
+
+	/**
+	 * Set default Editor mod to Text
+	 */
+	function set_default_editor() {
+		$r = 'html';
+		return $r;
 	}
 
 	/**

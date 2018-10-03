@@ -39,7 +39,7 @@ tbs_video_style_js_init ();
 			<div class="gallery__content__block" id="b1">
 
 				<div class="container__bottom">
-					<div class="gallery__image" style='background-image: url("<?php echo $Mammen->get_img( 'Картинки', 'large' )[0]['src'] ?>");'></div>
+					<div class="gallery__image" onclick="popup_img_cta({'img':'<?php echo $Mammen->get_img( 'Картинки', 'large' )[0]['src'] ?>'});" style='background-image: url("<?php echo $Mammen->get_img( 'Картинки', 'large' )[0]['src'] ?>");'></div>
 					<ul class="gallery__preview slider">
 						<li>
 							<?php

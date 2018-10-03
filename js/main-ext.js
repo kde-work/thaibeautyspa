@@ -239,7 +239,10 @@
                 $cont_with_more__cont = $('.cont-with-more__cont', $cont_with_more),
                 $cont_with_more__more = $('.cont-with-more__more', $cont_with_more),
                 $more_box__item = $('.more-box__item', $cont_with_more),
-                $more_box__item__target = $('.more-box__item--'+data_id, $cont_with_more);
+                $more_box__item__target = $('.more-box__item--'+data_id, $cont_with_more),
+                $more_box__center = $('.more-box__center', $more_box__item__target),
+                $about_event__title = $('.about-event__title', $more_box__center),
+                $scrollable__72vh_90 = $('.scrollable--72vh-90', $more_box__center);
 
             $more_box__item.removeClass('more-box__item--active');
             $more_box__item__target.addClass('more-box__item--active');
@@ -260,6 +263,8 @@
                     'top': '0'
                 });
             }
+
+            $scrollable__72vh_90.height($more_box__center.height() - $about_event__title.outerHeight(true));
         });
     });
     // Назад с Подробнее на Акциях
@@ -337,6 +342,24 @@
 
     // Мобильная версия Услуг. Аккардион
     $(function () {
+        setTimeout(function () {
+            $thumbnailBar = $('.slider_cont_c_mobi').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                fade: true,
+                asNavFor: '.slider_cc_mobi',
+                swipe: false
+            });
+            $thumbnailBars = $('.slider_cc_mobi').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                asNavFor: '.slider_cont_c_mobi',
+                dots: true,
+                arrows: false,
+                centerMode: false,
+            });
+        }, 300);
         var $services__title = $('.services__title');
 
         $services__title.on('click', function () {
@@ -418,6 +441,11 @@
             setTimeout(function () {
                 $('html, body').animate({ scrollTop: $services__content__target.offset().top }, 400);
             }, 700);
+            setTimeout(function () {
+                $('.slider_cc_mobi').slick('refresh');
+                $('.slider_cont_c_mobi').slick('refresh');
+            }, 800);
+
         });
     });
     function sal_open_acc($btn, $btns, $tab, $tabs) {
@@ -494,7 +522,7 @@
                 "pauseOnHover": false,
                 "slidesToShow": 1,
                 "slidesToScroll": 1,
-                "autoplay": false
+                "autoplay": autoplay
             });
         }, 1200);
         setTimeout(function () {
@@ -656,6 +684,7 @@
                 this_gender = $this.data('id'),
                 $service_slider__pre = $this.closest('.service-slider--pre'),
                 $container_right__source = $('.container__right--source', $service_slider__pre),
+                $service_slider__btn = $('.service-slider__btn', $container_right__source),
                 $container_right = $container_right__source.clone(true),
                 $under_slide__source = $('.under-slide--source', $service_slider__pre),
                 $under_slide = $under_slide__source.clone(true);
@@ -689,6 +718,12 @@
                 $this.data('id', i);
                 $this.addClass('dot__item--'+i);
                 i++;
+            });
+
+            $service_slider__btn.each(function () {
+                var $this = $(this);
+
+                $this.attr('href', $this.attr('href') + '&g=' + this_gender);
             });
 
             setTimeout(function () {

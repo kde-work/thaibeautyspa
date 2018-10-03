@@ -65,6 +65,13 @@ function tbs_form_callback() {
 			$extra = "<br>Отзыв: <p style='color: #050;'>$cta__text</p>";
 		}
 
+		if ( function_exists('get_field') ) {
+			$term_id = get_term_by( 'slug', $cat, 'cdimails-category', ARRAY_A );
+			$term_id = ( $term_id ) ? $term_id : 16;
+			$cat_email = get_field( 'email', "cdimails-category_{$term_id['term_id']}" );
+			$email_to = ( $cat_email ) ? $cat_email : $email_to;
+		}
+
 		function sms_send_mime_mail(
 			$email_from, // email отправителя
 			$email_to, // email получателя
@@ -104,18 +111,19 @@ function tbs_form_callback() {
 		// Создаём пост
 		tbs_create_post ($title, $body, $clear_number, $email, $name, 'mails', 'cdimails-category', $cat);
 
-//		sms_send_mime_mail(
-//			$from_email, // Ваш электронный адрес
-//			$email_to, // Ваш уникальный адрес в системе SMS.RU
-//			"UTF-8",  // кодировка, в которой находятся передаваемые строки
-//			"UTF-8", // кодировка, в которой будет отправлено письмо
-//			$title, // заголовок письма (здесь указываются параметры)
-//			$body
-//		);
+		$status = sms_send_mime_mail(
+			$from_email, // Ваш электронный адрес
+			$email_to, // Ваш уникальный адрес в системе SMS.RU
+			"UTF-8",  // кодировка, в которой находятся передаваемые строки
+			"UTF-8", // кодировка, в которой будет отправлено письмо
+			$title, // заголовок письма (здесь указываются параметры)
+			$body
+		);
 
 		echo json_encode(
 			array(
-				'status' => 1,
+				'status' => $status,
+				'email_to' => $email_to,
 				'content' => $body
 			)
 		);

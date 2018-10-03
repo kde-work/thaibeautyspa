@@ -19,19 +19,35 @@ global $Mammen;
 if ( !empty( $_GET['param'] ) AND $_GET['param'] == 'back' ) :
 ?>
     <script>
-        jQuery(function(){ // on DOM load
+        $(function(){ // on DOM load
             var $scroll_box = $("html, body");
 
             if ($('body').width() < 1080) {
                 setTimeout(function () {
                     $scroll_box.animate({ scrollTop: $('.best-services').offset().top }, "slow");
+
+	                <?php
+	                if ( !empty( $_GET['g'] ) ) :
+                    ?>
+                    var $best_s_pre__input = $('.mobile .best-s-pre__input--<?php echo $_GET['g']; ?>');
+                    $best_s_pre__input.trigger('click');
+                    <?php
+	                endif;
+	                ?>
                 }, 800);
             } else {
                 $.fn.fullpage.silentMoveTo(2);
+	            <?php
+	            if ( !empty( $_GET['g'] ) ) :
+	            ?>
+                var $best_s_pre__input = $('.desktop .best-s-pre__input--<?php echo $_GET['g']; ?>');
+                $best_s_pre__input.trigger('click');
+	            <?php
+	            endif;
+	            ?>
             }
         });
     </script>
-
 <?php
 endif;
 ?>
@@ -74,9 +90,6 @@ endif;
                     </div>
                 </div>
                 <div class="container__right--source">
-                    <!--					<div class="container__slider__number">-->
-                    <!--						<span>01</span><span>/00</span>-->
-                    <!--					</div>-->
                     <ul class="slider scroll-box">
 						<?php
 						$posts = tbs_get_best_services();
@@ -113,7 +126,7 @@ endif;
                                             <hr>
                                             <p class="slider-up"><?php echo $best_text; ?> <?php echo $best_text; ?></p>
                                         </div>
-                                        <div class="wrap slider-left"><a href="<?php echo get_the_permalink($post['ID']); ?>?param=main" class="btn">Подробнее</a></div>
+                                        <div class="wrap slider-left"><a href="<?php echo get_the_permalink($post['ID']); ?>?param=main" class="btn service-slider__btn">Подробнее</a></div>
                                     </div>
                                 </li>
 								<?php
@@ -148,7 +161,7 @@ endif;
                                     <div class="best-service-m__title"><?php echo str_replace('&nbsp;', ' ', $title); ?></div>
                                     <p class="best-service-m__sub-title text--italic slider-up"><?php echo $short_text; ?></p>
                                     <div class="best-service-m__center">
-                                        <a href="<?php echo get_the_permalink($post['ID']); ?>?param=main" class="btn btn--small-more best-service-m__btn">Подробнее</a>
+                                        <a href="<?php echo get_the_permalink($post['ID']); ?>?param=main" class="btn btn--small-more best-service-m__btn service-slider__btn">Подробнее</a>
                                     </div>
                                 </div>
 								<?php

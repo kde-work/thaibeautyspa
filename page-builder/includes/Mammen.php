@@ -58,7 +58,7 @@ class Mammen {
 		$group = array();
 		if ( $group_id !== false ) {
 			foreach ( $this->data as $key => $val ) {
-				if ( ( preg_match( '/.*(__'.$group_id.'-(\d)).*/ui', $key, $matches ) ) ) {
+				if ( ( preg_match( '/.*(__'.$group_id.'-([\d]{1,})).*/ui', $key, $matches ) ) ) {
 					$new_key = str_replace( $matches['1'], '', $key );
 					if ( !isset( $group[$matches['2']] ) OR !is_array( $group[$matches['2']] ) ) {
 						$group[$matches['2']] = array();

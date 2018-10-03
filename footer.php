@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="wrap">
-                <button type="submit" class="btn" disabled>Отправить</button>
+                <button type="submit" class="btn" disabled autocomplete="off">Отправить</button>
             </div>
 
             <div class="cta__status cta__status--loading">
@@ -76,13 +76,13 @@
 
             <div class="cta__status cta__status--success">
                 <div class="cta__status-body">
-                    <span class="cta__status-title"><h4>Заявка отправлена!</h4><br>В ближайшее время Вам позвонят</span>
+                    <span class="cta__status-title" style="color: #000;"><h4>Заявка отправлена!</h4><br>Мы свяжемся с вами в ближайшее время</span>
                 </div>
             </div>
 
             <div class="cta__status cta__status--error">
                 <div class="cta__status-body">
-                    <span class="cta__status-title"><h4>Произошла ошибка!</h4><br>Заявка не отправлена</span>
+                    <span class="cta__status-title" style="color: #000;"><h4>Произошла ошибка!</h4><br>Заявка не отправлена</span>
                 </div>
             </div>
 
@@ -121,11 +121,44 @@
 
 <div id="overlay"></div><!-- Подложка -->
 <link rel="stylesheet" href="<?php echo get_template_directory_uri()?>/css/social.css">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126733310-1"></script>
 <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-
-
+    gtag('config', 'UA-126733310-1');
 </script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter50563834 = new Ya.Metrika2({
+                    id:50563834,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks2");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/50563834" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 <?php wp_footer(); ?>
 
 </body>

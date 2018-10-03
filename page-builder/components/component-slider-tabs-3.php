@@ -57,16 +57,20 @@
  *          Заголовок окна OPTION 'limited': 150
  *          Заголовок окна OPTION 'help': Limit 150 characters
  *          Подзаголовок окна: Textarea
+ *          С описание окна: Textarea
  *          Подзаголовок окна OPTION 'limited': 250
  *          Подзаголовок окна OPTION 'help': Limit 250 characters
  *          Описание слева окна: WYSIWYG
  *          Описание справа окна: WYSIWYG
  *          Картинка для типа А: Media Upload
+ *          Текст возле кнопки А: Textarea
+ *          Текст над слайдером: Textarea
  *          Офраншизе: GROUP BEGIN
  *          Офраншизе OPTION 'type': Repeating Group
  *              Заголовок офраншизе: Textarea
  *              Картинка офраншизе: Media Upload
  *              Описание офраншизе: WYSIWYG
+ *              Mobile img франшиза: Media Upload
  *          Офраншизе: GROUP END
  *       Окно Подробнее: GROUP END
  *    Слайд: GROUP END

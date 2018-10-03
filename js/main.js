@@ -19,9 +19,9 @@ function mySlider(sliderBlock, style) {
     name.html(activeSlide.find('.master__data').html());
 
     if(style == "irregular") {
-        if(slides.length < 10)
-            container.find('.container__slider__number span:last-child').html('/0' + slides.length);
-        else container.find('.container__slider__number span:last-child').html('/' + slides.length);
+        // if(slides.length < 10)
+        //     container.find('.container__slider__number span:last-child').html('/0' + slides.length);
+        // else container.find('.container__slider__number span:last-child').html('/' + slides.length);
     }
 
     function initialButton(button, direction, slide_number) {
@@ -213,9 +213,9 @@ function mySlider(sliderBlock, style) {
                     });
                     activeSlide.find('.btn').hide();
 
-                    if(index < 9)
-                        container.find('span:first-child').html('0' + (index+1));
-                    else container.find('span:first-child').html(index+1);
+                    // if(index < 9)
+                    //     container.find('span:first-child').html('0' + (index+1));
+                    // else container.find('span:first-child').html(index+1);
                 },300);
 
                 setTimeout(function() {
@@ -812,6 +812,7 @@ $(document).ready(function() {
         imgBig.css({
             'background-image' : 'url("'+ $(this).data('src') +'")'
         });
+        imgBig.attr('onclick', 'popup_img_cta({\'img\':\''+ $(this).data('src') +'\'});');
     });
     mySlider('.gallery .main .container__bottom', 'gallery');
 
@@ -860,7 +861,7 @@ $(document).ready(function() {
     var first = false;
     var order = false;
     var clickLock = true;
-var clickable_int = 0;
+    var clickable_int = 0;
     navigationBlock.find('.services__link').click(function() {
         if (is_mobile()) {
             return;
@@ -960,50 +961,61 @@ var clickable_int = 0;
             $scrollable_lazy_load.mCustomScrollbar();
         },400);
 
-            if ($thumbnailBar) {
-                setTimeout(function () {
-                    $thumbnailBar.slick("unslick");
-                    $thumbnailBars.slick("unslick");
-                }, 10);
-            }
-                setTimeout(function () {
-                    $thumbnailBar = $('.slider_cont_c').slick({
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        arrows: false,
-                        fade: true,
-                        asNavFor: '.slider_cc',
-                        swipe: false
-                    });
-                    $thumbnailBars = $('.slider_cc').slick({
-                        slidesToShow: 4,
-                        slidesToScroll: 1,
-                        asNavFor: '.slider_cont_c',
-                        dots: false,
-                        centerMode: true,
-                        focusOnSelect: true,
-                        prevArrow: $(''),
-                        nextArrow: $(''),
-                        touchMove: false,
-                    });
-                    $thumbnailBars.siblings(".next_c").on("click", function(){
-                        $thumbnailBars.slick("slickNext");
-                    });
-                    $thumbnailBars.siblings(".prev_c").on("click", function(){
-                        $thumbnailBars.slick("slickPrev");
-                    });
-                    $thumbnailBar.slick('refresh');
-                    $thumbnailBar.slick('refresh');
-                    setTimeout(function () {
-                        var img_hh = $('.slider_cc img').width();
-                        img_hh = img_hh / 2;
-                        $('.arrows_c').css('top', img_hh + 'px');
-                        $('.line_c_bg').css('top', img_hh + 'px');
-                    }, 30);
+        if ($thumbnailBar) {
+            $('.slider_cc').closest( ".type_c_container" ).css('opacity', '0');
+            setTimeout(function () {
+
+                $thumbnailBar.slick("unslick");
+                $thumbnailBars.slick("unslick");
+            }, 350);
+        }
+        setTimeout(function () {
+            $thumbnailBar = $('.slider_cont_c').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                fade: true,
+                asNavFor: '.slider_cc',
+                swipe: false
+            });
+            $thumbnailBars = $('.slider_cc').slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                asNavFor: '.slider_cont_c',
+                dots: false,
+                centerMode: true,
+                focusOnSelect: true,
+                prevArrow: $(''),
+                nextArrow: $(''),
+                touchMove: false,
+            });
+            $('.slider_cc').closest( ".type_c_container" ).css('opacity', '1');
+            $thumbnailBars.siblings(".next_c").on("click", function(){
+                $thumbnailBars.slick("slickNext");
+            });
+            $thumbnailBars.siblings(".prev_c").on("click", function(){
+                $thumbnailBars.slick("slickPrev");
+            });
+            $thumbnailBar.slick('refresh');
+            $thumbnailBar.slick('refresh');
+            $thumbnailBar.css('opacity', '1');
+            setTimeout(function () {
+                // var totalHeight;
+                // $('.slider_cont_c').find('.slider_cc img').each(function(){
+                //     totalHeight = $(this).outerHeight(true);
+                // });
+                //
+                // var img_hh = $('.slider_cc img').width();
+                // img_hh = img_hh / 2;
+                // alert(totalHeight);
+                // alert(img_hh);
+                // $('.arrows_c').css('top', img_hh + 'px');
+                // $('.line_c_bg').css('top', img_hh + 'px');
+            }, 3000);
 
 
 
-                }, 400);
+        }, 400);
 
 
     });

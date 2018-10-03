@@ -426,24 +426,21 @@ get_footer();
             </div>
             <div class="social_list_mobi">
 
-                <a href="https://www.facebook.com/waithairechnoi/posts/1661690440595965">
-                    <span><?php _e('Вступить') ?></span>
-                    <i class=""></i>
-                </a>
-                <a href="https://www.instagram.com/waithairechnoi/">
-                    <span><?php _e('Вступить') ?></span>
-                    <i class=""></i>
-                </a>
                 <a href="https://vk.com/thaispasalon">
+                    <span><?php _e('Вступить') ?></span>
+                    <i class=""></i>
+                </a>
+                <a href="https://www.instagram.com/thaibeautyspa_/">
+                    <span><?php _e('Вступить') ?></span>
+                    <i class=""></i>
+                </a>
+                <a href="https://www.facebook.com/waithairechnoi/posts/1661690440595965">
                     <span><?php _e('Вступить') ?></span>
                     <i class=""></i>
                 </a>
                 <button class="btn btn__back">НАЗАД</button>
             </div>
         </div>
-
-
-
 
     </div>
 </div>

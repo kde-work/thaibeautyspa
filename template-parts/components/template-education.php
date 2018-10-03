@@ -147,17 +147,13 @@ global $Mammen;
                                 $note         = get_post_meta( $post['ID'], 'cdicourses-note', true );
                                 ?>
                                 <div class="event">
-                                    <div class="event__days"><?php echo $days; ?></div>
+
                                     <div class="best-service-m__center">
-                                        <div class="big-date">
-                                            <div class="big-date__date"><?php echo $date; ?></div>
-                                            <div class="big-date__months">
-                                                <div class="big-date__month big-date__month--left"><?php echo $first_month; ?></div>
-                                                <div class="big-date__month big-date__month--right"><?php echo $second_month; ?></div>
-                                            </div>
-                                        </div>
+                                        <div class="event__name-e"><?php echo $title; ?></div>
                                     </div>
-                                    <div class="event__name"><?php echo $title; ?></div>
+                                    <div class="best-service-m__center">
+                                        <div class="big-date__month big-date__month--m"><?php echo $days; ?></div>
+                                    </div>
                                     <div class="best-service-m__center">
                                         <div class="btn btn--more-mobile btn--small-more best-service-m__btn" data-id="<?php echo $post['ID']; ?>">Подробнее</div>
                                     </div>
@@ -173,65 +169,8 @@ global $Mammen;
                                             <h2 class="special__h2"><?php echo str_replace(array('<br>', '<br />'), ' ', $title); ?></h2>
                                         </div>
                                     </div>
-                                    <div class="best-service-m__center">
-                                        <div class="best-service-m__img special__img"
-                                             style="background-image: url('<?php echo $image_url; ?>');">
-                                        </div>
-                                    </div>
                                     <div class="center--mobile">
-                                        <div class="scrollable scrollable--250 text--mobile">
-                                            <p><?php echo $Mammen->get_field( 'Описание О школе' ); ?></p>
-                                        </div>
-                                        <div class="pattern-line"></div>
-                                        <div class="about-event__left about-event__program">
-                                            <div class="about-event__h3">Программа курса</div>
-                                            <div class="about-event__text"><?php echo htmlspecialchars_decode($planning); ?></div>
-                                        </div>
-                                        <div class="pattern-line"></div>
-                                        <div class="about-event__h3">Время и стоимость</div>
-                                        <div class="about-event__more-days">
-                                            <div class="about-event__days-time">
-                                                <?php echo $more_days; ?> <div class="about-event__color"><?php echo nbsp($more_time); ?></div>
-                                            </div>
-                                            <div class="about-event__cost">
-                                                <table class="about-event__table">
-                                                    <tr>
-                                                        <td class="about-event__t-name">
-                                                            <?php echo $p_name1; ?>
-                                                        </td>
-                                                        <td class="about-event__t-cost about-event__t-cost--cost">
-                                                            <?php echo nbsp($p_price1); ?>
-                                                        </td>
-                                                        <td class="about-event__t-cost about-event__t-cost--minus">
-                                                            <?php echo nbsp($p_minus1); ?>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="about-event__t-name">
-                                                            <?php echo $p_name2; ?>
-                                                        </td>
-                                                        <td class="about-event__t-cost about-event__t-cost--cost">
-                                                            <?php echo nbsp($p_price2); ?>
-                                                        </td>
-                                                        <td class="about-event__t-cost about-event__t-cost--minus">
-                                                            <?php echo nbsp($p_minus2); ?>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="about-event__t-name">
-                                                            <?php echo $p_name3; ?>
-                                                        </td>
-                                                        <td class="about-event__t-cost about-event__t-cost--cost">
-                                                            <?php echo nbsp($p_price3); ?>
-                                                        </td>
-                                                        <td class="about-event__t-cost about-event__t-cost--minus">
-                                                            <?php echo nbsp($p_minus3); ?>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <div class="about-event__note"><?php echo $note; ?></div>
-                                        </div>
+	                                    <?php echo tbs_auto_paragraph(htmlspecialchars_decode($desc)); ?>
 
                                         <?php
                                         $class_name = 'zapisatcya';
@@ -431,16 +370,16 @@ global $Mammen;
                                             $note         = get_post_meta( $post['ID'], 'cdicourses-note', true );
                                             ?>
                                             <div class="event">
-                                                <div class="event__left big-date">
-                                                    <div class="big-date__date"><?php echo $date; ?></div>
-                                                    <div class="big-date__months">
-                                                        <div class="big-date__month big-date__month--left"><?php echo $first_month; ?></div>
-                                                        <div class="big-date__month big-date__month--right"><?php echo $second_month; ?></div>
-                                                    </div>
-                                                </div>
+<!--                                                <div class="event__left big-date">-->
+<!--                                                    <div class="big-date__date">--><?php //echo $date; ?><!--</div>-->
+<!--                                                    <div class="big-date__months">-->
+<!--                                                        <div class="big-date__month big-date__month--left">--><?php //echo $first_month; ?><!--</div>-->
+<!--                                                        <div class="big-date__month big-date__month--right">--><?php //echo $second_month; ?><!--</div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
                                                 <div class="event__center">
-                                                    <div class="event__name"><?php echo $title; ?></div>
-                                                    <div class="event__days"><?php echo $days; ?></div>
+                                                    <div class="event__name-e"><?php echo $title; ?></div>
+                                                    <div class="big-date__month"><?php echo $days; ?></div>
                                                 </div>
                                                 <div class="event__right">
                                                     <div class="btn btn--small-more cont-with-more__btn" data-id="<?php echo $post['ID']; ?>">Подробнее</div>
@@ -458,67 +397,8 @@ global $Mammen;
                                                         <div class="about-event__title"><?php echo $title; ?></div>
                                                         <div class="scrollable--72vh-90">
                                                             <div class="scrollable--tmp scrollable--100per">
-                                                                <div class="about-event__rows about-event__rows--center">
-                                                                    <div class="about-event__left about-event__img" style="background-image: url('<?php echo $image_url; ?>');"></div>
-                                                                    <div class="about-event__right about-event__desc">
-                                                                        <div class="scroll-box__cont">
-                                                                            <div class="scrollable--tmp scrollable--100per">
-                                                                                <?php echo tbs_auto_paragraph(htmlspecialchars_decode($desc)); ?>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="about-event__rows about-event__rows--bottom">
-                                                                    <div class="about-event__left about-event__program">
-                                                                        <div class="about-event__h3">Программа курса</div>
-                                                                        <div class="about-event__text"><?php echo htmlspecialchars_decode($planning); ?></div>
-                                                                    </div>
-                                                                    <div class="about-event__right about-event__time-cost">
-                                                                        <div class="about-event__h3">Время и стоимость</div>
-                                                                        <div class="about-event__more-days">
-                                                                            <div class="about-event__days-time">
-                                                                                <?php echo $more_days; ?> <div class="about-event__color"><?php echo $more_time; ?></div>
-                                                                            </div>
-                                                                            <div class="about-event__cost">
-                                                                                <table class="about-event__table">
-                                                                                    <tr>
-                                                                                        <td class="about-event__t-name">
-                                                                                            <?php echo $p_name1; ?>
-                                                                                        </td>
-                                                                                        <td class="about-event__t-cost about-event__t-cost--cost">
-                                                                                            <?php echo $p_price1; ?>
-                                                                                        </td>
-                                                                                        <td class="about-event__t-cost about-event__t-cost--minus">
-                                                                                            <?php echo $p_minus1; ?>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td class="about-event__t-name">
-                                                                                            <?php echo $p_name2; ?>
-                                                                                        </td>
-                                                                                        <td class="about-event__t-cost about-event__t-cost--cost">
-                                                                                            <?php echo $p_price2; ?>
-                                                                                        </td>
-                                                                                        <td class="about-event__t-cost about-event__t-cost--minus">
-                                                                                            <?php echo $p_minus2; ?>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td class="about-event__t-name">
-                                                                                            <?php echo $p_name3; ?>
-                                                                                        </td>
-                                                                                        <td class="about-event__t-cost about-event__t-cost--cost">
-                                                                                            <?php echo $p_price3; ?>
-                                                                                        </td>
-                                                                                        <td class="about-event__t-cost about-event__t-cost--minus">
-                                                                                            <?php echo $p_minus3; ?>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </table>
-                                                                            </div>
-                                                                            <div class="about-event__note"><?php echo $note; ?></div>
-                                                                        </div>
-                                                                    </div>
+                                                                <div class="">
+	                                                                <?php echo tbs_auto_paragraph(htmlspecialchars_decode($desc)); ?>
                                                                 </div>
                                                             </div>
                                                         </div>
