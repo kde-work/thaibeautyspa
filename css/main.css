@@ -2962,13 +2962,13 @@ body:not(.linch) .right .main__social a:hover {
     /*clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)*/
 /*}*/
 .right .main__social a:first-child{
-    background-image:url(../img/facebook.png);
+    background-image:url(../img/vkontakte.png);
 }
 body:not(.linch) .right .main__social a:first-child:hover {
-    background:#b39658 url(../img/facebook-white.png) center 6px no-repeat
+    background:#b39658 url(../img/vkontakte-white.png) center 10px no-repeat
 }
 .linch .main__social a:nth-child(1), .linch .main__social a:nth-child(1):hover {
-    background-image: url(../img/facebook-w.png);
+    background-image: url(../img/vkontakte-w.png);
 }
 .right .main__social a:nth-child(2){
     background-image:url(../img/instagram.png);
@@ -2980,13 +2980,13 @@ body:not(.linch) .right .main__social a:nth-child(2):hover {
     background-image: url(../img/instagram-w.png);
 }
 .right .main__social a:last-child{
-    background-image:url(../img/vkontakte.png);
+    background-image:url(../img/facebook.png);
 }
 body:not(.linch) .right .main__social a:last-child:hover {
-    background:#b39658 url(../img/vkontakte-white.png) center 10px no-repeat
+    background:#b39658 url(../img/facebook-white.png) center 6px no-repeat
 }
 .linch .main__social a:nth-child(3), .linch .main__social a:nth-child(3):hover {
-    background-image: url(../img/vkontakte-w.png);
+    background-image: url(../img/facebook-w.png);
 }
 /*.right .main__social a:hover{*/
     /*top:-2px;*/

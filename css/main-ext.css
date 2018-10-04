@@ -1548,6 +1548,9 @@ body.services:not(.special) .under-slide {
     filter: url("../img/grayscale.svg#greyscale");
     filter: gray;
 }
+.hot-hours__none {
+    margin-top: 2em;
+}
 .events {
     max-height: 68vh;
 }

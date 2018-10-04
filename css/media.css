@@ -872,8 +872,17 @@
         justify-content: space-between;
         width: 97%;
     }
-    .circle-price__item {
+    .reviews .circle-price__item {
         text-align: center;
+        position: relative;
+    }
+    .services-icon {
+        bottom: 0;
+        margin-top: 10px;
+        position: relative;
+    }
+    .review__photo {
+        height: 520px;
     }
     .btn--back {
         position: absolute;
