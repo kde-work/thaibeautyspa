@@ -14,9 +14,10 @@
  * Thumbnail: /page-builder/assets/img/gallery.png *Image for admin panel in Page Builder
  * Preview: /page-builder/assets/img/gallery.png *Relative path from Theme root
  * Global Component Rules: 0
- * Фото: GROUP BEGIN
- *    Картинки: Multiple Media Upload
- * Фото: GROUP END
+ * Картинки: GROUP BEGIN
+ * Картинки OPTION 'type': Repeating Group
+ *    Фото: Media Upload
+ * Картинки: GROUP END
  * Видео: GROUP BEGIN
  * Видео OPTION 'type': Repeating Group
  *    Ссылка на Youtube видео: Text

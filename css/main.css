@@ -1154,7 +1154,7 @@
 }
 .gallery .main .center{
     position:relative;
-    height:60vh
+    height:80vh
 }
 .gallery .main .container__wrap{
     position:absolute;
@@ -1281,7 +1281,7 @@
 .gallery .main .container__bottom .gallery__image{
     max-width:105%;
     width:105%;
-    height:39vh;
+    height:60vh;
     margin-left:-2%
 }
 .gallery .main .container__bottom .gallery__image img{
@@ -1779,7 +1779,7 @@
     padding:17px 35px;
     margin-bottom:5%;
     font-size:19px;
-    font-family:SitkaSmall;
+    font-family:"Roboto Condensed";
     line-height:0;
     outline:none;
     color:#000;
@@ -2590,7 +2590,7 @@
     padding:16px;
     padding-bottom:50px;
     outline:none;
-    font-family:SitkaSmall;
+    font-family:"Roboto Condensed";
     font-size:16px;
     resize:none;
     border:none;
@@ -2604,7 +2604,7 @@
 .reviews .reviews__second .center__bottom .reviews__form .reviews__form__input{
     padding:22px;
     width:21%;
-    font-family:SitkaSmall;
+    font-family:"Roboto Condensed";
     font-size:16px;
     outline:none;
     border-radius:50px;
@@ -2699,7 +2699,7 @@
     margin-bottom:4vh;
     outline:none;
     font-size:19px;
-    font-family:SitkaSmall;
+    font-family:"Roboto Condensed";
     font-style:italic;
     color:#000;
     background:none;
@@ -2828,11 +2828,11 @@
     font-size:25px!important;
     line-height:43px
 }
-@font-face{
-    font-family:SitkaSmall;
-    font-style:italic;
-    src:url(../fonts/SitkaSmall.woff) format("woff"),url(../fonts/SitkaSmall.ttf) format("truetype")
-}
+/*@font-face{*/
+    /*font-family:"Roboto Condensed";*/
+    /*font-style:italic;*/
+    /*src:url(../fonts/"Roboto Condensed".woff) format("woff"),url(../fonts/"Roboto Condensed".ttf) format("truetype")*/
+/*}*/
 *{
     margin:0;
     padding:0;
@@ -2846,7 +2846,7 @@ body{
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ebf3f8",endColorstr="#ebf3f8",GradientType=1)
 }
 .text--italic,a{
-    font-family:SitkaSmall;
+    font-family:"Roboto Condensed";
     font-size:15.2px;
     text-decoration:none;
     color:#000
@@ -5262,7 +5262,7 @@ body:not(.linch) .right .main__social a:last-child:hover {
     }
     .main__menu__button .main__menu__btn:after{
         content:"Меню";
-        font-family:SitkaSmall;
+        font-family:"Roboto Condensed";
         font-style:italic;
         font-size:24px
     }

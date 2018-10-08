@@ -73,7 +73,7 @@ endif;
                 </div>
                 <div class="container__pre best-s-pre">
                     <div class="best-s-pre__cont">
-                        <div class="best-s-pre__desc">Здесь мы поможем вам с выбором лучшей программы, выберите<br>категорию для лучшего подбора программ для вас </div>
+                        <div class="best-s-pre__desc"><?php echo $Mammen->get_field( 'Описание' )?></div>
                         <div class="best-s-pre__big-text">Кто вы?</div>
                         <div class="best-s-pre__hr"></div>
                         <div class="best-s-pre__inputs">
@@ -190,7 +190,7 @@ endif;
                 <div class="special__big-text f--center"><?php echo $Mammen->get_field( 'Заголовок' ); ?></div>
                 <div class="container__pre best-s-pre">
                     <div class="best-s-pre__cont">
-                        <div class="best-s-pre__desc">Здесь мы поможем вам с выбором лучшей программы, выберите<br>категорию для лучшего подбора программ для вас </div>
+                        <div class="best-s-pre__desc"><?php echo $Mammen->get_field( 'Описание Мобильное' )?></div>
                         <div class="best-s-pre__big-text">Кто вы?</div>
                         <div class="best-s-pre__hr"></div>
                         <div class="best-s-pre__inputs">

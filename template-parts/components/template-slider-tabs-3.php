@@ -145,8 +145,7 @@ global $Mammen;
                                                             </div>
                                                         </div>
                                                         <div class="type_b_mobi_btn" style="text-align: center; margin-bottom: 40px;">
-                                                            <button class="btn" style="position: relative!important;"  onclick="popup_c({'cat':'бизнес-линч', 'title':'Написать директору', 'email': 1, 'time': 0, 'gender': 0, 'description': 'Написать директору'}, this);">написать директору</button>
-
+                                                            <button class="btn" style="position: relative!important;"  onclick="popup_c({'cat':'бизнес-линч', 'title':'Написать директору', 'email': 1, 'time': 0, 'gender': 0, 'description': 'франшиза THAIBEAUTYSPA'}, this);">написать директору</button>
                                                         </div>
                                                         <div class="mobi_after_bt">
                                                             <?php echo htmlspecialchars_decode($tab->get_field('Текст возле кнопки А')); ?>
@@ -181,7 +180,7 @@ global $Mammen;
                                                         </div>
                                                     </div>
                                                     <div class="type_b_mobi_btn" style="text-align: center; margin-bottom: 40px;">
-                                                        <button class="btn" style="position: relative!important;"  onclick="popup_c({'cat':'бизнес-линч', 'title':'Написать директору', 'email': 1, 'time': 0, 'gender': 0, 'description': 'Написать директору'}, this);">написать директору</button>
+                                                        <button class="btn" style="position: relative!important;"  onclick="popup_c({'cat':'бизнес-линч', 'title':'Написать директору', 'email': 1, 'time': 0, 'gender': 0, 'description': '<?= $title ?>'}, this);">написать директору</button>
                                                     </div>
                                                     <div class="mobi_after_bt">
                                                         <?php echo htmlspecialchars_decode($tab->get_field('Текст возле кнопки А')); ?>
@@ -202,7 +201,7 @@ global $Mammen;
                                                         </div>
                                                         <p class="text--italic slider-up"></p>
                                                         <div class="type_b_mobi_btn" style="text-align: center; margin-bottom: 40px;">
-                                                            <button class="btn" style="position: relative!important;"  onclick="popup_c({'cat':'бизнес-линч', 'title':'Написать директору', 'email': 1, 'time': 0, 'gender': 0, 'description': 'Написать директору'}, this);">написать директору</button>
+                                                            <button class="btn" style="position: relative!important;"  onclick="popup_c({'cat':'бизнес-линч', 'title':'Написать директору', 'email': 1, 'time': 0, 'gender': 0, 'description': '<?= $title ?>'}, this);">написать директору</button>
                                                             
                                                         </div>
                                                         <div class="mobi_after_bt">
@@ -230,7 +229,7 @@ global $Mammen;
                                                         </div>
                                                         <p class="text--italic slider-up"><?php echo htmlspecialchars_decode($ext_text); ?></p>
                                                         <div class="wrap slider-left">
-                                                            <button class="btn btn--zap" onclick="popup_c({'cat':'бизнес-линч', 'title':'Написать директору', 'email': 1, 'time': 0, 'gender': 0, 'description': 'написать директору'}, this);">написать директору</button>
+                                                            <button class="btn btn--zap" onclick="popup_c({'cat':'бизнес-линч', 'title':'Написать директору', 'email': 1, 'time': 0, 'gender': 0, 'description': '<?= $title ?>'}, this);">написать директору</button>
                                                         </div>
 
                                                         <button class="btn btn__back btn--back">НАЗАД</button>
@@ -364,6 +363,7 @@ global $Mammen;
                                                                             content: '<?php echo $tab->get_field('Текст кнопки окна Подробнее'); ?>' !important;
                                                                         }
                                                                     </style>
+
                                                                     <button class="btn btn__enroll <?php echo $class_name; ?>" onclick="popup_c({'cat':'<?php echo get_the_title(); ?>', 'title':'<?php echo $tab->get_field('Текст кнопки окна Подробнее'); ?>', 'email': 1, 'time': 0, 'gender': 0, 'description': 'Услуга: <?php echo str_replace(array('<br>', '<br />'), ' ', $slide->get_field('Заголовок окна')); ?>. /<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field( 'Заголовок')); ?>/'}, this);"><?php echo $tab->get_field('Текст кнопки окна Подробнее'); ?></button>
 
 

@@ -32,7 +32,8 @@
         </div>
         <div class="last_section_b">
             <div class="left_btn_write">
-                <button class="btn "  onclick="popup_c({'cat':'бизнес-линч', 'title':'Написать директору', 'email': 1, 'time': 0, 'gender': 0, 'description': 'Написать директору'}, this);">написать директору</button>
+                <?php $description_form = $slide->get_field('Заголовок окна'); ?>
+                <button class="btn "  onclick="popup_c({'cat':'бизнес-линч', 'title':'Написать директору', 'email': 1, 'time': 0, 'gender': 0, 'description': '<?= $description_form ?>'}, this);">написать директору</button>
             </div>
             <div class="right_after_btn">
                 <?php echo htmlspecialchars_decode($slide->get_field('Описание справа окна')); ?>

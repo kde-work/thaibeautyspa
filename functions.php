@@ -2,6 +2,7 @@
 
 require 'inc/services.php';
 require 'inc/form.php';
+require 'inc/editor-rules.php';
 
 // Initial Mammen Page Builder Setup
 require get_template_directory() . '/page-builder/page-builder.php';
@@ -23,7 +24,7 @@ function footer_enqueue_scripts(){
 		add_action('wp_footer','wp_print_head_scripts',5);
 	// }
 }
-//add_action('after_setup_theme','footer_enqueue_scripts');
+// add_action('after_setup_theme','footer_enqueue_scripts');
 
 // Переменная для ajax и js/css файлы
 function ajaxurl_scripts () {
@@ -32,7 +33,7 @@ function ajaxurl_scripts () {
                        array(
                            'url' => admin_url('admin-ajax.php')
                        ));
-    $v = '0.026';
+    $v = '0.028';
 
     wp_enqueue_script("jquery");
     
@@ -90,6 +91,9 @@ function ajaxurl_scripts () {
 
 	wp_register_style( 'dev-kk',  get_template_directory_uri() . '/css/dev-kk.css', array(), $v );
 	wp_enqueue_style( 'dev-kk' );
+
+	wp_register_style( 'seo',  get_template_directory_uri() . '/css/seo.css', array(), $v );
+	wp_enqueue_style( 'seo' );
 
     wp_register_style( 'media-t',  get_template_directory_uri() . '/css/media.css', array(), $v );
     wp_enqueue_style( 'media-t' );
@@ -335,3 +339,9 @@ function foghorn_comment( $comment, $args, $depth ) {
 	endswitch;
 }
 endif; // ends check for foghorn_comment()
+
+add_action('after_setup_theme', function(){
+	register_nav_menus( array(
+		'header_menu' => 'Меню en'
+	) );
+});

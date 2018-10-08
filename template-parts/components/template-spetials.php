@@ -22,7 +22,7 @@ global $Mammen;
 				<div class="center">
                     <div class="services__m-content services__m-content--1" data-id="1">
                         <h2 class="special__h2"><?php echo tbs_replace_str_with_star(str_replace(array('<br>', '<br />'), ' ', $Mammen->get_field('Название таба Акции'))); ?></h2>
-                        <div class="best-service-m slick--slider-init">
+                        <div class="best-service-m slick--slider-init" id="scroll_top_cc_slider">
 	                        <?php
 	                        $tabs = $Mammen->get_fields( 'Наши акции' );
 	                        if ( count( $tabs ) ) {
@@ -49,7 +49,17 @@ global $Mammen;
                                             }
                                         </style>
                                         <div class="best-service-m__center">
-                                            <div class="btn btn--small-more best-service-m__btn <?php echo $class_name; ?>" onclick="popup_c({'cat':'Акции', 'title':'<?php echo $btn; ?>', 'subtitle':'<?php echo $tab->get_field('Заголовок слайда'); ?>', 'email': 1, 'time': 0, 'gender': 0, 'modal_text': '<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Описание под названием')); ?>', 'description': 'Акция: <?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Описание под названием')); ?>. /<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field( 'Описание под названием')); ?>/', 'template': 'wide'}, this);"><? echo $btn; ?></div>
+                                            <?php
+                                            if ($tab->get_field('Использовать Окно Подробнее')) {
+                                                $image_src_mobi = $tab->get_img( 'Картинка окна', 'large' )[0]['src'];
+                                                $text_left_bt = $tab->get_field('Текст слева внизу');
+                                                $title_to_mobi = $tab->get_field('Заголовок окна');
+                                                $title_to_mobi_after_img =  $tab->get_field('Подзаголовок окна');
+                                                ?>
+                                                <div class="btn btn--small-more social_btn--small-more my_btn_mobi_open_cc" data-id="<?php echo $j; ?>">Подробнее</div>
+                                            <?php } else { ?>
+                                                <div class="btn btn--small-more best-service-m__btn <?php echo $class_name; ?>" onclick="popup_c({'cat':'Акции', 'title':'<?php echo $btn; ?>', 'subtitle':'<?php echo $tab->get_field('Заголовок слайда'); ?>', 'email': 1, 'time': 0, 'gender': 0, 'modal_text': '<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Описание под названием')); ?>', 'description': 'Акция: <?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Описание под названием')); ?>. /<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field( 'Описание под названием')); ?>/', 'template': 'wide'}, this);"><? echo $btn; ?></div>
+                                            <?php } ?>
                                         </div>
                                     </div>
 			                        <?php
@@ -58,6 +68,42 @@ global $Mammen;
                             ?>
                         </div>
                         <div class="pattern-line"></div>
+                                    <div class="social_content_slides my_mobi_open_cc" id="scroll_mobi_active" style="display: none;">
+
+                                                            <div class="social_mobi">
+                                                                <div class="title_mobi">
+                                                                    <h2 style="font-size: 36px;" id="window_title_id" ><?php if ($title_to_mobi) { echo $title_to_mobi; } ?></h2>
+                                                                </div>
+                                                                <div class="social_right_mobi" style="text-align: center!important;">
+                                                                    <img src="<?php if ($image_src_mobi) { echo $image_src_mobi; } ?>" alt="image" id="image_id" style="max-width: 100%; width: auto;">
+                                                                    <div class="r-text">
+                                                                        <h3><?php if ($text_left_bt) { echo $title_to_mobi_after_img; } ?></h3>
+                                                                        <p id="text_left_id"><?php if ($text_left_bt) { echo $text_left_bt; } ?></p>
+                                                                    </div>
+                                                                    <div class="social_list_mobi">
+
+                                                                        <a href="https://www.facebook.com/waithairechnoi/posts/1661690440595965" target="_blank">
+                                                                            <span><?php _e('Вступить') ?></span>
+                                                                            <i class="fab fa-facebook-f"></i>
+                                                                        </a>
+                                                                        <a href="https://www.instagram.com/waithairechnoi/" target="_blank">
+                                                                            <span><?php _e('Вступить') ?></span>
+                                                                            <i class="fab fa-instagram"></i>
+                                                                        </a>
+                                                                        <a href="https://vk.com/thaispasalon" target="_blank">
+                                                                            <span><?php _e('Вступить') ?></span>
+                                                                            <i class="fab fa-vk"></i>
+                                                                        </a>
+                                                                        <button  class="my_btn my_btn_mobi my_btn_mobi_cc" data-id="<?php echo $j; ?>" style="position:relative!important;"><?php _e('Назад') ?></button>
+
+                                                                    </div>
+                                                                </div>
+
+
+
+
+                                                            </div>
+                                                        </div>
                     </div>
                     <h3 class="services__title services__title--1 services__title--slick" data-id="1">
                         <span class="services__title-num">01</span>
@@ -101,6 +147,7 @@ global $Mammen;
 							?>
                         </div>
                         <div class="pattern-line"></div>
+
                     </div>
                     <h3 class="services__title services__title--2 services__title--slick" data-id="2">
                         <span class="services__title-num">02</span>
@@ -133,6 +180,7 @@ global $Mammen;
                     </h3>
 				</div>
 			</div>
+
 		</div>
 	</div>
 
@@ -194,49 +242,116 @@ global $Mammen;
 											$dotes .= ob_get_contents();
 											ob_end_clean();
 
-											/*if ($tab->get_field('Использовать Окно Подробнее') OR false) :
+											if ($tab->get_field('Использовать Окно Подробнее') OR false) :
 											// Формирование "Подробнее"
 											ob_start();
 											?>
-                                            <div id="i-<?php echo $j; ?>" class="more-box__item more-box__item--<?php echo $j; ?>">
-                                                <div class="main enroll">
-                                                    <div class="center more-box__center">
+                                            <div id="i-<?php echo $j; ?>" class="more-box__item more-box__item--<?php echo $j; ?>" style="margin-top: 31vh;">
+                                               <div class="main enroll"  id="scroll_to_mobi_<?php echo $j; ?>">
+                                                    <div class="center more-box__center" style="max-height: unset; height: auto; padding-right: 0; width: 100%!important; padding-left: 15px;">
                                                         <div class="container__wrap"><img src="<?php echo get_template_directory_uri(); ?>/img/border-8.png" alt=""></div>
-                                                        <button class="btn btn__back">НАЗАД</button>
-														<?php
-														$class_name = 'zapisatcya';
-														$btn = 'Записаться';
-														?>
+                                                        <button class="social_content_slides_hode btn btn__back">НАЗАД</button>
+                                                        <?php
+                                                        $class_name = 'zapisatcya';
+                                                        $btn = 'Записаться';
+                                                        ?>
                                                         <style type="text/css">
                                                             #fullpage .<?php echo $class_name; ?>::after, #fullpage .<?php echo $class_name; ?>::before {
                                                                 content: '<? echo $btn; ?>' !important;
                                                             }
                                                         </style>
-                                                        <button class="btn btn__enroll <?php echo $class_name; ?>" onclick="popup_c({'cat':'Акции', 'title':'<?php echo $btn; ?>', 'subtitle':'<?php echo $tab->get_field('Заголовок окна'); ?>', 'email': 1, 'time': 0, 'gender': 0, 'modal_text': '<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Подзаголовок окна')); ?>', 'description': 'Акция: <?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Заголовок окна')); ?>. /<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field( 'Подзаголовок окна')); ?>/', 'template': 'wide'}, this);"><? echo $btn; ?></button>
+                                                        <button class="social_content_slides_hode btn btn__enroll <?php echo $class_name; ?>" onclick="popup_c({'cat':'Акции', 'title':'<?php echo $btn; ?>', 'subtitle':'<?php echo $tab->get_field('Заголовок окна'); ?>', 'email': 1, 'time': 0, 'gender': 0, 'modal_text': '<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Подзаголовок окна')); ?>', 'description': 'Акция: <?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field('Заголовок окна')); ?>. /<?php echo str_replace(array('<br>', '<br />'), ' ', $tab->get_field( 'Подзаголовок окна')); ?>/', 'template': 'wide'}, this);" style="right: 18%; box-shadow: none!important;
+    transform: translateX(50%);"><? echo $btn; ?></button>
 
-                                                        <div class="enroll__top">
-                                                            <div class="enroll__top__left">
-                                                                <h3><?php echo $tab->get_field('Заголовок окна'); ?></h3>
-                                                                <hr>
-                                                                <p class="text--italic"><?php echo $tab->get_field('Подзаголовок окна'); ?></p>
-                                                            </div>
-                                                            <div class="enroll__top__right block--back-image" style="background-image: url('<?php echo $tab->get_img( 'Картинка окна', 'large' )[0]['src']; ?>');">
-                                                            </div>
-                                                        </div>
-                                                        <div class="enroll__bottom">
-                                                            <div class="enroll__bottom__left">
-                                                                <div class="more-box__caps align--left">
-																	<?php echo $tab->get_field('Текст слева капс'); ?>
+                                                        <div class="social_content_slides">
+                                                            <div class="content_social">
+                                                                <div class="both"></div>
+                                                                <div class="social_left">
+                                                                    <div class="l-text">
+                                                                        <h2><?php echo $tab->get_field('Заголовок окна'); ?></h2>
+                                                                        <h3><?php echo $tab->get_field('Текст слева капс'); ?></h3>
+                                                                        <p><?php echo $tab->get_field('Текст слева внизу'); ?></p>
+                                                                    </div>
+                                                                    <div class="social-bt">
+                                                                        <div class="social_cont">
+                                                                            <div class="social_wrap">
+                                                                                <a href="https://vk.com/thaispasalon" target="_blank">
+                                                                                    <div class="social_wrap_img">
+                                                                                        <i class="fab fa-vk fa-2x"></i>
+                                                                                    </div>
+                                                                                </a>
+
+                                                                            </div>
+                                                                            <a href="https://vk.com/thaispasalon" target="_blank"><?php _e('Вступить') ?></a>
+                                                                        </div>
+                                                                        <div class="social_cont">
+                                                                            <div class="social_wrap">
+                                                                                <a href="https://www.instagram.com/waithairechnoi/" target="_blank">
+                                                                                    <div class="social_wrap_img">
+                                                                                        <i class="fab fa-instagram fa-2x"></i>
+                                                                                    </div>
+                                                                                </a>
+
+                                                                            </div>
+                                                                            <a href="https://www.instagram.com/waithairechnoi/" target="_blank"><?php _e('Вступить') ?></a>
+                                                                        </div>
+                                                                        <div class="social_cont">
+                                                                            <div class="social_wrap">
+                                                                                <a href="https://www.facebook.com/waithairechnoi/" target="_blank">
+                                                                                    <div class="social_wrap_img">
+                                                                                        <i class="fab fa-facebook-f fa-2x"></i>
+                                                                                    </div>
+                                                                                </a>
+
+                                                                            </div>
+                                                                            <a href="https://www.facebook.com/waithairechnoi/" target="_blank"><?php _e('Вступить') ?></a>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                                <div class="align--left">
-																	<?php echo $tab->get_field('Текст слева внизу'); ?>
+                                                                <div class="social_right">
+                                                                    <img src="<?php $img_right = $tab->get_img( 'Картинка окна', 'large' )[0]['src'];  echo $img_right; ?>" alt="image">
+                                                                    <div class="r-text">
+                                                                        <div>
+                                                                            <?php echo $tab->get_field('Описание справа окна'); ?>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
+                                                                <div class="both"></div>
                                                             </div>
 
-                                                            <div class="enroll__bottom__right">
-                                                                <div class="scrollable">
-																	<?php echo $tab->get_field('Описание справа окна'); ?>
+                                                            <div class="social_mobi">
+                                                                <div class="lines_mobi"></div>
+                                                                <div class="title_mobi">
+                                                                    <h2 style="font-size: 36px;" id="window_title_id" ><?php if ($title_to_mobi) { echo $title_to_mobi; } ?></h2>
                                                                 </div>
+                                                                <div class="social_right_mobi" style="text-align: center!important;">
+                                                                    <img src="<?php if ($image_src_mobi) { echo $image_src_mobi; } ?>" alt="image" id="image_id" style="max-width: 100%; width: auto;">
+                                                                    <div class="r-text">
+                                                                        <h3><?php if ($text_left_bt) { echo $title_to_mobi_after_img; } ?></h3>
+                                                                        <p id="text_left_id"><?php if ($text_left_bt) { echo $text_left_bt; } ?></p>
+                                                                    </div>
+                                                                    <div class="social_list_mobi">
+
+                                                                        <a href="https://www.facebook.com/waithairechnoi/posts/1661690440595965" target="_blank">
+                                                                            <span><?php _e('Вступить') ?></span>
+                                                                            <i class="fab fa-facebook-f"></i>
+                                                                        </a>
+                                                                        <a href="https://www.instagram.com/waithairechnoi/" target="_blank">
+                                                                            <span><?php _e('Вступить') ?></span>
+                                                                            <i class="fab fa-instagram"></i>
+                                                                        </a>
+                                                                        <a href="https://vk.com/thaispasalon" target="_blank">
+                                                                            <span><?php _e('Вступить') ?></span>
+                                                                            <i class="fab fa-vk"></i>
+                                                                        </a>
+                                                                        <button  class="my_btn my_btn_mobi" data-id="<?php echo $j; ?>" style="position:relative!important;"><?php _e('Назад') ?></button>
+
+                                                                    </div>
+                                                                </div>
+
+
+
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -245,7 +360,7 @@ global $Mammen;
 											<?php
 											$more_html .= ob_get_contents();
 											ob_end_clean(); // втихую отбрасывает содержимое буфера
-                                            endif;*/
+                                            endif;
 
 											$j++;
 										}
@@ -367,7 +482,7 @@ global $Mammen;
 	<div class="services__main ">
 		<div class="services__main__left">
 			<img src="<?php $img1 = $Mammen->get_img( 'Изображение hover-эффект Акции', 'large' )[0]['src']; echo $img1; ?>" alt="" class="img--hidden">
-			<a href="#акции" id="stocks" class="services__link" data-target="services__blocks 1" data-img="<?php echo $img1; ?>">
+			<a href="#" class="services__link" data-target="services__blocks 1" data-img="<?php echo $img1; ?>">
 				<span>01</span>
 				<span><?php echo $Mammen->get_field('Название таба Акции'); ?></span>
 			</a>
@@ -377,32 +492,40 @@ global $Mammen;
 				<span><?php echo $Mammen->get_field('Название таба Абонементы'); ?></span>
 			</a>
 			<img src="<?php $img3 = $Mammen->get_img( 'Изображение hover-эффект Подарки', 'large' )[0]['src']; echo $img3; ?>" alt="" class="img--hidden">
-			<a href="#сертификаты" id="duffy" class="services__link" data-target="services__blocks 3" data-img="<?php echo $img3; ?>">
+			<a href="#сертификаты" id="daffy" class="services__link" data-target="services__blocks 3" data-img="<?php echo $img3; ?>">
 				<span>03</span>
 				<span><?php echo $Mammen->get_field('Название таба Подарки'); ?></span>
 			</a>
 		</div>
 		<div class="services__main__right block--back-image hover-target-image" style="background-image: url('<?php echo $img1; ?>');"></div>
 	</div>
-	<script>
-	$( document ).ready(function() {
-     	if(/#%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D1%8B/.test(location.href)){
-			setTimeout(function(){
-  				$('#duffy').click();
-				}, 600);
-			}
-	 	if(/#%D0%B0%D0%B1%D0%BE%D0%BD%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D1%8B/.test(location.href)){
-			setTimeout(function(){
-  				$('#duck').click();
-				}, 600);
-			}
-		if(/#%D0%B0%D0%BA%D1%86%D0%B8%D0%B8/.test(location.href)){
-			setTimeout(function(){
-  				$('#stocks').click();
-				}, 600);			
-			}		
-		});
-	</script>	
+	<script type="text/javascript" charset="utf-8">
+$(document).ready(function(){ // функция будет выполнена при полной загрузке страницы
+// 	if("http://thaibeautyspa.kutalo.com/спец-предложения/".indexOf('#') > -1)
+// 	if (document.location.href.indexOf('#сертификаты') == -1)
+// 	{
+
+	
+// // 		history.pushState('', document.title, window.location.pathname);
+// 	}
+
+	if (/#%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D1%8B/.test(location.href)) {
+		   setTimeout(function(){ // если нужно устанавливаем задержку выполнения действия
+      $('#daffy').click(); // имитируем нажатие кнопкой мишы на блок
+   },600); // время задержки в милисикундах
+  console.info('Ссылка содержит слово сертификаты');
+} else {
+  console.info('Ссылка не содержит слово сертификаты');
+}
+		if (/#%D0%B0%D0%B1%D0%BE%D0%BD%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D1%8B/.test(location.href)) {
+		   setTimeout(function(){ // если нужно устанавливаем задержку выполнения действия
+      $('#duck').click(); // имитируем нажатие кнопкой мишы на блок
+   },600); // время задержки в милисикундах
+} else {
+		}
+});
+	</script>
+	
 	<div class="sections">
 
 		<div class="section" id="section1">

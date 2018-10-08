@@ -87,6 +87,56 @@ tbs_video_style_js_init ();
                 ?>
                 </div>
             </div>
+<!--            <div class="center__bottom form_padding">-->
+<!--                <h3>Напишите нам отзыв</h3>-->
+<!--                <div class="container cta__block cta__block--none-style">-->
+<!--                    <form action="#" class="cta__form reviews__form">-->
+<!--                        <textarea name="cta__text" id="" cols="30" rows="10" placeholder="Написать текст" required ></textarea>-->
+<!--                        <input name="cta__name" class="reviews__form__input reviews__name" type="text" placeholder="Имя" required  pattern="[a-zA-Zа-яА-Я]{2,}">-->
+<!--                        <input name="cta__last-name" class="reviews__form__input reviews__lname" type="text" placeholder="Фамилия" required  pattern="[a-zA-Zа-яА-Я]{2,}">-->
+<!--                        <input name="cta__email" class="reviews__form__input reviews__email" type="text" placeholder="Email" required>-->
+<!--                        <button class="btn" type="submit">Отправить</button>-->
+<!---->
+<!--                        <div class="cta__status cta__status--loading">-->
+<!--                            <div class="cta__status-body">-->
+<!--                                <span class="cta__status-title">Идет отправка...</span>-->
+<!--                                <div class="spinner">-->
+<!--                                    <div class="rect1"></div>-->
+<!--                                    <div class="rect2"></div>-->
+<!--                                    <div class="rect3"></div>-->
+<!--                                    <div class="rect4"></div>-->
+<!--                                    <div class="rect5"></div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!---->
+<!--                        <div class="cta__status cta__status--success">-->
+<!--                            <div class="cta__status-body">-->
+<!--                                <span class="cta__status-title"><b>Отзыв успешно отправлен!</b><br>Спасибо за ваше мнение</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!---->
+<!--                        <div class="cta__status cta__status--error">-->
+<!--                            <div class="cta__status-body">-->
+<!--                                <span class="cta__status-title"><b>Произошла ошибка!</b><br>Заявка не отправлена</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!---->
+<!--                        <input type="hidden" name="url" value="--><?php //echo get_the_permalink(); ?><!--">-->
+<!--                        <input type="hidden" name="description" value="Отзыв">-->
+<!--                        <input type="hidden" name="type" value="default">-->
+<!--                        <input type="hidden" name="cat" value="отзывы">-->
+<!--                        <input type="hidden" name="action" value="tbs_form">-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+</div>
+
+<div class="reviews__second reviews__second--2 section">
+    <div class="main">
+        <div class="center" style="transform: translateY(-50%);">
             <div class="center__bottom form_padding">
                 <h3>Напишите нам отзыв</h3>
                 <div class="container cta__block cta__block--none-style">

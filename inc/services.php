@@ -1,4 +1,8 @@
 <?php
+function tbs_clear_desc($text) {
+	$text = str_replace( array( '"', "'", "\r\n", "\r", "\n" ), ' ', strip_tags( $text ) );
+	return $text;
+}
 function nbsp($text) {
 	$text = str_replace( ' ', '&nbsp', $text );
 	return $text;

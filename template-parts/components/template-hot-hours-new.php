@@ -82,6 +82,7 @@ global $Mammen;
                                             endif;
 
                                             $posts = tbs_list_post_by_post_type( 'hothours', $place['term_id'] );
+                                            $post_mas = array();
                                             $c = 0;
                                             foreach ( $posts as $post ) {
                                                 $title     = get_the_title( $post['ID'] );
@@ -93,10 +94,14 @@ global $Mammen;
                                                 $time_tmp = explode(":", $time);
                                                 $post_time = $time_tmp[0]*60*60 + $time_tmp[1]*60 + $date;
 	                                            date_default_timezone_set( 'Europe/Moscow' );
+//	                                            if(current_user_can('edit_posts')) {
+//		                                            echo date( 'Y-m-d H:i:s', time() );
+//	                                            }
 //                                                print_r("{$time_tmp[0]} $post_time ". time() . " " . (($post_time - time())/60));
-	                                            if ( ( time() + date("Z") ) > $post_time ) {
+	                                            if ( ( time() /*+ date("Z")*/ ) > $post_time ) {
 	                                                continue;
                                                 }
+	                                            ob_start();
 	                                            ?>
                                                 <div class="desktop">
                                                     <div class="service__data__item">
@@ -127,7 +132,7 @@ global $Mammen;
         //                                                        print_r($serv);
                                                                 }
                                                                 ?>
-                                                                <button class="btn" onclick="popup_c({'cat':'горячие-часы', 'title':'Записаться на горячие часы', 'subtitle':'<?php echo $title; ?>', 'modal_text':'<?php echo $modal_text; ?>', 'template': 'wide', 'email': 1, 'time': 0, 'gender': 0, 'description': 'Горячие часы. <?php echo date( 'd.m.Y', $date ) . " в $time. Название: $title. Описание предложения: $action_descr. Салон: {$place['name']}"; ?>', 'day': '<?php echo date('d', $date); ?>', 'month': '<?php echo $month; ?>', 'big_time': '<?php echo $time; ?>'}, this);">Подробнее</button>
+                                                                <button class="btn" onclick="popup_c({'cat':'горячие-часы', 'title':'Записаться на горячие часы', 'subtitle':'<?php echo $title; ?>', 'modal_text':'<?php echo tbs_clear_desc( $modal_text ); ?>', 'template': 'wide', 'email': 1, 'time': 0, 'gender': 0, 'description': 'Горячие часы. <?php echo date( 'd.m.Y', $date ) . " в $time. Название: $title. Описание предложения: ".tbs_clear_desc( $action_descr ).". Салон: {$place['name']}"; ?>', 'day': '<?php echo date('d', $date); ?>', 'month': '<?php echo $month; ?>', 'big_time': '<?php echo $time; ?>'}, this);">Подробнее</button>
 
                                                             </div>
                                                         </div>
@@ -160,14 +165,22 @@ global $Mammen;
 		                                                    //                                                        print_r($serv);
 	                                                    }
 	                                                    ?>
-                                                        <button class="btn btn--small-more best-service-m__btn" onclick="popup_c({'cat':'горячие-часы', 'title':'Записаться на горячие часы', 'subtitle':'<?php echo $title; ?>', 'modal_text':'<?php echo $modal_text; ?>', 'template': 'wide', 'email': 1, 'time': 0, 'gender': 0, 'description': 'Горячие часы. <?php echo date( 'd.m.Y', $date ) . " в $time. Название: $title. Описание предложения: $action_descr. Салон: {$place['name']}"; ?>', 'day': '<?php echo date('d', $date); ?>', 'month': '<?php echo $month; ?>', 'big_time': '<?php echo $time; ?>'}, this);">Подробнее</button>
+                                                        <button class="btn btn--small-more best-service-m__btn" onclick="popup_c({'cat':'горячие-часы', 'title':'Записаться на горячие часы', 'subtitle':'<?php echo $title; ?>', 'modal_text':'<?php echo tbs_clear_desc( $modal_text ); ?>', 'template': 'wide', 'email': 1, 'time': 0, 'gender': 0, 'description': 'Горячие часы. <?php echo date( 'd.m.Y', $date ) . " в $time. Название: $title. Описание предложения: ".tbs_clear_desc( $action_descr ).". Салон: {$place['name']}"; ?>', 'day': '<?php echo date('d', $date); ?>', 'month': '<?php echo $month; ?>', 'big_time': '<?php echo $time; ?>'}, this);">Подробнее</button>
                                                     </div>
                                                 </div>
                                                 <?php
-	                                            $c++;
+	                                            $post_mas[$post_time] = ob_get_clean();
+                                                $c++;
                                             }
                                             if ( !$c ) {
                                                 echo "<div class='hot-hours__none'>Горячих часов нет</div>";
+                                            } else {
+//                                                print_r($post_mas);
+	                                            sort( $post_mas );
+//                                                print_r($post_mas);
+                                                foreach ( $post_mas as $key => $cont ) {
+                                                    echo $cont;
+                                                }
                                             }
                                             ?>
                                         </li>

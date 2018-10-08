@@ -39,11 +39,13 @@ tbs_video_style_js_init ();
 			<div class="gallery__content__block" id="b1">
 
 				<div class="container__bottom">
-					<div class="gallery__image" onclick="popup_img_cta({'img':'<?php echo $Mammen->get_img( 'Картинки', 'large' )[0]['src'] ?>'});" style='background-image: url("<?php echo $Mammen->get_img( 'Картинки', 'large' )[0]['src'] ?>");'></div>
+                    <?php
+                    $images = $Mammen->get_fields( 'Картинки' );
+                    ?>
+					<div class="gallery__image" onclick="popup_img_cta({'img':'<?php echo current($images)->get_img( 'Фото', 'large' )[0]['src'] ?>'});" style='background-image: url("<?php echo current($images)->get_img( 'Фото', 'large' )[0]['src'] ?>");'></div>
 					<ul class="gallery__preview slider">
 						<li>
 							<?php
-							$images = $Mammen->get_img( 'Картинки', 'large' );
 							$k = 0;
 							foreach ( $images as $image ) :
 								++$k;
@@ -52,7 +54,7 @@ tbs_video_style_js_init ();
 									echo '<li>';
 								}
 								?>
-                                <div class="gallery__thumb" style='background-image: url("<?php echo $image['src'] ?>");' data-src="<?php echo $image['src'] ?>"></div>
+                                <div class="gallery__thumb" style='background-image: url("<?php echo $image->get_img( 'Фото', 'large' )[0]['src'] ?>");' data-src="<?php echo $image->get_img( 'Фото', 'large' )[0]['src'] ?>"></div>
 							<?php endforeach; ?>
 						</li>
 					</ul>
@@ -93,9 +95,9 @@ tbs_video_style_js_init ();
             <h2 class="big-title">Галерея</h2>
             <div class="content__block slick--go">
 	            <?php
-	            $images = $Mammen->get_img( 'Картинки', 'large' );
+	            $images = $Mammen->get_fields( 'Картинки' );
 	            foreach ( $images as $image ) : ?>
-                    <div class="review__photo" style='background-image: url("<?php echo $image['src'] ?>");' data-src="<?php echo $image['src'] ?>"></div>
+                    <div class="review__photo" style='background-image: url("<?php echo $image->get_img( 'Фото', 'large' )[0]['src'] ?>");' data-src="<?php echo $image->get_img( 'Фото', 'large' )[0]['src'] ?>"></div>
 	            <?php endforeach; ?>
             </div>
             <div class="pattern-line"></div>

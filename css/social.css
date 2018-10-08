@@ -2,7 +2,36 @@
     font-family: Tahoma;
     src: url('../fonts/Tahoma.ttf');
 }
-
+.lang_custom {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 51px;
+    z-index: 999;
+}
+.btn_my_styles {
+    display: block;
+    width: 100%;
+    background-color: #b39658;
+    height: 70px;
+    border-radius: 35px;
+    font-size: 22px;
+    color: #000;
+    border: none;
+    width: 100%;
+    transition: all 0.3s;
+}
+.btn_my_styles:hover {
+    color: #b39658;
+    background-color: #000;
+}
+.lang_custom a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 12px;
+        font-family: "Roboto Condensed", sans-serif;
+}
 
 .social_content_slides .lines_mobi {
     width: 100vw;
@@ -618,7 +647,7 @@
 .text_b_right {
     font-size: 16px;
 }
-.services__items .btn:after {
+.services.linch .services__items .btn:after {
     background-color: #fff!important;
     border-color: #fff;
 }
@@ -864,8 +893,14 @@ body.thai_page  ol{
     margin: auto;
     text-align: center;
 }
-body.thai_page {
+body.thai_page  {
     min-height: 100vh;
+}
+body.thai_page .lang_custom .ru_lang {
+    display: inline!important;
+}
+body.thai_page .lang_custom .thai_lang {
+    display: none!important;
 }
 @media screen and (max-width: 1080px) {
     body.thai_page .thai_letter {
@@ -917,6 +952,15 @@ body.thai_page {
     .thai_page_popup .cta__block .services__popup__form {
         max-height: 70vh;
     }
+    .lang_custom {
+        position: absolute;
+        top: 23px;
+        right: 87px;
+        bottom: auto;
+    }
+    body.thai_page .lang_custom {
+        right: 18px;
+    }
 }
 @media screen and (max-width: 480px) {
     .thai_page_input, .thai_page_input_center, .file_upl  {
@@ -925,5 +969,11 @@ body.thai_page {
         margin: 10px auto!important;
         text-align: center;
 
+    }
+    .lang_custom {
+            bottom: auto;
+        right: 54px;
+        z-index: 999;
+        top: 28px;
     }
 }

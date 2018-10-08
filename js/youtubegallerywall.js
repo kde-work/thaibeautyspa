@@ -1,5 +1,5 @@
-//** YouTube Gallery Wall- By Dynamic Drive DHTML code library: http://www.dynamicdrive.com
-//** Script Download/ instructions page: http://www.dynamicdrive.com/dynamicindex17/youtube-gallery-wall.htm
+//** YouTube Gallery Wall- By Dynamic Drive DHTML code library: https://www.dynamicdrive.com
+//** Script Download/ instructions page: https://www.dynamicdrive.com/dynamicindex17/youtube-gallery-wall.htm
 //** Created: April 12, 2016
 //** Last modified: April 15th, 16 v1.1 to fix iOS devices sometimes not loading videos
 
@@ -14,7 +14,7 @@ function onYouTubeIframeAPIReady(){
 
 	var KEYCODE_ESC = 27
 
-	var thumbnailformat = 'http://img.youtube.com/vi/VIDEOID/0.jpg'
+	var thumbnailformat = 'https://img.youtube.com/vi/VIDEOID/0.jpg'
 
 	var ytubelightbox = 
 		'<div class="videobox">'
@@ -40,7 +40,7 @@ function onYouTubeIframeAPIReady(){
 		// https://www.youtube.com/v/Pe0jFDPHkzo
 		// and more
 	     
-		//See http://stackoverflow.com/a/6904504/4360074
+		//See https://stackoverflow.com/a/6904504/4360074
 		var youtubeidreg = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i;
 		return youtubeidreg.exec(link)[1] // return Youtube video ID portion of link
 	}
@@ -109,7 +109,7 @@ function onYouTubeIframeAPIReady(){
 				var thumbnail = thumbnailformat.replace('VIDEOID', videoid)
 				var doclink = link.getAttribute('data-url')
 				if (ismobile){
-					/* iOS :hover fix: http://stackoverflow.com/questions/18047353/fix-css-hover-on-iphone-ipad-ipod */
+					/* iOS :hover fix: https://stackoverflow.com/questions/18047353/fix-css-hover-on-iphone-ipad-ipod */
 					$li.css({cursor: 'pointer'})
 				}
 				$li.html(

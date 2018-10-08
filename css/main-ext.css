@@ -548,6 +548,8 @@
 .header-phones {
     display: flex;
     margin: 6px 0 14px;
+    padding-right: 5px;
+    justify-content: right;
 }
 .header-phones .header-phone {
     font-family: "Roboto Condensed", Times New Roman, Times, serif;
@@ -2053,4 +2055,7 @@ a img.aligncenter {
     line-height:17px;
     margin:0;
     padding:0 4px 5px;
+}
+.education__desc p {
+	margin-bottom: 1em;
 }

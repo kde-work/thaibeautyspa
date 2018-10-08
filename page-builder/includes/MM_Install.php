@@ -37,15 +37,15 @@ class MM_Install {
 //		add_filter( 'wpmu_drop_tables', array( __CLASS__, 'wpmu_drop_tables' ) );
 //		add_filter( 'cron_schedules', array( __CLASS__, 'cron_schedules' ) );
 	}
-
+	
 	/**
 	 * Set default Editor mod to Text
 	 */
 	function set_default_editor() {
-		$r = 'html';
-		return $r;
+	   $r = 'html';
+	   return $r;
 	}
-
+	
 	/**
 	 * initial components.
 	 */

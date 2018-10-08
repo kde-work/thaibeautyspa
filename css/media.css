@@ -1560,6 +1560,18 @@
         padding: 20px 8px;
     }
 }
+@media screen and (max-width: 450px) {
+	.cta__time-e {
+		display: block;
+	}
+	.cta__time-text {
+		margin-top: 6px;
+		width: 100% !important;
+	}
+	.modal-copy {
+		margin: 10px 0 0 0;
+	}
+}
 @media screen and (max-width: 420px) {
     #fullpage .left .flower--mobile {
         width: 128px;
@@ -1678,6 +1690,11 @@
         padding: 0;
     }
     .services__title-text, .services__slider h3 {
+        font-size: 19px;
+    }
+}
+@media (max-width: 1050px){
+    .home #masters-ext p{
         font-size: 19px;
     }
 }

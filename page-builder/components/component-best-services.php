@@ -17,6 +17,8 @@
  * Заголовок: Text
  * Заголовок OPTION 'limited': 100
  * Заголовок OPTION 'help': Лимит 100 символов
+ * Описание: Textarea
+ * Описание Мобильное: Textarea
  * N1: Notes
  * N1 OPTION 'text': <h2>Содержимое подхватывается из пользовательского типа записи Услуги с влюченным checkbox</h2>
  * COMPONENT END

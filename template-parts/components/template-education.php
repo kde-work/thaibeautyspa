@@ -128,23 +128,23 @@ global $Mammen;
                                 $date         = get_post_meta( $post['ID'], 'cdicourses-date', true );
                                 $first_month  = get_post_meta( $post['ID'], 'cdicourses-first-month', true );
                                 $second_month = get_post_meta( $post['ID'], 'cdicourses-second-month', true );
-                                $days         = get_post_meta( $post['ID'], 'cdicourses-days', true );
+//                                $days         = get_post_meta( $post['ID'], 'cdicourses-days', true );
                                 $image_id     = get_post_meta( $post['ID'], 'cdicourses-meta-image', true );
                                 $image_url    = wp_get_attachment_image_src( $image_id, 'large' )[0];
                                 $desc         = get_post_meta( $post['ID'], 'cdicourses_desc', true );
-                                $planning     = get_post_meta( $post['ID'], 'cdicourses_planning', true );
-                                $more_days    = get_post_meta( $post['ID'], 'cdicourses-more-days', true );
-                                $more_time    = get_post_meta( $post['ID'], 'cdicourses-more-time', true );
-                                $p_name1      = get_post_meta( $post['ID'], 'cdicourses-p-block-more-1', true );
-                                $p_price1     = get_post_meta( $post['ID'], 'cdicourses-p-block-price-1', true );
-                                $p_minus1     = get_post_meta( $post['ID'], 'cdicourses-p-block-minus-1', true );
-                                $p_name2      = get_post_meta( $post['ID'], 'cdicourses-p-block-more-2', true );
-                                $p_price2     = get_post_meta( $post['ID'], 'cdicourses-p-block-price-2', true );
-                                $p_minus2     = get_post_meta( $post['ID'], 'cdicourses-p-block-minus-2', true );
-                                $p_name3      = get_post_meta( $post['ID'], 'cdicourses-p-block-more-3', true );
-                                $p_price3     = get_post_meta( $post['ID'], 'cdicourses-p-block-price-3', true );
-                                $p_minus3     = get_post_meta( $post['ID'], 'cdicourses-p-block-minus-3', true );
-                                $note         = get_post_meta( $post['ID'], 'cdicourses-note', true );
+//                                $planning     = get_post_meta( $post['ID'], 'cdicourses_planning', true );
+//                                $more_days    = get_post_meta( $post['ID'], 'cdicourses-more-days', true );
+//                                $more_time    = get_post_meta( $post['ID'], 'cdicourses-more-time', true );
+//                                $p_name1      = get_post_meta( $post['ID'], 'cdicourses-p-block-more-1', true );
+//                                $p_price1     = get_post_meta( $post['ID'], 'cdicourses-p-block-price-1', true );
+//                                $p_minus1     = get_post_meta( $post['ID'], 'cdicourses-p-block-minus-1', true );
+//                                $p_name2      = get_post_meta( $post['ID'], 'cdicourses-p-block-more-2', true );
+//                                $p_price2     = get_post_meta( $post['ID'], 'cdicourses-p-block-price-2', true );
+//                                $p_minus2     = get_post_meta( $post['ID'], 'cdicourses-p-block-minus-2', true );
+//                                $p_name3      = get_post_meta( $post['ID'], 'cdicourses-p-block-more-3', true );
+//                                $p_price3     = get_post_meta( $post['ID'], 'cdicourses-p-block-price-3', true );
+//                                $p_minus3     = get_post_meta( $post['ID'], 'cdicourses-p-block-minus-3', true );
+//                                $note         = get_post_meta( $post['ID'], 'cdicourses-note', true );
                                 ?>
                                 <div class="event">
 
@@ -152,7 +152,7 @@ global $Mammen;
                                         <div class="event__name-e"><?php echo $title; ?></div>
                                     </div>
                                     <div class="best-service-m__center">
-                                        <div class="big-date__month big-date__month--m"><?php echo $days; ?></div>
+                                        <div class="big-date__month big-date__month--m"><?php echo $date; ?></div>
                                     </div>
                                     <div class="best-service-m__center">
                                         <div class="btn btn--more-mobile btn--small-more best-service-m__btn" data-id="<?php echo $post['ID']; ?>">Подробнее</div>
@@ -169,7 +169,7 @@ global $Mammen;
                                             <h2 class="special__h2"><?php echo str_replace(array('<br>', '<br />'), ' ', $title); ?></h2>
                                         </div>
                                     </div>
-                                    <div class="center--mobile">
+                                    <div class="center--mobile education__desc">
 	                                    <?php echo tbs_auto_paragraph(htmlspecialchars_decode($desc)); ?>
 
                                         <?php
@@ -351,23 +351,23 @@ global $Mammen;
                                             $date         = get_post_meta( $post['ID'], 'cdicourses-date', true );
                                             $first_month  = get_post_meta( $post['ID'], 'cdicourses-first-month', true );
                                             $second_month = get_post_meta( $post['ID'], 'cdicourses-second-month', true );
-                                            $days         = get_post_meta( $post['ID'], 'cdicourses-days', true );
+//                                            $days         = get_post_meta( $post['ID'], 'cdicourses-days', true );
                                             $image_id     = get_post_meta( $post['ID'], 'cdicourses-meta-image', true );
                                             $image_url    = wp_get_attachment_image_src( $image_id, 'large' )[0];
                                             $desc         = get_post_meta( $post['ID'], 'cdicourses_desc', true );
-                                            $planning     = get_post_meta( $post['ID'], 'cdicourses_planning', true );
-                                            $more_days    = get_post_meta( $post['ID'], 'cdicourses-more-days', true );
-                                            $more_time    = get_post_meta( $post['ID'], 'cdicourses-more-time', true );
-                                            $p_name1      = get_post_meta( $post['ID'], 'cdicourses-p-block-more-1', true );
-                                            $p_price1     = get_post_meta( $post['ID'], 'cdicourses-p-block-price-1', true );
-                                            $p_minus1     = get_post_meta( $post['ID'], 'cdicourses-p-block-minus-1', true );
-                                            $p_name2      = get_post_meta( $post['ID'], 'cdicourses-p-block-more-2', true );
-                                            $p_price2     = get_post_meta( $post['ID'], 'cdicourses-p-block-price-2', true );
-                                            $p_minus2     = get_post_meta( $post['ID'], 'cdicourses-p-block-minus-2', true );
-                                            $p_name3      = get_post_meta( $post['ID'], 'cdicourses-p-block-more-3', true );
-                                            $p_price3     = get_post_meta( $post['ID'], 'cdicourses-p-block-price-3', true );
-                                            $p_minus3     = get_post_meta( $post['ID'], 'cdicourses-p-block-minus-3', true );
-                                            $note         = get_post_meta( $post['ID'], 'cdicourses-note', true );
+//                                            $planning     = get_post_meta( $post['ID'], 'cdicourses_planning', true );
+//                                            $more_days    = get_post_meta( $post['ID'], 'cdicourses-more-days', true );
+//                                            $more_time    = get_post_meta( $post['ID'], 'cdicourses-more-time', true );
+//                                            $p_name1      = get_post_meta( $post['ID'], 'cdicourses-p-block-more-1', true );
+//                                            $p_price1     = get_post_meta( $post['ID'], 'cdicourses-p-block-price-1', true );
+//                                            $p_minus1     = get_post_meta( $post['ID'], 'cdicourses-p-block-minus-1', true );
+//                                            $p_name2      = get_post_meta( $post['ID'], 'cdicourses-p-block-more-2', true );
+//                                            $p_price2     = get_post_meta( $post['ID'], 'cdicourses-p-block-price-2', true );
+//                                            $p_minus2     = get_post_meta( $post['ID'], 'cdicourses-p-block-minus-2', true );
+//                                            $p_name3      = get_post_meta( $post['ID'], 'cdicourses-p-block-more-3', true );
+//                                            $p_price3     = get_post_meta( $post['ID'], 'cdicourses-p-block-price-3', true );
+//                                            $p_minus3     = get_post_meta( $post['ID'], 'cdicourses-p-block-minus-3', true );
+//                                            $note         = get_post_meta( $post['ID'], 'cdicourses-note', true );
                                             ?>
                                             <div class="event">
 <!--                                                <div class="event__left big-date">-->
@@ -379,7 +379,7 @@ global $Mammen;
 <!--                                                </div>-->
                                                 <div class="event__center">
                                                     <div class="event__name-e"><?php echo $title; ?></div>
-                                                    <div class="big-date__month"><?php echo $days; ?></div>
+                                                    <div class="big-date__month"><?php echo $date; ?></div>
                                                 </div>
                                                 <div class="event__right">
                                                     <div class="btn btn--small-more cont-with-more__btn" data-id="<?php echo $post['ID']; ?>">Подробнее</div>
@@ -397,7 +397,7 @@ global $Mammen;
                                                         <div class="about-event__title"><?php echo $title; ?></div>
                                                         <div class="scrollable--72vh-90">
                                                             <div class="scrollable--tmp scrollable--100per">
-                                                                <div class="">
+                                                                <div class="education__desc">
 	                                                                <?php echo tbs_auto_paragraph(htmlspecialchars_decode($desc)); ?>
                                                                 </div>
                                                             </div>
@@ -478,7 +478,7 @@ global $Mammen;
 		</a>
 	</div>
     <div class="services__main__right block--back-image hover-target-image" style="background-image: url('<?php echo $img_first; ?>');"></div>
-</div>
+</div> 
 
 <div class="sections">
 

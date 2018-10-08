@@ -623,7 +623,7 @@ $(document).ready(function() {
 
             if(index == 1 && direction =='down'){
                 if(reviews) {
-                    $('.reviews__second .center').css({
+                    $('.reviews__second:not(.reviews__second--2) .center').css({
                         transform: "translateY(0%)"
                     });
                 }
@@ -632,12 +632,26 @@ $(document).ready(function() {
             }
             if(index == 2 && direction =='up'){
                 if(reviews) {
-                    $('.reviews__second .center').css({
+                    $('.reviews__second:not(.reviews__second--2) .center').css({
                         transform: "translateY(-30%)"
                     });
                 }
                 if(smallScreen)
                     $('.left').fadeIn(1000);
+            }
+            if(index == 2 && direction =='down'){
+                if(reviews) {
+                    $('.reviews__second--2 .center').css({
+                        transform: "translateY(0%)"
+                    });
+                }
+            }
+            if(index == 3 && direction =='up'){
+                if(reviews) {
+                    $('.reviews__second--2 .center').css({
+                        transform: "translateY(-50%)"
+                    });
+                }
             }
         }
     });

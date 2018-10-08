@@ -57,11 +57,13 @@ if (function_exists('get_field')) {
                     <a href="https://www.facebook.com/waithairechnoi/posts/1661690440595965" target="_blank"></a>
                 </div>
             </div>
-            <div class="header-phones">
-                <a class="header-phone" href="tel:84951455262">+7 (495) 451-52-62</a>
-                <div class="header-phones__split"></div>
-                <a class="header-phone" href="tel:89011842332">+7 (901) 184 23 32</a>
-            </div>
+	        <?php if ( get_the_ID() != 188 ) : ?>
+                <div class="header-phones">
+                    <a class="header-phone" href="tel:84951455262">+7 (495) 451-52-62</a>
+                    <div class="header-phones__split"></div>
+                    <a class="header-phone" href="tel:89011842332">+7 (901) 184 23 32</a>
+                </div>
+	        <?php endif; ?>
             <div class="header-btn">
                 <button class="btn btn--transparent btn--small" onclick="popup_c({'cat':'обратный-звонок', 'title':'Обратный звонок', 'email': 1, 'time': 0, 'gender': 0, 'description': 'Заказ обратного звонка'}, this);">ОБРАТНЫЙ ЗВОНОК</button>
             </div>
@@ -75,9 +77,11 @@ if (function_exists('get_field')) {
         </div>
     </div>
     <div class="main__right__top-mobile mobile">
-        <div class="header-phones">
-            <a class="header-phone" href="tel:84951455262">+7 (495) 451-52-62</a>
-        </div>
+	    <?php if ( get_the_ID() != 188 ) : ?>
+            <div class="header-phones">
+                <a class="header-phone" href="tel:84951455262">+7 (495) 451-52-62</a>
+            </div>
+	    <?php endif; ?>
         <div class="main__menu__button startMenuLeft main__menu__button--mobile mobile"><button class="main__menu__btn"></button></div>
         <div class="header-btn">
             <button class="btn btn--transparent btn--small" onclick="popup_c({'cat':'обратный-звонок', 'title':'Обратный звонок', 'email': 1, 'time': 0, 'gender': 0, 'description': 'Заказ обратного звонка'}, this);">ОБРАТНЫЙ ЗВОНОК</button>
