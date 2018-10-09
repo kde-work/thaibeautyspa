@@ -36,7 +36,7 @@
                             html_tab__tab = $('.mm-tabs__tab--'+(current_id_tab)+'.mm-tabs-group--'+group_id, $mm_tabs).clone();
                         }
 
-                        mm_rename_tab($mm_tabs, group_id, current_id_tab*1 - 1, current_id_tab);
+                        mm_rename_tab($mm_tabs, group_id, current_id_tab - 1, current_id_tab, false);
 
                         if (html_tab__body) {
                             $next_iter_tab__body.before(html_tab__body);
@@ -60,13 +60,20 @@
     }
 
     // Rename Tab
-    function mm_rename_tab($mm_tabs, group_id, id_tab, new_id_tab) {
-        var $new_tab__head = $('.mm-tabs__tab--'+new_id_tab+'.mm-tabs-group--'+group_id, $mm_tabs),
-            $new_tab__body = $('.mm-tabs__content--'+new_id_tab+'.mm-tabs-group--'+group_id, $mm_tabs),
-            $old_tab__head = $('.mm-tabs__tab--'+id_tab+'.mm-tabs-group--'+group_id, $mm_tabs),
-            $old_tab__body = $('.mm-tabs__content--'+id_tab+'.mm-tabs-group--'+group_id, $mm_tabs),
-            $new_mm__name = $('.mm__name', $new_tab__body),
+    function mm_rename_tab($mm_tabs, group_id, id_tab, new_id_tab, without_old) {
+        if (without_old) {
+            var $new_tab__head = $('.mm-tabs__tab--'+new_id_tab+'.mm-tabs-group--'+group_id, $mm_tabs),
+                $new_tab__body = $('.mm-tabs__content--'+new_id_tab+'.mm-tabs-group--'+group_id, $mm_tabs);
+        } else {
+            var $new_tab__head = $('.mm-tabs__tab--'+new_id_tab+'.mm-tabs-group--'+group_id, $mm_tabs),
+                $new_tab__body = $('.mm-tabs__content--'+new_id_tab+'.mm-tabs-group--'+group_id, $mm_tabs),
+                $old_tab__head = $('.mm-tabs__tab--'+id_tab+'.mm-tabs-group--'+group_id, $mm_tabs),
+                $old_tab__body = $('.mm-tabs__content--'+id_tab+'.mm-tabs-group--'+group_id, $mm_tabs);
+        }
+        var $new_mm__name = $('.mm__name', $new_tab__body),
             re = new RegExp('__' + group_id + '\-' + new_id_tab + '', 'gi');
+        
+        console.log($new_mm__name);
 
         $new_mm__name.map(function () {
             var $this = $(this),
@@ -81,18 +88,25 @@
             $label.attr('for', new_el_id);
         });
 
-        $new_tab__head.html(id_tab);
+        if (!without_old) {
+            $new_tab__head.html(id_tab);
+        }
 
-        $old_tab__head.remove();
-        $old_tab__body.remove();
+        if ($old_tab__head !== void 0 && $old_tab__head.length) {
+            $old_tab__head.remove();
+            $old_tab__body.remove();
+        }
 
         $new_tab__body.removeClass('mm-tabs__content--'+new_id_tab).addClass('mm-tabs__content--'+id_tab);
         $new_tab__body.data('tab-id', id_tab);
 
-        $new_tab__head.removeClass('mm-tabs__tab--'+new_id_tab).addClass('mm-tabs__tab--'+id_tab);
-        $new_tab__head.data('tab-id', id_tab);
+        if (!without_old) {
+            $new_tab__head.removeClass('mm-tabs__tab--'+new_id_tab).addClass('mm-tabs__tab--'+id_tab);
+            $new_tab__head.data('tab-id', id_tab);
+        }
     }
 
+    window.mm_rename_tab = mm_rename_tab;
     window.mm_remove_tab = mm_remove_tab;
 
 })($ || window.jQuery);

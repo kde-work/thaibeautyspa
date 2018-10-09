@@ -85,3 +85,28 @@
 .mm-tabs--grid > div > .mm-tabs__tab--new, .mm-tabs--grid > div > .mm-tabs__remove-tab {
     visibility: collapse;
 }
+
+.mm-tabs__move-box {
+    display: flex;
+    left: 0;
+    padding: 5px 8px 4px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    width: 222px;
+}
+.move-box__title {
+    color: #999;
+    display: none;
+}
+.mm-tabs__move-tab {
+    display: none;
+    cursor: pointer;
+    margin: 0 0 0 9px;
+}
+.mm-tabs__move-tab:hover {
+    color: #F87D47;
+}

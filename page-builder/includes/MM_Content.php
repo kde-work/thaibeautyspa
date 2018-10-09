@@ -123,6 +123,7 @@ class MM_Content {
 			wp_enqueue_script( 'mammen-thumbnail', MM_ASSETS_REL_DIR . '/js/mammen-thumbnail.js', array( 'jquery' ), $ver );
 			wp_enqueue_script( 'mammen-tabs', MM_ASSETS_REL_DIR . '/js/mammen-tabs.js', array( 'jquery' ), $ver );
 			wp_enqueue_script( 'mammen-tab-remove', MM_ASSETS_REL_DIR . '/js/mammen-tab-remove.js', array( 'jquery' ), $ver );
+			wp_enqueue_script( 'mammen-tab-move', MM_ASSETS_REL_DIR . '/js/mammen-tab-move.js', array( 'jquery' ), $ver );
 
 			wp_register_style( 'page-builder', MM_ASSETS_REL_DIR . '/css/page-builder.css', array(), $ver );
 			wp_enqueue_style( 'page-builder' );

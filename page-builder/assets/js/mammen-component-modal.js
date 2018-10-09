@@ -93,24 +93,37 @@
             component_slug = $this.data('slug'),
             shortcode = '[mammen component="'+ component_name +'"',
             $switch_html = $('.switch-html'), // Text mode buttons
-            $switch_tmce = $('.switch-tmce'); // Visual mode buttons
+            $mm__name = $('.mm-modal__content .mm__name');
 
         $switch_html.trigger('click'); // switch WYSIWYG editors to the Text mode
         // $switch_tmce.trigger('click'); // switch WYSIWYG editors to the Visual mode
 
-        register_fields.forEach(function (entry) {
-            var $field = $(entry.selector, $this),
+        $mm__name.each(function () {
+            var $field = $(this),
                 $ooto_par = $field.parents('.mm-tabs__content--not-current-ooto'),
                 field_value = $field.val();
 
-            if (!$ooto_par.length && $field.length) {
+            if (!$ooto_par.length && $field.length && field_value) {
                 field_value = field_value.replace(/\n<br>|\r<br>|\r|\n/g, '<br>');
                 field_value = mm_validation(field_value);
                 if (field_value !== void 0 && field_value !== '') {
-                    shortcode += ' ' + entry.slug + '="' + field_value + '"';
+                    shortcode += ' ' + $field.attr('name') + '="' + field_value + '"';
                 }
             }
         });
+        // register_fields.forEach(function (entry) {
+        //     var $field = $(entry.selector, $this),
+        //         $ooto_par = $field.parents('.mm-tabs__content--not-current-ooto'),
+        //         field_value = $field.val();
+        //
+        //     if (!$ooto_par.length && $field.length) {
+        //         field_value = field_value.replace(/\n<br>|\r<br>|\r|\n/g, '<br>');
+        //         field_value = mm_validation(field_value);
+        //         if (field_value !== void 0 && field_value !== '') {
+        //             shortcode += ' ' + entry.slug + '="' + field_value + '"';
+        //         }
+        //     }
+        // });
         shortcode += ']';
 
         // Filling by preset data from WYSIWYG

@@ -369,6 +369,11 @@ class MM_Component_Page {
                         </div>
                         <div class="mm-tabs__body mm-tabs__body--<?php echo $group_id; ?>">
                             <div class="mm-tabs__remove-tab mm-tabs__remove-tab--<?php echo $group_id; ?>" data-component-id="<?php echo $component_id; ?>" onclick="mm_remove_tab(this);" data-group-id="<?php echo $group_id; ?>" data-tab-id="1">✕ Remove tab #<span class="mm-tabs__tab-id">1</span></div>
+                            <div class="mm-tabs__move-box mm-tabs__move-box--<?php echo $group_id; ?> move-box">
+                                <div class="move-box__title move-box__title--<?php echo $group_id; ?>">Move Tab:</div>
+                                <div class="mm-tabs__move-tab mm-tabs__move-tab--left mm-tabs__move-tab--<?php echo $group_id; ?>" data-component-id="<?php echo $component_id; ?>" onclick="mm_move_tab(this, -1);" data-group-id="<?php echo $group_id; ?>" data-tab-id="1">← Left</div>
+                                <div class="mm-tabs__move-tab mm-tabs__move-tab--right mm-tabs__move-tab--<?php echo $group_id; ?>" data-component-id="<?php echo $component_id; ?>" onclick="mm_move_tab(this, 1);" data-group-id="<?php echo $group_id; ?>" data-tab-id="1">Right →</div>
+                            </div>
                             <div class="mm-tabs__content mm-tabs-group--<?php echo $group_id; ?> mm-tabs__content--1 mm-tabs__content--current" data-tab-id="1" data-group-id="<?php echo $group_id; ?>">
 				<?php
 			} else {

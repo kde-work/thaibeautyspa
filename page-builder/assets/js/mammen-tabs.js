@@ -85,7 +85,9 @@
             $tabs_tab__ooto = $('.mm-tabs__tab--ooto.mm-tabs-group--'+group_id, $mm_group),
             $tabs_body__ooto = $('.mm-tabs__content--ooto.mm-tabs-group--'+group_id, $mm_group),
             $tab_body = $('.mm-tabs-group--'+group_id+'.mm-tabs__content--'+tab_id, $mm_group),
-            $mm_tabs_group = $('.mm-tabs-group--'+group_id, $mm_group);
+            $mm_tabs_group = $('.mm-tabs-group--'+group_id, $mm_group),
+            $tab__new = $('.mm-tabs__tab--'+tab_id+'.mm-tabs-group--'+group_id+' ~ .mm-tabs__tab--new', $mm_tabs),
+            max_tab_id = $tab__new.data('max-tab-id');
 
         $tabs_tab__ooto.removeClass('mm-tabs__tab--error');
         $tabs_body__ooto.addClass('mm-tabs__content--not-current-ooto');
@@ -99,6 +101,7 @@
         $mm_tabs.data('current-tab', tab_id);
 
         mm_change_remove_button($mm_group, tab_id, group_id);
+        mm_change_move_buttons($mm_group, tab_id, group_id, max_tab_id);
 
         if ($this.hasClass('mm-tabs__tab--ooto')) {
             mm_tab_trigger($this, true, true);
@@ -112,6 +115,34 @@
 
         $delete_button.data('tab-id', id_tab);
         $delete_button_label.html(id_tab);
+    }
+
+    function mm_change_move_buttons($mm_tabs, id_tab, group_id, max_tab_id) {
+        var $move_button = $('.mm-tabs__move-tab--'+group_id, $mm_tabs),
+            $move_button__left = $('.mm-tabs__move-tab--left.mm-tabs__move-tab--'+group_id, $mm_tabs),
+            $move_button__right = $('.mm-tabs__move-tab--right.mm-tabs__move-tab--'+group_id, $mm_tabs),
+            $move_box__title = $('.move-box__title--'+group_id, $mm_tabs);
+
+        $move_button.data('tab-id', id_tab);
+        if (max_tab_id === 1) {
+            $move_button__left.hide();
+            $move_button__right.hide();
+            $move_box__title.hide();
+        } else {
+            $move_box__title.show();
+
+            if (id_tab === 1) {
+                $move_button__left.hide();
+            } else {
+                $move_button__left.show();
+            }
+
+            if (id_tab === max_tab_id) {
+                $move_button__right.hide();
+            } else {
+                $move_button__right.show();
+            }
+        }
     }
 
     function mm_add_head_tab(elem, id_tab, group_id) {
@@ -166,5 +197,6 @@
     window.mm_get_tab = mm_get_tab;
     window.mm_tab_click = mm_tab_click;
     window.mm_change_remove_button = mm_change_remove_button;
+    window.mm_change_move_buttons = mm_change_move_buttons;
 
 })($ || window.jQuery);

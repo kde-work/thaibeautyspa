@@ -55,6 +55,16 @@
  *    My select OPTION 'required': 1
  *    My select '1': Select 1
  *    My select '2': Another Select
+ *   Head: OOTO BEGIN
+ *     Heading: OOTO TAB
+ *     Heading OPTION 'group': Head
+ *       Heading Text: Text
+ *       Heading Text OPTION 'limited': 100
+ *       Heading Text OPTION 'help': Limit 100 characters
+ *     Media: OOTO TAB
+ *     Media OPTION 'group': Head
+ *       Image/Logo: Media Upload
+ *   Head: OOTO END
  * Slider: GROUP END
  * My first multiple select: Multiple Select
  * My first multiple select OPTION 'required': 1
